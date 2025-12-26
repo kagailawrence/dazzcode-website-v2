@@ -55,7 +55,8 @@ export default function Home() {
             <span className="text-xl font-bold flex items-center gap-2"><div className="h-3 w-3 bg-blue-400 rounded-full"></div> TypeScript</span>
             <span className="text-xl font-bold flex items-center gap-2"><div className="h-3 w-3 bg-cyan-400 rounded-full"></div> Tailwind</span>
             <span className="text-xl font-bold flex items-center gap-2"><div className="h-3 w-3 bg-green-400 rounded-full"></div> Node.js</span>
-            <span className="text-xl font-bold flex items-center gap-2"><div className="h-3 w-3 bg-orange-400 rounded-full"></div> AWS</span>
+            <span className="text-xl font-bold flex items-center gap-2"><div className="h-3 w-3 bg-green-400 rounded-full"></div> Go</span>
+            <span className="text-xl font-bold flex items-center gap-2"><div className="h-3 w-3 bg-green-400 rounded-full"></div> Rust</span>
           </div>
         </div>
       </section>

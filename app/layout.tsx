@@ -25,6 +25,11 @@ export const metadata: Metadata = {
     description: "We build scalable SaaS products and help businesses turn ideas into reliable software.",
     siteName: "Dazzcode",
   },
+  icons: {
+    icon: "/images/logo.png",
+    shortcut: "/images/logo.png",
+    apple: "/images/logo.png",
+  },
   metadataBase: new URL("https://dazzcode.com"),
 };
 
