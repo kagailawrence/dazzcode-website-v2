@@ -11,13 +11,42 @@ export default function ContactForm() {
     const [pending, setPending] = useState(false);
     const [success, setSuccess] = useState(false);
 
+    const [error, setError] = useState<string | null>(null);
+
     async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
         setPending(true);
-        // Simulate API call
-        await new Promise(resolve => setTimeout(resolve, 1500));
-        setPending(false);
-        setSuccess(true);
+        setError(null);
+
+        const formData = new FormData(e.currentTarget);
+        const data = {
+            name: formData.get("name"),
+            email: formData.get("email"),
+            company: formData.get("company"),
+            message: formData.get("message"),
+        };
+
+        try {
+            const response = await fetch("/api/contact", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+            });
+
+            const result = await response.json();
+
+            if (!response.ok) {
+                throw new Error(result.error || "Something went wrong");
+            }
+
+            setSuccess(true);
+        } catch (err: any) {
+            setError(err.message);
+        } finally {
+            setPending(false);
+        }
     }
 
     if (success) {
@@ -64,6 +93,12 @@ export default function ContactForm() {
                     required
                 />
             </div>
+
+            {error && (
+                <div className="p-3 rounded-lg bg-red-500/10 border border-red-500/20 text-red-500 text-sm">
+                    {error}
+                </div>
+            )}
 
             <Button type="submit" className="w-full h-12 text-base" disabled={pending}>
                 {pending ? "Sending..." : (
