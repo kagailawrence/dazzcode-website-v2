@@ -344,6 +344,45 @@ export default function Home() {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section className="py-24 border-t border-white/5 bg-secondary/2">
+        <div className="container px-4 md:px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">Engineering FAQ</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">Everything you need to know about partnering with us.</p>
+          </div>
+          <div className="max-w-3xl mx-auto space-y-4">
+            {[
+              {
+                q: "Who owns the intellectual property?",
+                a: "You do. 100% of the code, design, and architecture we build is yours from day one. There is no vendor lock-in, and we ensure a smooth handover to your internal team when you're ready."
+              },
+              {
+                q: "What is your core tech stack?",
+                a: "We specialize in Next.js, TypeScript, and Tailwind CSS for the frontend. For backends, we use Node.js, Go, or Rust depending on performance needs, with PostgreSQL/Prisma for data."
+              },
+              {
+                q: "How fast can we go from idea to launch?",
+                a: "A standard SaaS MVP typically takes 4–6 weeks. We focus on a 'Lean Production' model—shipping the core revenue-driving features first without sacrificing engineering quality."
+              },
+              {
+                q: "Do you handle existing legacy codebases?",
+                a: "Yes. Our 'SaaS Audit & Cleanup' service is specifically for founders struggling with slow, buggy, or unscalable legacy systems. We refactor while keeping your business running."
+              },
+              {
+                q: "How do we communicate during the build?",
+                a: "Total transparency. We use dedicated Slack channels for daily updates, bi-weekly sprint demos, and provide continuous access to a staging environment so you can always see the latest build."
+              }
+            ].map((item, i) => (
+              <div key={i} className="p-6 rounded-2xl bg-secondary/10 border border-white/5 hover:border-primary/20 transition-colors">
+                <h3 className="text-lg font-bold mb-2 text-white">{item.q}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">{item.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-24">
         <div className="container px-4 md:px-6">
@@ -354,13 +393,13 @@ export default function Home() {
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-6 relative z-10">
               Eliminate execution risk. Schedule a strategic consultation to validate your technical roadmap.
             </p>
-            <div className="flex flex-wrap justify-center gap-x-8 gap-y-2 mb-10 text-xs font-medium uppercase tracking-widest text-primary/80 relative z-10">
-              <span>✓ 100% IP Ownership</span>
-              <span>✓ No Vendor Lock-in</span>
-              <span>✓ Full Transparency</span>
+            <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 mb-10 text-xs font-medium uppercase tracking-widest text-primary/80 relative z-10">
+              <span className="flex items-center gap-2"><ShieldCheck className="h-4 w-4" /> 100% IP Ownership</span>
+              <span className="flex items-center gap-2"><Rocket className="h-4 w-4" /> Investor Ready</span>
+              <span className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4" /> No Vendor Lock-in</span>
             </div>
             <Link href="/contact" className="relative z-10">
-              <Button size="lg" className="h-14 px-10 text-lg">
+              <Button size="lg" className="h-14 px-10 text-lg shadow-xl shadow-primary/20 hover:scale-105 transition-transform">
                 Book Your Strategy Call
               </Button>
             </Link>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dazzcode.com/sitemap.xml
