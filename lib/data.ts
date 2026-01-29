@@ -80,12 +80,12 @@ export interface ProductDetail {
 export const services: ServiceDetail[] = [
     {
         slug: "saas-development",
-        title: "Custom SaaS Development",
-        description: "We build scalable, cloud-native SaaS platforms from scratch. Perfect for founders waiting to launch their MVP or scale up.",
+        title: "SaaS MVP Launch",
+        description: "From idea → live product in weeks. We build scalable, cloud-native SaaS platforms from scratch.",
         icon: Layout,
         hero: {
-            headline: "Build scalable SaaS products, not just code.",
-            subheadline: "We help non-technical founders and enterprises launch world-class software products. From concept to scale.",
+            headline: "SaaS MVP Launch: From Idea to Market.",
+            subheadline: "We help early-stage founders and SMEs launch world-class SaaS products. From concept to scale.",
             cta: "Start Your Build"
         },
         problems: {
@@ -185,12 +185,12 @@ const standardTemplate = (slug: string, title: string, desc: string, icon: React
 
 // Re-populating services based on previous knowledge and 'standardTemplate' usage
 services.push(
-    standardTemplate("saas-platform-engineering", "SaaS Platform Engineering", "High-performance architecture for enterprise applications.", Server),
+    standardTemplate("saas-platform-engineering", "Growth & Automation", "AI, integrations, and performance tuning for scaling SaaS.", Server),
     standardTemplate("saas-api-development", "SaaS API Development", "REST & GraphQL APIs built for scale and consumption.", Globe),
     standardTemplate("mobile-app-development", "Mobile App Development", "Native performance with React Native / Expo.", Smartphone),
     standardTemplate("database-design", "Database Design", "Optimized schema design for Postgres, MySQL, and Mongo.", Database),
     standardTemplate("saas-cloud-infrastructure", "SaaS Cloud Architecture", "Multi-tenant AWS/GCP setups. CI/CD pipelines, Docker, and auto-scaling for subscription platforms.", Cloud),
-    standardTemplate("maintenance-scaling", "Maintenance & Scaling", "Refactoring legacy code, optimizing database queries, and ensuring 99.9% uptime.", Settings),
+    standardTemplate("maintenance-scaling", "SaaS Audit & Cleanup", "Fix slow, insecure, or unscalable systems. Refactoring legacy code and optimizing database queries.", Settings),
     standardTemplate("ui-ux-design", "UI/UX Design", "User-centric design systems that convert visitors into customers.", PenTool),
     standardTemplate("seo-optimization", "SEO Optimization", "Technical SEO to rank your SaaS on Google.", Search),
     standardTemplate("consulting", "CTO Consulting", "Strategic technical advice for non-technical founders.", Briefcase),

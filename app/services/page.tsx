@@ -13,9 +13,9 @@ export default function ServicesPage() {
     return (
         <div className="container py-20 px-4 md:px-6">
             <div className="text-center max-w-3xl mx-auto mb-20">
-                <h1 className="text-4xl md:text-5xl font-bold mb-6">World-Class Engineering Services</h1>
+                <h1 className="text-4xl md:text-5xl font-bold mb-6">Strategic SaaS Engineering Services</h1>
                 <p className="text-xl text-muted-foreground">
-                    We provide the technical expertise to turn your business requirements into powerful software solutions.
+                    Launch, Fix, and Scale your product with growth-focused engineering.
                     Specialized in modern web technologies and cloud-native architectures.
                 </p>
             </div>

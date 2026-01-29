@@ -22,12 +22,11 @@ export default function Home() {
           </div>
 
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8 bg-gradient-to-r from-white via-white to-white/70 bg-clip-text text-transparent animate-slide-up">
-            De-Risk Your Technical Execution. <br className="hidden md:block" /> Accelerate Time-to-Value.
+            Launch, Fix, or Scale <br className="hidden md:block" /> SaaS Products That Actually Make Money.
           </h1>
 
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-12 animate-slide-up delay-100">
-            Fractional Engineering Leadership & Venture Scalability.
-            Transform your roadmap into a deployed asset without the overhead of a full-time executive team.
+            We help early-stage founders and SMEs through MVPs, audits, rewrites, and growth-focused engineering — not just code.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up delay-200">
@@ -70,9 +69,9 @@ export default function Home() {
                 <div className="h-12 w-12 rounded-lg bg-blue-500/20 flex items-center justify-center text-blue-500 mb-6">
                   <Code2 className="h-6 w-6" />
                 </div>
-                <h3 className="text-xl font-bold mb-3">Asset Value Preservation</h3>
+                <h3 className="text-xl font-bold mb-3">SaaS Audit & Cleanup</h3>
                 <p className="text-muted-foreground">
-                  We engineer software as a long-term asset. Modular, documented, and built to avoid the compound interest of technical debt.
+                  Fix slow, insecure, or unscalable systems. We audit your codebase, clear technical debt, and get your velocity back on track.
                 </p>
               </CardContent>
             </Card>
@@ -81,9 +80,9 @@ export default function Home() {
                 <div className="h-12 w-12 rounded-lg bg-purple-500/20 flex items-center justify-center text-purple-500 mb-6">
                   <Rocket className="h-6 w-6" />
                 </div>
-                <h3 className="text-xl font-bold mb-3">Strategic Velocity</h3>
+                <h3 className="text-xl font-bold mb-3">SaaS MVP Launch</h3>
                 <p className="text-muted-foreground">
-                  Speed is a competitive moat. We deploy modular architecture to shorten feedback loops and accelerate market validation.
+                  From idea → live product in weeks. Institutional-grade engineering that transforms your roadmap into a revenue-generating asset.
                 </p>
               </CardContent>
             </Card>
@@ -92,9 +91,9 @@ export default function Home() {
                 <div className="h-12 w-12 rounded-lg bg-green-500/20 flex items-center justify-center text-green-500 mb-6">
                   <ShieldCheck className="h-6 w-6" />
                 </div>
-                <h3 className="text-xl font-bold mb-3">Enterprise Readiness</h3>
+                <h3 className="text-xl font-bold mb-3">Growth & Automation</h3>
                 <p className="text-muted-foreground">
-                  Unlock upmarket revenue. SOC-2 ready architecture and compliance-first engineering to satisfy enterprise procurement.
+                  AI, integrations, and performance tuning. We handle the complex engineering so you can focus on scale.
                 </p>
               </CardContent>
             </Card>
@@ -114,14 +113,54 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-[90rem] mx-auto">
+            {/* Audit Tier */}
+            <Card className="glass-dark hover:bg-secondary/20 transition-all duration-300 border-white/5 flex flex-col relative overflow-hidden group">
+              <div className="absolute top-0 right-0 p-24 bg-amber-500/10 blur-3xl rounded-full translate-x-1/3 -translate-y-1/3 group-hover:bg-amber-500/20 transition-colors"></div>
+              <CardContent className="p-8 flex-1 flex flex-col relative z-10">
+                <div className="mb-8">
+                  <h3 className="text-2xl font-bold mb-2 text-white">SaaS Audit</h3>
+                  <p className="text-sm font-medium text-amber-400 mb-4 uppercase tracking-widest">Identify & Fix Bottlenecks</p>
+                  <div className="flex items-baseline gap-1">
+                    <span className="text-4xl font-bold text-white">$800 - $3k</span>
+                  </div>
+                  <p className="text-muted-foreground mt-4 text-sm">
+                    Fix slow, insecure, or unscalable systems with a deep technical dive.
+                  </p>
+                </div>
+
+                <div className="flex-1 space-y-4 mb-8">
+                  {[
+                    "Deep-dive technical audit",
+                    "Performance & security review",
+                    "Refactor roadmap & PRs",
+                    "Cost optimization report",
+                    "1–2 weeks timeline"
+                  ].map((feature) => (
+                    <div key={feature} className="flex items-start gap-3">
+                      <div className="mt-1 h-5 w-5 rounded-full bg-amber-500/20 flex items-center justify-center shrink-0">
+                        <Check className="h-3 w-3 text-amber-500" />
+                      </div>
+                      <span className="text-sm text-foreground/80">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <Link href="/contact" className="w-full">
+                  <Button className="w-full bg-secondary/50 hover:bg-amber-600/20 hover:text-amber-400 border border-white/5" variant="outline">
+                    Get an Audit
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
+
             {/* Foundation Tier */}
             <Card className="glass-dark hover:bg-secondary/20 transition-all duration-300 border-white/5 flex flex-col relative overflow-hidden group">
               <div className="absolute top-0 right-0 p-24 bg-blue-500/10 blur-3xl rounded-full translate-x-1/3 -translate-y-1/3 group-hover:bg-blue-500/20 transition-colors"></div>
               <CardContent className="p-8 flex-1 flex flex-col relative z-10">
                 <div className="mb-8">
-                  <h3 className="text-2xl font-bold mb-2 text-white">Foundation</h3>
-                  <p className="text-sm font-medium text-blue-400 mb-4 uppercase tracking-widest">Validate Without Regret</p>
+                  <h3 className="text-2xl font-bold mb-2 text-white">SaaS MVP</h3>
+                  <p className="text-sm font-medium text-blue-400 mb-4 uppercase tracking-widest">From Idea → Live Product</p>
                   <div className="flex items-baseline gap-1">
                     <span className="text-4xl font-bold text-white">$3k - $6k</span>
                   </div>
@@ -130,7 +169,7 @@ export default function Home() {
                   </p>
                 </div>
 
-                <div className="flex-1 space-y-4 mb-8">
+                <div className="flex-1_space-y-4 mb-8">
                   {[
                     "SaaS architecture design",
                     "MVP scope definition",
@@ -150,7 +189,7 @@ export default function Home() {
 
                 <Link href="/contact" className="w-full">
                   <Button className="w-full bg-secondary/50 hover:bg-blue-600/20 hover:text-blue-400 border border-white/5" variant="outline">
-                    Start Validation
+                    Start Your MVP
                   </Button>
                 </Link>
               </CardContent>
@@ -166,21 +205,21 @@ export default function Home() {
                   <div className="inline-flex items-center rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-xs font-medium text-primary mb-4">
                     Most Popular
                   </div>
-                  <h3 className="text-2xl font-bold mb-2 text-white">Growth</h3>
+                  <h3 className="text-2xl font-bold mb-2 text-white">SaaS Growth</h3>
                   <p className="text-sm font-medium text-primary mb-4 uppercase tracking-widest">Scale Without Breaking</p>
                   <div className="flex items-baseline gap-1">
                     <span className="text-4xl font-bold text-white">$8k - $15k</span>
                   </div>
                   <p className="text-muted-foreground mt-4 text-sm">
-                    For funded or revenue-generating SaaS needing scale and performance.
+                    AI, integrations, and high-performance scaling for funded SaaS.
                   </p>
                 </div>
 
                 <div className="flex-1 space-y-4 mb-8">
                   {[
-                    "Everything in Foundation",
+                    "Everything in MVP",
                     "Scalable backend architecture",
-                    "Performance optimization",
+                    "Performance & AI integrations",
                     "Database design & indexing",
                     "Security hardening",
                     "CI/CD pipelines",
@@ -209,8 +248,8 @@ export default function Home() {
               <div className="absolute top-0 right-0 p-24 bg-purple-500/10 blur-3xl rounded-full translate-x-1/3 -translate-y-1/3 group-hover:bg-purple-500/20 transition-colors"></div>
               <CardContent className="p-8 flex-1 flex flex-col relative z-10">
                 <div className="mb-8">
-                  <h3 className="text-2xl font-bold mb-2 text-white">Partner</h3>
-                  <p className="text-sm font-medium text-purple-400 mb-4 uppercase tracking-widest">Replace an Engineering Team</p>
+                  <h3 className="text-2xl font-bold mb-2 text-white">SaaS Partner</h3>
+                  <p className="text-sm font-medium text-purple-400 mb-4 uppercase tracking-widest">Fractional Engineering Team</p>
                   <div className="flex items-baseline gap-1">
                     <span className="text-4xl font-bold text-white">$2.5k - $6k</span>
                     <span className="text-muted-foreground text-sm">/mo</span>
@@ -226,7 +265,7 @@ export default function Home() {
                     "Dedicated SaaS team",
                     "Roadmap planning",
                     "Continuous delivery",
-                    "Scaling & optimization",
+                    "Scaling & automation",
                     "Priority support",
                     "Monthly retainer"
                   ].map((feature) => (
