@@ -17,27 +17,31 @@ export default function Home() {
         </div>
 
         <div className="container px-4 md:px-6 relative z-10 text-center">
-          <div className="inline-flex items-center rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-sm font-medium text-primary mb-8 animate-fade-in">
+          <div className="inline-flex items-center rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-sm font-medium text-primary mb-8 animate-fade-in gap-2">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+            </span>
             Accepting New Projects for Q3
           </div>
 
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8 bg-gradient-to-r from-white via-white to-white/70 bg-clip-text text-transparent animate-slide-up">
-            Launch, Fix, or Scale <br className="hidden md:block" /> SaaS Products That Actually Make Money.
+            Ship Your SaaS Without <br className="hidden md:block" /> the Technical Headache.
           </h1>
 
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-12 animate-slide-up delay-100">
-            We help early-stage founders and SMEs through MVPs, audits, rewrites, and growth-focused engineering — not just code.
+            We help early-stage founders and SMEs launch, fix, and scale revenue-generating products — not just code.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up delay-200">
             <Link href="/contact">
               <Button size="lg" className="h-14 px-8 text-lg w-full sm:w-auto shadow-[0_0_30px_-5px_var(--color-primary)] hover:shadow-[0_0_50px_-5px_var(--color-primary)] transition-all duration-300">
-                Start Your Build
+                Launch My SaaS
               </Button>
             </Link>
             <Link href="/services">
               <Button variant="outline" size="lg" className="h-14 px-8 text-lg w-full sm:w-auto glass hover:bg-white/5">
-                View Our Services
+                Validate My Roadmap
               </Button>
             </Link>
           </div>
@@ -48,7 +52,7 @@ export default function Home() {
       <section className="py-12 border-y border-white/5 bg-black/20">
         <div className="container px-4 md:px-6 text-center">
           <p className="text-sm font-medium text-muted-foreground mb-8 uppercase tracking-widest">Built on Institutional-Grade Standards</p>
-          <div className="flex flex-wrap justify-center gap-8 md:gap-16 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
+          <div className="flex flex-wrap justify-center gap-8 md:gap-16 opacity-70 grayscale hover:grayscale-0 transition-all duration-500 mb-12">
             {/* Tech logos placeholders */}
             <span className="text-xl font-bold flex items-center gap-2"><div className="h-3 w-3 bg-white rounded-full"></div> Next.js</span>
             <span className="text-xl font-bold flex items-center gap-2"><div className="h-3 w-3 bg-blue-400 rounded-full"></div> TypeScript</span>
@@ -56,6 +60,57 @@ export default function Home() {
             <span className="text-xl font-bold flex items-center gap-2"><div className="h-3 w-3 bg-green-400 rounded-full"></div> Node.js</span>
             <span className="text-xl font-bold flex items-center gap-2"><div className="h-3 w-3 bg-green-400 rounded-full"></div> Go</span>
             <span className="text-xl font-bold flex items-center gap-2"><div className="h-3 w-3 bg-green-400 rounded-full"></div> Rust</span>
+          </div>
+          <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8 text-left border-t border-white/5 pt-12">
+            <div className="space-y-2">
+              <h4 className="text-white font-semibold">Investor-Grade Infrastructure</h4>
+              <p className="text-sm text-muted-foreground">SOC2-ready architecture, encrypted data at rest, and automated CI/CD for zero-downtime deployments. We build code that passes due diligence.</p>
+            </div>
+            <div className="space-y-2">
+              <h4 className="text-white font-semibold">Production-First Engineering</h4>
+              <p className="text-sm text-muted-foreground">Sub-100ms API response times and scalable multi-tenant schemas. We don't just build apps; we build assets that scale to enterprise demands.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Social Proof Section */}
+      <section className="py-24 border-y border-white/5 relative overflow-hidden">
+        <div className="container px-4 md:px-6 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">Trusted by Strategic Founders</h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="p-8 rounded-2xl bg-secondary/10 border border-white/5 space-y-4">
+              <p className="text-foreground/80 italic">"They took our legacy spaghetti code and turned it into a scalable platform that actually holds up during peak traffic. The audit was the best investment we made this year."</p>
+              <div className="flex items-center gap-3">
+                <div className="h-10 w-10 rounded-full bg-blue-500/20 flex items-center justify-center font-bold text-blue-500">JF</div>
+                <div>
+                  <p className="text-sm font-bold text-white">CTO, FinTech Startup</p>
+                  <p className="text-xs text-muted-foreground">30% reduction in churn after refactor</p>
+                </div>
+              </div>
+            </div>
+            <div className="p-8 rounded-2xl bg-secondary/10 border border-white/5 space-y-4">
+              <p className="text-foreground/80 italic">"Launched our MVP in 5 weeks. The architecture is so clean that our internal team took over with zero friction. Truly institutional-grade work."</p>
+              <div className="flex items-center gap-3">
+                <div className="h-10 w-10 rounded-full bg-purple-500/20 flex items-center justify-center font-bold text-purple-500">AM</div>
+                <div>
+                  <p className="text-sm font-bold text-white">Founder, AI SaaS</p>
+                  <p className="text-xs text-muted-foreground">Secured Seed funding 2 months later</p>
+                </div>
+              </div>
+            </div>
+            <div className="p-8 rounded-2xl bg-secondary/10 border border-white/5 space-y-4">
+              <p className="text-foreground/80 italic">"The automation they built saved us 20+ hours of manual data entry per week. Engineering that actually moves the bottom line."</p>
+              <div className="flex items-center gap-3">
+                <div className="h-10 w-10 rounded-full bg-green-500/20 flex items-center justify-center font-bold text-green-500">SK</div>
+                <div>
+                  <p className="text-sm font-bold text-white">Operations Lead, SME</p>
+                  <p className="text-xs text-muted-foreground">ROI achieved in under 90 days</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -71,7 +126,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-xl font-bold mb-3">SaaS Audit & Cleanup</h3>
                 <p className="text-muted-foreground">
-                  Fix slow, insecure, or unscalable systems. We audit your codebase, clear technical debt, and get your velocity back on track.
+                  Stop burning runway on features that don't ship. We audit your codebase, clear technical debt, and restore engineering velocity.
                 </p>
               </CardContent>
             </Card>
@@ -82,7 +137,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-xl font-bold mb-3">SaaS MVP Launch</h3>
                 <p className="text-muted-foreground">
-                  From idea → live product in weeks. Institutional-grade engineering that transforms your roadmap into a revenue-generating asset.
+                  Build your MVP on a foundation that scales. We transform high-level roadmaps into revenue-generating assets in weeks, not months.
                 </p>
               </CardContent>
             </Card>
@@ -93,7 +148,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-xl font-bold mb-3">Growth & Automation</h3>
                 <p className="text-muted-foreground">
-                  AI, integrations, and performance tuning. We handle the complex engineering so you can focus on scale.
+                  Unlock enterprise scale with SOC2-ready architecture. AI integration, complex migrations, and performance tuning for high-growth SaaS.
                 </p>
               </CardContent>
             </Card>
@@ -125,7 +180,7 @@ export default function Home() {
                     <span className="text-4xl font-bold text-white">$800 - $3k</span>
                   </div>
                   <p className="text-muted-foreground mt-4 text-sm">
-                    Fix slow, insecure, or unscalable systems with a deep technical dive.
+                    Best for founders with slow, buggy, or unscalable codebases.
                   </p>
                 </div>
 
@@ -148,7 +203,7 @@ export default function Home() {
 
                 <Link href="/contact" className="w-full">
                   <Button className="w-full bg-secondary/50 hover:bg-amber-600/20 hover:text-amber-400 border border-white/5" variant="outline">
-                    Get an Audit
+                    Fix My SaaS
                   </Button>
                 </Link>
               </CardContent>
@@ -189,7 +244,7 @@ export default function Home() {
 
                 <Link href="/contact" className="w-full">
                   <Button className="w-full bg-secondary/50 hover:bg-blue-600/20 hover:text-blue-400 border border-white/5" variant="outline">
-                    Start Your MVP
+                    Launch My MVP
                   </Button>
                 </Link>
               </CardContent>
@@ -211,7 +266,7 @@ export default function Home() {
                     <span className="text-4xl font-bold text-white">$8k - $15k</span>
                   </div>
                   <p className="text-muted-foreground mt-4 text-sm">
-                    AI, integrations, and high-performance scaling for funded SaaS.
+                    Best for funded SaaS needing AI integration and high-performance scale.
                   </p>
                 </div>
 
@@ -237,7 +292,7 @@ export default function Home() {
 
                 <Link href="/contact" className="w-full">
                   <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/25">
-                    Scale Now
+                    Scale My Product
                   </Button>
                 </Link>
               </CardContent>
@@ -255,7 +310,7 @@ export default function Home() {
                     <span className="text-muted-foreground text-sm">/mo</span>
                   </div>
                   <p className="text-muted-foreground mt-4 text-sm">
-                    Dedicated technical execution for serious founders and enterprises.
+                    Best for founders requiring a dedicated technical execution team.
                   </p>
                 </div>
 
@@ -295,13 +350,18 @@ export default function Home() {
           <div className="rounded-3xl bg-gradient-to-r from-secondary to-background border border-white/10 p-12 text-center relative overflow-hidden">
             <div className="absolute top-0 right-0 p-32 bg-primary/5 blur-3xl rounded-full translate-x-1/2 -translate-y-1/2"></div>
 
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 relative z-10">Secure Your Technical Partner.</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-10 relative z-10">
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 relative z-10">Stop Over-Engineering. Start Shipping.</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-6 relative z-10">
               Eliminate execution risk. Schedule a strategic consultation to validate your technical roadmap.
             </p>
+            <div className="flex flex-wrap justify-center gap-x-8 gap-y-2 mb-10 text-xs font-medium uppercase tracking-widest text-primary/80 relative z-10">
+              <span>✓ 100% IP Ownership</span>
+              <span>✓ No Vendor Lock-in</span>
+              <span>✓ Full Transparency</span>
+            </div>
             <Link href="/contact" className="relative z-10">
               <Button size="lg" className="h-14 px-10 text-lg">
-                Book Your Call
+                Book Your Strategy Call
               </Button>
             </Link>
           </div>
