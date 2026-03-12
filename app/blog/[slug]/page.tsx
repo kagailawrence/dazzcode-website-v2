@@ -1,115 +1,121 @@
-import { blogPosts } from "@/lib/blog";
+import { getPostBySlug, getAllPosts } from "@/lib/blog";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Calendar, Clock, Tag } from "lucide-react";
-import type { Metadata } from "next";
-
-interface BlogPostPageProps {
-    params: Promise<{
-        slug: string;
-    }>;
-}
+import { ArrowLeft, Calendar, Clock, User } from "lucide-react";
+import JsonLd from "@/components/seo/JsonLd";
+import { Metadata } from "next";
 
 export async function generateStaticParams() {
-    return blogPosts.map((post) => ({
+    const posts = getAllPosts();
+    return posts.map((post) => ({
         slug: post.slug,
     }));
 }
 
-export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
+export async function generateMetadata(
+    { params }: { params: Promise<{ slug: string }> }
+): Promise<Metadata> {
     const { slug } = await params;
-    const post = blogPosts.find((p) => p.slug === slug);
+    const post = getPostBySlug(slug);
 
     if (!post) {
-        return {
-            title: "Post Not Found | Dazzcode Blog",
-        };
+        return {};
     }
 
     return {
-        title: `${post.title} | Dazzcode Blog`,
-        description: post.excerpt,
+        title: post.title,
+        description: post.description,
         openGraph: {
             title: post.title,
-            description: post.excerpt,
+            description: post.description,
             type: "article",
-            publishedTime: post.date,
-            authors: ["Dazzcode Team"],
+            publishedTime: post.publishedAt,
+            authors: [post.author],
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: post.title,
+            description: post.description,
         },
     };
 }
 
-export default async function BlogPostPage({ params }: BlogPostPageProps) {
+export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
-    const post = blogPosts.find((p) => p.slug === slug);
+    const post = getPostBySlug(slug);
 
     if (!post) {
         notFound();
     }
 
-    return (
-        <article className="min-h-screen py-24 pb-32">
-            {/* Header */}
-            <header className="container px-4 md:px-6 max-w-3xl mx-auto mb-16">
-                <Link href="/blog">
-                    <Button variant="ghost" className="pl-0 gap-2 mb-8 hover:bg-transparent hover:text-primary">
-                        <ArrowLeft className="h-4 w-4" /> Back to Blog
-                    </Button>
-                </Link>
+    // GEO: Article Schema for AI Retrieval
+    const articleSchema = {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        headline: post.title,
+        description: post.description,
+        author: {
+            "@type": "Person",
+            "name": post.author,
+        },
+        datePublished: post.publishedAt,
+    };
 
-                <div className="flex flex-wrap gap-4 items-center text-sm text-muted-foreground mb-6">
-                    <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 text-primary font-medium">
+    return (
+        <article className="container py-20 px-4 md:px-6 max-w-4xl mx-auto">
+            <JsonLd schema={articleSchema} />
+
+            <Link href="/blog" className="inline-flex items-center text-sm font-medium text-muted-foreground hover:text-primary mb-12 transition-colors">
+                <ArrowLeft className="mr-2 h-4 w-4" /> Back to all articles
+            </Link>
+
+            <header className="mb-16">
+                <div className="flex items-center gap-4 text-sm text-muted-foreground mb-6">
+                    <span className="flex items-center gap-1">
+                        <Calendar className="h-4 w-4" />
+                        {new Date(post.publishedAt).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
+                    </span>
+                    <span className="flex items-center gap-1">
+                        <Clock className="h-4 w-4" />
+                        {post.readTime}
+                    </span>
+                    <span className="flex items-center gap-1 hidden sm:flex">
+                        <User className="h-4 w-4" />
+                        {post.author}
+                    </span>
+                    <span className="px-2 py-0.5 rounded bg-primary/10 text-primary font-medium ml-auto">
                         {post.category}
-                    </span>
-                    <span className="flex items-center gap-1.5">
-                        <Calendar className="h-4 w-4" /> {post.date}
-                    </span>
-                    <span className="flex items-center gap-1.5">
-                        <Clock className="h-4 w-4" /> {post.readTime}
                     </span>
                 </div>
 
-                <h1 className="text-3xl md:text-5xl font-bold tracking-tight mb-8 leading-tight">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-8 leading-tight">
                     {post.title}
                 </h1>
 
-                <div className="flex flex-wrap gap-2">
-                    {post.tags.map(tag => (
-                        <span key={tag} className="text-xs px-2 py-1 rounded bg-secondary text-secondary-foreground border border-white/5">
-                            #{tag}
-                        </span>
-                    ))}
-                </div>
+                <p className="text-xl text-muted-foreground leading-relaxed border-l-4 border-primary pl-6">
+                    {post.description}
+                </p>
             </header>
 
-            {/* Content */}
-            <div className="container px-4 md:px-6 max-w-3xl mx-auto">
-                <div
-                    className="prose prose-invert prose-lg max-w-none 
-                    prose-headings:font-bold prose-headings:tracking-tight prose-headings:text-foreground
-                    prose-p:text-muted-foreground prose-p:leading-relaxed
-                    prose-strong:text-primary prose-strong:font-semibold
-                    prose-a:text-primary prose-a:no-underline hover:prose-a:underline
-                    prose-code:text-primary prose-code:bg-primary/10 prose-code:rounded prose-code:px-1 prose-code:py-0.5 prose-code:before:content-none prose-code:after:content-none
-                    prose-li:text-muted-foreground
-                    "
-                    dangerouslySetInnerHTML={{ __html: post.content }}
-                />
-            </div>
+            {/* GEO: The content is rendered here. 
+                Proper H2/H3 tags are expected within the markdown. */}
+            <div
+                className="prose prose-invert prose-lg max-w-none prose-headings:font-heading prose-a:text-primary hover:prose-a:text-primary/80 prose-img:rounded-xl"
+                dangerouslySetInnerHTML={{ __html: post.content }}
+            />
 
-            {/* Footer / CTA */}
-            <div className="container px-4 md:px-6 max-w-3xl mx-auto mt-20 pt-10 border-t border-white/10">
-                <div className="bg-secondary/10 rounded-2xl p-8 flex flex-col items-center text-center space-y-4">
-                    <h3 className="text-xl font-bold">Enjoyed this article?</h3>
-                    <p className="text-muted-foreground">
-                        We help SaaS founders solve these specific engineering challenges every day.
-                    </p>
-                    <Link href="/contact">
-                        <Button>Discuss Your Project</Button>
-                    </Link>
-                </div>
-            </div>
+            <hr className="my-16 border-white/10" />
+
+            <section className="text-center">
+                <h3 className="text-2xl font-bold mb-4">Ready to build your SaaS?</h3>
+                <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
+                    Stop over-engineering and start shipping. Dazzcode builds institutional-grade SaaS products for strategic founders globally.
+                </p>
+                <Link href="/contact">
+                    <Button size="lg">Book a Strategy Call</Button>
+                </Link>
+            </section>
         </article>
     );
 }

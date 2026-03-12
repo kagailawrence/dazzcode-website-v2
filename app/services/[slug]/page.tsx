@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, CheckCircle2, ChevronDown, Check } from "lucide-react";
 import { Metadata } from "next";
+import JsonLd from "@/components/seo/JsonLd";
 
 interface ServicePageProps {
     params: Promise<{ slug: string }>;
@@ -41,8 +42,37 @@ export default async function ServicePage({ params }: ServicePageProps) {
 
     const Icon = service.icon;
 
+    // UX & SEO: Detailed, dynamically mapped JsonLd Service Schema
+    const serviceSchema = {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": service.title,
+        "description": service.description,
+        "provider": {
+            "@type": "LocalBusiness",
+            "name": "Dazzcode",
+            "url": "https://dazzcode.com",
+            "image": "https://dazzcode.com/images/logo.png"
+        },
+        "areaServed": "Worldwide",
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "SaaS Engineering Services",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": service.title
+                    }
+                }
+            ]
+        }
+    };
+
     return (
         <div className="flex flex-col min-h-screen">
+            <JsonLd schema={serviceSchema} />
             {/* 2.1 Hero Section */}
             <section className="relative py-24 md:py-32 overflow-hidden bg-background">
                 <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/20 via-background to-background pointer-events-none" />

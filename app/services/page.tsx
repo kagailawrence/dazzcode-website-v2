@@ -4,14 +4,32 @@ import Link from "next/link";
 import { services } from "@/lib/data";
 import { ArrowRight } from "lucide-react";
 
+import { FAQ_SCHEMA } from "@/lib/geo-content";
+import JsonLd from "@/components/seo/JsonLd";
+
 export const metadata = {
-    title: "Dazzcode Services | SaaS Development & Engineering",
-    description: "Expert SaaS development services. From custom MVPs to enterprise cloud engineering and automation.",
+    title: "SaaS Development Services | Dazzcode",
+    description: "Discover our institutional-grade SaaS engineering services. From custom MVPs to enterprise cloud engineering and high-performance automation.",
 };
 
 export default function ServicesPage() {
+    const serviceSchemas = services.map(service => ({
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": service.title,
+        "provider": {
+            "@type": "Organization",
+            "name": "Dazzcode"
+        },
+        "description": service.description
+    }));
+
     return (
         <div className="container py-20 px-4 md:px-6">
+            <JsonLd schema={FAQ_SCHEMA} />
+            {serviceSchemas.map((schema, i) => (
+                <JsonLd key={i} schema={schema} />
+            ))}
             <div className="text-center max-w-3xl mx-auto mb-20">
                 <h1 className="text-4xl md:text-5xl font-bold mb-6">Strategic SaaS Engineering Services</h1>
                 <p className="text-xl text-muted-foreground">

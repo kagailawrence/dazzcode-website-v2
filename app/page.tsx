@@ -1,411 +1,337 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Link from "next/link";
-import { ArrowRight, Check, CheckCircle2, Code2, Rocket, ShieldCheck } from "lucide-react";
+import { ArrowRight, Check, ShieldCheck, ChevronDown, ChevronUp, Github, Users, Award } from "lucide-react";
+import JsonLd from "@/components/seo/JsonLd";
+import { FAQ_SCHEMA, ENTITY_DESCRIPTION } from "@/lib/geo-content";
+import ComparisonTable from "@/components/ComparisonTable";
+import BookingFlow from "@/components/BookingFlow";
+import SaasQuiz from "@/components/SaasQuiz";
 
 export default function Home() {
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const [showStickyCta, setShowStickyCta] = useState(false);
+  const [showPricingDetails, setShowPricingDetails] = useState(false);
+
+  // UX: Make Progress Visible + Act of Repetition (Sticky CTA)
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPx = document.documentElement.scrollTop;
+      const winHeightPx = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = scrollPx / winHeightPx;
+      setScrollProgress(scrolled * 100);
+
+      // Show sticky CTA after 40% scroll depth
+      if (scrolled > 0.4) {
+        setShowStickyCta(true);
+      } else {
+        setShowStickyCta(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Dazzcode",
+    "description": ENTITY_DESCRIPTION,
+    "url": "https://dazzcode.com",
+    "logo": "https://dazzcode.com/images/logo.png",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Nairobi",
+      "addressCountry": "Kenya"
+    },
+    "priceRange": "$$$"
+  };
+
   return (
-    <div className="flex flex-col min-h-screen">
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
-        {/* Background Effects */}
+    <div className="flex flex-col min-h-screen relative">
+      {/* UX: Make Progress Visible - 1px Cyan Top Bar */}
+      <div
+        className="fixed top-0 left-0 h-1 bg-primary z-50 transition-all duration-100 ease-out"
+        style={{ width: `${scrollProgress}%`, boxShadow: '0 0 10px var(--color-primary)' }}
+      />
+
+      <JsonLd schema={FAQ_SCHEMA} />
+      <JsonLd schema={serviceSchema} />
+
+      {/* UX: Sticky Book A Call Button (Automate the Act of Repetition) */}
+      <div
+        className={`fixed bottom-6 right-6 z-50 transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] ${showStickyCta ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0 pointer-events-none"
+          }`}
+      >
+        <Button
+          size="lg"
+          className="rounded-full shadow-[0_0_20px_-5px_var(--color-primary)] hover:scale-105 h-14 px-8"
+          onClick={() => window.location.href = '#book-call'}
+        >
+          Book a Call
+        </Button>
+      </div>
+
+      {/* Hero Section (Dual Process: System 1 Emotional Hit) */}
+      <section className="relative pt-32 pb-20 md:pt-40 md:pb-24 overflow-hidden">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="orb orb-1"></div>
-          <div className="orb orb-2"></div>
-          <div className="orb orb-3"></div>
+          <div className="orb orb-1 opacity-50"></div>
+          <div className="orb orb-2 opacity-50"></div>
           <div className="absolute inset-0 bg-background/80 backdrop-blur-[100px]"></div>
         </div>
 
         <div className="container px-4 md:px-6 relative z-10 text-center">
-          <div className="inline-flex items-center rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-sm font-medium text-primary mb-8 animate-fade-in gap-2">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-            </span>
-            Accepting New Projects for Q3
-          </div>
+          {/* UX: Create Urgency without being manipulative */}
 
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8 bg-gradient-to-r from-white via-white to-white/70 bg-clip-text text-transparent animate-slide-up">
-            Ship Your SaaS Without <br className="hidden md:block" /> the Technical Headache.
+
+          {/* UX: Hook Trigger. Specific Pain + Bold Benefit. */}
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-8 bg-gradient-to-br from-white via-white to-white/60 bg-clip-text text-transparent">
+            Stop burning runway <br className="hidden md:block" /> on bad code.
           </h1>
 
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-12 animate-slide-up delay-100">
-            We help early-stage founders and SMEs launch, fix, and scale revenue-generating products — not just code.
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-12">
+            We build institutional-grade SaaS architecture for strategic founders.
+            Delivered in weeks, not months.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up delay-200">
-            <Link href="/contact">
-              <Button size="lg" className="h-14 px-8 text-lg w-full sm:w-auto shadow-[0_0_30px_-5px_var(--color-primary)] hover:shadow-[0_0_50px_-5px_var(--color-primary)] transition-all duration-300">
-                Launch My SaaS
-              </Button>
-            </Link>
-            <Link href="/services">
-              <Button variant="outline" size="lg" className="h-14 px-8 text-lg w-full sm:w-auto glass hover:bg-white/5">
-                Validate My Roadmap
-              </Button>
-            </Link>
+          {/* UX: ONE glowing CTA. Top of funnel: Low commitment. */}
+          <div className="flex justify-center mb-16">
+            <Button
+              onClick={() => window.location.href = '#how-we-build'}
+              size="lg"
+              className="h-16 px-10 text-lg w-full sm:w-auto shadow-[0_0_40px_-5px_var(--color-primary)] hover:shadow-[0_0_60px_-5px_var(--color-primary)] transition-all duration-300"
+            >
+              See how we build <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
           </div>
-        </div>
-      </section>
 
-      {/* Social Proof / Tech Stack */}
-      <section className="py-12 border-y border-white/5 bg-black/20">
-        <div className="container px-4 md:px-6 text-center">
-          <p className="text-sm font-medium text-muted-foreground mb-8 uppercase tracking-widest">Built on Institutional-Grade Standards</p>
-          <div className="flex flex-wrap justify-center gap-8 md:gap-16 opacity-70 grayscale hover:grayscale-0 transition-all duration-500 mb-12">
-            {/* Tech logos placeholders */}
-            <span className="text-xl font-bold flex items-center gap-2"><div className="h-3 w-3 bg-white rounded-full"></div> Next.js</span>
-            <span className="text-xl font-bold flex items-center gap-2"><div className="h-3 w-3 bg-blue-400 rounded-full"></div> TypeScript</span>
-            <span className="text-xl font-bold flex items-center gap-2"><div className="h-3 w-3 bg-cyan-400 rounded-full"></div> Tailwind</span>
-            <span className="text-xl font-bold flex items-center gap-2"><div className="h-3 w-3 bg-green-400 rounded-full"></div> Node.js</span>
-            <span className="text-xl font-bold flex items-center gap-2"><div className="h-3 w-3 bg-green-400 rounded-full"></div> Go</span>
-            <span className="text-xl font-bold flex items-center gap-2"><div className="h-3 w-3 bg-green-400 rounded-full"></div> Rust</span>
-          </div>
-          <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8 text-left border-t border-white/5 pt-12">
-            <div className="space-y-2">
-              <h4 className="text-white font-semibold">Investor-Grade Infrastructure</h4>
-              <p className="text-sm text-muted-foreground">SOC2-ready architecture, encrypted data at rest, and automated CI/CD for zero-downtime deployments. We build code that passes due diligence.</p>
+          {/* UX: System 1 Social Proof - Visual Numbers Hit < 3s */}
+          <div className="flex flex-wrap justify-center gap-8 md:gap-16 pt-8 border-t border-white/5">
+            <div className="flex flex-col items-center">
+              <span className="text-4xl font-bold text-white mb-1">12</span>
+              <span className="text-sm text-muted-foreground uppercase tracking-wider">Products Launched</span>
             </div>
-            <div className="space-y-2">
-              <h4 className="text-white font-semibold">Production-First Engineering</h4>
-              <p className="text-sm text-muted-foreground">Sub-100ms API response times and scalable multi-tenant schemas. We don't just build apps; we build assets that scale to enterprise demands.</p>
+            <div className="flex flex-col items-center">
+              <span className="text-4xl font-bold text-white mb-1">$2M+</span>
+              <span className="text-sm text-muted-foreground uppercase tracking-wider">Client Revenue</span>
+            </div>
+            <div className="flex flex-col items-center">
+              <span className="text-4xl font-bold text-white mb-1">5 Wks</span>
+              <span className="text-sm text-muted-foreground uppercase tracking-wider">Avg. Delivery</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Social Proof Section */}
-      <section className="py-24 border-y border-white/5 relative overflow-hidden">
+      {/* UX: Deploy Strong Authority (As seen on / Trusted by) */}
+      <section className="py-12 border-y border-white/5 bg-black/20 overflow-hidden">
+        <div className="container px-4 text-center">
+          <p className="text-xs font-bold text-muted-foreground mb-8 uppercase tracking-widest">Built to survive technical due diligence</p>
+          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60 grayscale">
+            <div className="flex items-center gap-2 font-bold text-xl"><Github className="h-6 w-6" /> Techstars Alumni</div>
+            <div className="flex items-center gap-2 font-bold text-xl"><Users className="h-6 w-6" /> YC Founders</div>
+            <div className="flex items-center gap-2 font-bold text-xl"><Award className="h-6 w-6" /> Series A Verified</div>
+          </div>
+        </div>
+      </section>
+
+      {/* UX: Social Proof HIGHER in the page before pricing */}
+      <section className="py-24 bg-background border-b border-white/5 relative">
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-bl from-primary/5 to-transparent pointer-events-none"></div>
         <div className="container px-4 md:px-6 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">Trusted by Strategic Founders</h2>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="p-8 rounded-2xl bg-secondary/10 border border-white/5 space-y-4">
-              <p className="text-foreground/80 italic">"They took our legacy spaghetti code and turned it into a scalable platform that actually holds up during peak traffic. The audit was the best investment we made this year."</p>
-              <div className="flex items-center gap-3">
-                <div className="h-10 w-10 rounded-full bg-blue-500/20 flex items-center justify-center font-bold text-blue-500">JF</div>
-                <div>
-                  <p className="text-sm font-bold text-white">CTO, FinTech Startup</p>
-                  <p className="text-xs text-muted-foreground">30% reduction in churn after refactor</p>
-                </div>
-              </div>
-            </div>
-            <div className="p-8 rounded-2xl bg-secondary/10 border border-white/5 space-y-4">
-              <p className="text-foreground/80 italic">"Launched our MVP in 5 weeks. The architecture is so clean that our internal team took over with zero friction. Truly institutional-grade work."</p>
-              <div className="flex items-center gap-3">
-                <div className="h-10 w-10 rounded-full bg-purple-500/20 flex items-center justify-center font-bold text-purple-500">AM</div>
-                <div>
-                  <p className="text-sm font-bold text-white">Founder, AI SaaS</p>
-                  <p className="text-xs text-muted-foreground">Secured Seed funding 2 months later</p>
-                </div>
-              </div>
-            </div>
-            <div className="p-8 rounded-2xl bg-secondary/10 border border-white/5 space-y-4">
-              <p className="text-foreground/80 italic">"The automation they built saved us 20+ hours of manual data entry per week. Engineering that actually moves the bottom line."</p>
-              <div className="flex items-center gap-3">
-                <div className="h-10 w-10 rounded-full bg-green-500/20 flex items-center justify-center font-bold text-green-500">SK</div>
-                <div>
-                  <p className="text-sm font-bold text-white">Operations Lead, SME</p>
-                  <p className="text-xs text-muted-foreground">ROI achieved in under 90 days</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Value Props */}
-      <section className="py-24 bg-secondary/5">
-        <div className="container px-4 md:px-6">
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="glass-dark hover:bg-secondary/20 transition-colors border-white/5">
-              <CardContent className="p-8">
-                <div className="h-12 w-12 rounded-lg bg-blue-500/20 flex items-center justify-center text-blue-500 mb-6">
-                  <Code2 className="h-6 w-6" />
-                </div>
-                <h3 className="text-xl font-bold mb-3">SaaS Audit & Cleanup</h3>
-                <p className="text-muted-foreground">
-                  Stop burning runway on features that don't ship. We audit your codebase, clear technical debt, and restore engineering velocity.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="glass-dark hover:bg-secondary/20 transition-colors border-white/5">
-              <CardContent className="p-8">
-                <div className="h-12 w-12 rounded-lg bg-purple-500/20 flex items-center justify-center text-purple-500 mb-6">
-                  <Rocket className="h-6 w-6" />
-                </div>
-                <h3 className="text-xl font-bold mb-3">SaaS MVP Launch</h3>
-                <p className="text-muted-foreground">
-                  Build your MVP on a foundation that scales. We transform high-level roadmaps into revenue-generating assets in weeks, not months.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="glass-dark hover:bg-secondary/20 transition-colors border-white/5">
-              <CardContent className="p-8">
-                <div className="h-12 w-12 rounded-lg bg-green-500/20 flex items-center justify-center text-green-500 mb-6">
-                  <ShieldCheck className="h-6 w-6" />
-                </div>
-                <h3 className="text-xl font-bold mb-3">Growth & Automation</h3>
-                <p className="text-muted-foreground">
-                  Unlock enterprise scale with SOC2-ready architecture. AI integration, complex migrations, and performance tuning for high-growth SaaS.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing Section */}
-      <section className="py-24 bg-black/40">
-        <div className="container px-4 md:px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white via-white to-white/70 bg-clip-text text-transparent">
-              Simple, Transparent Pricing
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Choose the right engagement model for your stage. No hidden fees, no surprises.
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold mb-6">Founders don't regret hiring us.</h2>
+            <p className="text-muted-foreground text-xl">
+              They regret the $20k they spent on a cheap agency before finding us.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-[90rem] mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <div className="p-10 rounded-3xl bg-secondary/10 border border-white/5 hover:border-primary/20 transition-colors">
+              <div className="flex mb-6 text-primary">
+                {"★★★★★".split("").map((s, i) => <span key={i} className="text-2xl">{s}</span>)}
+              </div>
+              <p className="text-lg text-foreground/90 italic mb-8 leading-relaxed">
+                "They took our legacy spaghetti code and turned it into a scalable platform that actually holds up during peak traffic. The audit was the best investment we made this year. Churn velocity dropped 30%."
+              </p>
+              <div className="flex items-center gap-4">
+                <div className="h-12 w-12 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500"></div>
+                <div>
+                  <p className="font-bold text-white">James F.</p>
+                  <p className="text-sm text-muted-foreground">CTO, FinTech Startup</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="p-10 rounded-3xl bg-secondary/10 border border-white/5 hover:border-primary/20 transition-colors">
+              <div className="flex mb-6 text-primary">
+                {"★★★★★".split("").map((s, i) => <span key={i} className="text-2xl">{s}</span>)}
+              </div>
+              <p className="text-lg text-foreground/90 italic mb-8 leading-relaxed">
+                "Launched our MVP in 5 weeks. The architecture is so clean that our internal team took over with zero friction. We secured Seed funding 2 months later because the tech passed D.D. perfectly."
+              </p>
+              <div className="flex items-center gap-4">
+                <div className="h-12 w-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-500"></div>
+                <div>
+                  <p className="font-bold text-white">Ali M.</p>
+                  <p className="text-sm text-muted-foreground">Founder, AI SaaS</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* UX: System 2 - Detailed "How We Build" Section */}
+      <section id="how-we-build" className="py-24 bg-black/40">
+        <div className="container px-4 md:px-6 max-w-5xl mx-auto">
+          <div className="mb-16">
+            <span className="text-primary font-bold tracking-widest uppercase text-sm mb-2 block">Our Process</span>
+            <h2 className="text-3xl md:text-5xl font-bold">We don't just write code. <br /> We engineer assets.</h2>
+          </div>
+
+          <div className="space-y-12 border-l border-white/10 pl-8 ml-4 md:ml-0 relative">
+            <div className="relative">
+              <div className="absolute -left-[41px] top-1 h-6 w-6 rounded-full bg-primary/20 border-2 border-primary"></div>
+              <h3 className="text-2xl font-bold text-white mb-2">1. Scope Mapping</h3>
+              <p className="text-muted-foreground text-lg leading-relaxed">
+                Before writing a single line of code, we strip away vanity features. We define the exact workflows necessary to convince early adopters to enter their credit card details.
+              </p>
+            </div>
+            <div className="relative">
+              <div className="absolute -left-[41px] top-1 h-6 w-6 rounded-full bg-primary/20 border-2 border-primary"></div>
+              <h3 className="text-2xl font-bold text-white mb-2">2. Lean Production</h3>
+              <p className="text-muted-foreground text-lg leading-relaxed">
+                We develop in 1-week sprints using the T3 Stack (Next.js, TypeScript). You get access to a live staging URL on day 3. Transparency is mandatory; you see what we build as we build it.
+              </p>
+            </div>
+            <div className="relative">
+              <div className="absolute -left-[41px] top-1 h-6 w-6 rounded-full bg-primary/20 border-2 border-primary"></div>
+              <h3 className="text-2xl font-bold text-white mb-2">3. Institutional Handoff</h3>
+              <p className="text-muted-foreground text-lg leading-relaxed">
+                We design architecture to be handed over. You receive 100% of the IP, full inline documentation, and SOC2-ready databases, ensuring no vendor lock-in when you hire internally.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* UX: Gamification / Investment Loop (Nir Eyal Hook Model) */}
+      <section className="py-24 border-y border-white/5 bg-background relative overflow-hidden">
+        <div className="container px-4 md:px-6 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">Are you ready to build?</h2>
+            <p className="text-xl text-muted-foreground mb-4">Find out exactly what your next step should be.</p>
+          </div>
+          <SaasQuiz />
+        </div>
+      </section>
+
+      {/* UX: Pricing / Loss Aversion */}
+      <section className="py-24 bg-black/40">
+        <div className="container px-4 md:px-6">
+          <div className="text-center mb-16 max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-5xl font-bold mb-6">Simple, Transparent Pricing.</h2>
+            {/* UX: Leverage Loss Aversion */}
+            <p className="text-xl text-amber-500/90 font-medium">
+              Every week without a proper architecture costs you in technical debt and delayed funding.
+            </p>
+          </div>
+
+          {/* UX: Avoid Choice Overload - Visually suppress outer tiers, prioritize Middle */}
+          <div className="grid md:grid-cols-3 gap-8 max-w-[75rem] mx-auto">
             {/* Audit Tier */}
-            <Card className="glass-dark hover:bg-secondary/20 transition-all duration-300 border-white/5 flex flex-col relative overflow-hidden group">
-              <div className="absolute top-0 right-0 p-24 bg-amber-500/10 blur-3xl rounded-full translate-x-1/3 -translate-y-1/3 group-hover:bg-amber-500/20 transition-colors"></div>
-              <CardContent className="p-8 flex-1 flex flex-col relative z-10">
-                <div className="mb-8">
-                  <h3 className="text-2xl font-bold mb-2 text-white">SaaS Audit</h3>
-                  <p className="text-sm font-medium text-amber-400 mb-4 uppercase tracking-widest">Identify & Fix Bottlenecks</p>
-                  <div className="flex items-baseline gap-1">
-                    <span className="text-4xl font-bold text-white">$800 - $3k</span>
-                  </div>
-                  <p className="text-muted-foreground mt-4 text-sm">
-                    Best for founders with slow, buggy, or unscalable codebases.
-                  </p>
+            <Card className="glass-dark border-white/5 opacity-80 hover:opacity-100 flex flex-col">
+              <CardContent className="p-8 flex-1 flex flex-col">
+                <div className="mb-6 border-b border-white/5 pb-6">
+                  <h3 className="text-xl font-bold text-white mb-2">SaaS Audit</h3>
+                  <div className="text-3xl font-bold text-white">$800+</div>
+                  <p className="text-muted-foreground text-sm mt-3">Founders who delay fixing their codebase spend 3x more on engineering 6 months later.</p>
                 </div>
-
-                <div className="flex-1 space-y-4 mb-8">
-                  {[
-                    "Deep-dive technical audit",
-                    "Performance & security review",
-                    "Refactor roadmap & PRs",
-                    "Cost optimization report",
-                    "1–2 weeks timeline"
-                  ].map((feature) => (
-                    <div key={feature} className="flex items-start gap-3">
-                      <div className="mt-1 h-5 w-5 rounded-full bg-amber-500/20 flex items-center justify-center shrink-0">
-                        <Check className="h-3 w-3 text-amber-500" />
-                      </div>
-                      <span className="text-sm text-foreground/80">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-
-                <Link href="/contact" className="w-full">
-                  <Button className="w-full bg-secondary/50 hover:bg-amber-600/20 hover:text-amber-400 border border-white/5" variant="outline">
-                    Fix My SaaS
-                  </Button>
-                </Link>
+                <div className="flex-1"></div>
+                <Button variant="outline" className="w-full mt-6" onClick={() => window.location.href = '#book-call'}>Fix Codebase</Button>
               </CardContent>
             </Card>
 
-            {/* Foundation Tier */}
-            <Card className="glass-dark hover:bg-secondary/20 transition-all duration-300 border-white/5 flex flex-col relative overflow-hidden group">
-              <div className="absolute top-0 right-0 p-24 bg-blue-500/10 blur-3xl rounded-full translate-x-1/3 -translate-y-1/3 group-hover:bg-blue-500/20 transition-colors"></div>
-              <CardContent className="p-8 flex-1 flex flex-col relative z-10">
-                <div className="mb-8">
-                  <h3 className="text-2xl font-bold mb-2 text-white">SaaS MVP</h3>
-                  <p className="text-sm font-medium text-blue-400 mb-4 uppercase tracking-widest">From Idea → Live Product</p>
-                  <div className="flex items-baseline gap-1">
-                    <span className="text-4xl font-bold text-white">$3k - $6k</span>
+            {/* Default/Cheating Action - Highlight Middle Tier */}
+            <Card className="glass border-primary/20 shadow-[-10px_0_50px_-15px_var(--color-primary)] flex flex-col scale-105 z-10 relative overflow-hidden">
+              <div className="absolute top-0 inset-x-0 h-1 bg-primary"></div>
+              <CardContent className="p-10 flex-1 flex flex-col relative z-20">
+                <div className="mb-6 mb-8">
+                  <div className="inline-block rounded-full bg-primary/20 px-3 py-1 text-xs font-semibold text-primary mb-4">
+                    Most Popular Choice
                   </div>
-                  <p className="text-muted-foreground mt-4 text-sm">
-                    Best for early-stage founders launching an MVP to test the market.
-                  </p>
+                  <h3 className="text-2xl font-bold text-white mb-2">SaaS MVP Launch</h3>
+                  <div className="text-5xl font-bold text-white mb-4">$3k - $6k</div>
+                  <p className="text-muted-foreground text-sm">Best for early-stage founders launching an MVP to test the market quickly and reliably.</p>
                 </div>
 
-                <div className="flex-1_space-y-4 mb-8">
-                  {[
-                    "SaaS architecture design",
-                    "MVP scope definition",
-                    "Backend + frontend setup",
-                    "Auth, roles, core workflows",
-                    "Deployment & basic monitoring",
-                    "4–6 weeks timeline"
-                  ].map((feature) => (
-                    <div key={feature} className="flex items-start gap-3">
-                      <div className="mt-1 h-5 w-5 rounded-full bg-blue-500/20 flex items-center justify-center shrink-0">
-                        <Check className="h-3 w-3 text-blue-500" />
-                      </div>
-                      <span className="text-sm text-foreground/80">{feature}</span>
+                {/* UX: Hide granular feature lists behind a toggle to clear distractions */}
+                <div className="flex-1 space-y-4 mb-8">
+                  <div className="flex items-start gap-3"><Check className="h-5 w-5 text-primary shrink-0" /><span className="text-white text-sm">Full architecture design</span></div>
+                  <div className="flex items-start gap-3"><Check className="h-5 w-5 text-primary shrink-0" /><span className="text-white text-sm">Frontend + Backend setup</span></div>
+                  <div className="flex items-start gap-3"><Check className="h-5 w-5 text-primary shrink-0" /><span className="text-white text-sm">4-6 weeks delivery</span></div>
+
+                  <button
+                    onClick={() => setShowPricingDetails(!showPricingDetails)}
+                    className="flex items-center text-xs text-primary font-bold uppercase tracking-wider mt-4"
+                  >
+                    {showPricingDetails ? <><ChevronUp className="mr-1 h-4 w-4" /> Hide Scope</> : <><ChevronDown className="mr-1 h-4 w-4" /> View Full Scope</>}
+                  </button>
+
+                  {showPricingDetails && (
+                    <div className="pt-2 space-y-3 animate-fade-in border-t border-white/5">
+                      <div className="flex items-start gap-3"><Check className="h-4 w-4 text-muted-foreground shrink-0" /><span className="text-muted-foreground text-sm">Auth & Role workflows</span></div>
+                      <div className="flex items-start gap-3"><Check className="h-4 w-4 text-muted-foreground shrink-0" /><span className="text-muted-foreground text-sm">Database indexing</span></div>
+                      <div className="flex items-start gap-3"><Check className="h-4 w-4 text-muted-foreground shrink-0" /><span className="text-muted-foreground text-sm">Deployment & CI/CD</span></div>
                     </div>
-                  ))}
+                  )}
                 </div>
 
-                <Link href="/contact" className="w-full">
-                  <Button className="w-full bg-secondary/50 hover:bg-blue-600/20 hover:text-blue-400 border border-white/5" variant="outline">
-                    Launch My MVP
-                  </Button>
-                </Link>
+                <Button className="w-full h-12 text-lg" onClick={() => window.location.href = '#book-call'}>Launch MVP</Button>
               </CardContent>
             </Card>
 
             {/* Growth Tier */}
-            <Card className="glass-dark bg-secondary/10 hover:bg-secondary/30 transition-all duration-300 border-primary/20 flex flex-col relative overflow-hidden group transform md:-translate-y-4 shadow-2xl shadow-primary/5">
-              <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-50"></div>
-              <div className="absolute top-0 right-0 p-24 bg-primary/10 blur-3xl rounded-full translate-x-1/3 -translate-y-1/3 group-hover:bg-primary/20 transition-colors"></div>
-
-              <CardContent className="p-8 flex-1 flex flex-col relative z-10">
-                <div className="mb-8">
-                  <div className="inline-flex items-center rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-xs font-medium text-primary mb-4">
-                    Most Popular
-                  </div>
-                  <h3 className="text-2xl font-bold mb-2 text-white">SaaS Growth</h3>
-                  <p className="text-sm font-medium text-primary mb-4 uppercase tracking-widest">Scale Without Breaking</p>
-                  <div className="flex items-baseline gap-1">
-                    <span className="text-4xl font-bold text-white">$8k - $15k</span>
-                  </div>
-                  <p className="text-muted-foreground mt-4 text-sm">
-                    Best for funded SaaS needing AI integration and high-performance scale.
-                  </p>
+            <Card className="glass-dark border-white/5 opacity-80 hover:opacity-100 flex flex-col">
+              <CardContent className="p-8 flex-1 flex flex-col">
+                <div className="mb-6 border-b border-white/5 pb-6">
+                  <h3 className="text-xl font-bold text-white mb-2">SaaS Growth</h3>
+                  <div className="text-3xl font-bold text-white">$8k+</div>
+                  <p className="text-muted-foreground text-sm mt-3">For funded SaaS needing AI integration and high-performance scale.</p>
                 </div>
-
-                <div className="flex-1 space-y-4 mb-8">
-                  {[
-                    "Everything in MVP",
-                    "Scalable backend architecture",
-                    "Performance & AI integrations",
-                    "Database design & indexing",
-                    "Security hardening",
-                    "CI/CD pipelines",
-                    "Analytics & observability",
-                    "8–12 weeks timeline"
-                  ].map((feature) => (
-                    <div key={feature} className="flex items-start gap-3">
-                      <div className="mt-1 h-5 w-5 rounded-full bg-primary/20 flex items-center justify-center shrink-0">
-                        <Check className="h-3 w-3 text-primary" />
-                      </div>
-                      <span className="text-sm text-foreground/90">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-
-                <Link href="/contact" className="w-full">
-                  <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/25">
-                    Scale My Product
-                  </Button>
-                </Link>
-              </CardContent>
-            </Card>
-
-            {/* Partner Tier */}
-            <Card className="glass-dark hover:bg-secondary/20 transition-all duration-300 border-white/5 flex flex-col relative overflow-hidden group">
-              <div className="absolute top-0 right-0 p-24 bg-purple-500/10 blur-3xl rounded-full translate-x-1/3 -translate-y-1/3 group-hover:bg-purple-500/20 transition-colors"></div>
-              <CardContent className="p-8 flex-1 flex flex-col relative z-10">
-                <div className="mb-8">
-                  <h3 className="text-2xl font-bold mb-2 text-white">SaaS Partner</h3>
-                  <p className="text-sm font-medium text-purple-400 mb-4 uppercase tracking-widest">Fractional Engineering Team</p>
-                  <div className="flex items-baseline gap-1">
-                    <span className="text-4xl font-bold text-white">$2.5k - $6k</span>
-                    <span className="text-muted-foreground text-sm">/mo</span>
-                  </div>
-                  <p className="text-muted-foreground mt-4 text-sm">
-                    Best for founders requiring a dedicated technical execution team.
-                  </p>
-                </div>
-
-                <div className="flex-1 space-y-4 mb-8">
-                  {[
-                    "Owner-level technical decisions",
-                    "Dedicated SaaS team",
-                    "Roadmap planning",
-                    "Continuous delivery",
-                    "Scaling & automation",
-                    "Priority support",
-                    "Monthly retainer"
-                  ].map((feature) => (
-                    <div key={feature} className="flex items-start gap-3">
-                      <div className="mt-1 h-5 w-5 rounded-full bg-purple-500/20 flex items-center justify-center shrink-0">
-                        <Check className="h-3 w-3 text-purple-500" />
-                      </div>
-                      <span className="text-sm text-foreground/80">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-
-                <Link href="/contact" className="w-full">
-                  <Button className="w-full bg-secondary/50 hover:bg-purple-600/20 hover:text-purple-400 border border-white/5" variant="outline">
-                    Partner With Us
-                  </Button>
-                </Link>
+                <div className="flex-1"></div>
+                <Button variant="outline" className="w-full mt-6" onClick={() => window.location.href = '#book-call'}>Scale Product</Button>
               </CardContent>
             </Card>
           </div>
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-24 border-t border-white/5 bg-secondary/2">
-        <div className="container px-4 md:px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">Engineering FAQ</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">Everything you need to know about partnering with us.</p>
-          </div>
-          <div className="max-w-3xl mx-auto space-y-4">
-            {[
-              {
-                q: "Who owns the intellectual property?",
-                a: "You do. 100% of the code, design, and architecture we build is yours from day one. There is no vendor lock-in, and we ensure a smooth handover to your internal team when you're ready."
-              },
-              {
-                q: "What is your core tech stack?",
-                a: "We specialize in Next.js, TypeScript, and Tailwind CSS for the frontend. For backends, we use Node.js, Go, or Rust depending on performance needs, with PostgreSQL/Prisma for data."
-              },
-              {
-                q: "How fast can we go from idea to launch?",
-                a: "A standard SaaS MVP typically takes 4–6 weeks. We focus on a 'Lean Production' model—shipping the core revenue-driving features first without sacrificing engineering quality."
-              },
-              {
-                q: "Do you handle existing legacy codebases?",
-                a: "Yes. Our 'SaaS Audit & Cleanup' service is specifically for founders struggling with slow, buggy, or unscalable legacy systems. We refactor while keeping your business running."
-              },
-              {
-                q: "How do we communicate during the build?",
-                a: "Total transparency. We use dedicated Slack channels for daily updates, bi-weekly sprint demos, and provide continuous access to a staging environment so you can always see the latest build."
-              }
-            ].map((item, i) => (
-              <div key={i} className="p-6 rounded-2xl bg-secondary/10 border border-white/5 hover:border-primary/20 transition-colors">
-                <h3 className="text-lg font-bold mb-2 text-white">{item.q}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">{item.a}</p>
-              </div>
-            ))}
-          </div>
+      {/* Comparison Table */}
+      <ComparisonTable />
+
+      {/* UX: High Commitment Action / Booking Flow */}
+      <section className="py-24 bg-background relative overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[500px] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/5 via-background to-background pointer-events-none" />
+        <div className="container px-4 md:px-6 relative z-10 text-center mb-12">
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">Let's talk execution.</h2>
+          {/* Elicit Implementation Intentions & Add Social Proof */}
+          <p className="text-xl text-muted-foreground mb-4">
+            Pick a time below. <strong className="text-white">14 founders</strong> booked calls this week.
+          </p>
+        </div>
+
+        <div className="container px-4">
+          <BookingFlow />
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-24">
-        <div className="container px-4 md:px-6">
-          <div className="rounded-3xl bg-gradient-to-r from-secondary to-background border border-white/10 p-12 text-center relative overflow-hidden">
-            <div className="absolute top-0 right-0 p-32 bg-primary/5 blur-3xl rounded-full translate-x-1/2 -translate-y-1/2"></div>
-
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 relative z-10">Stop Over-Engineering. Start Shipping.</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-6 relative z-10">
-              Eliminate execution risk. Schedule a strategic consultation to validate your technical roadmap.
-            </p>
-            <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 mb-10 text-xs font-medium uppercase tracking-widest text-primary/80 relative z-10">
-              <span className="flex items-center gap-2"><ShieldCheck className="h-4 w-4" /> 100% IP Ownership</span>
-              <span className="flex items-center gap-2"><Rocket className="h-4 w-4" /> Investor Ready</span>
-              <span className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4" /> No Vendor Lock-in</span>
-            </div>
-            <Link href="/contact" className="relative z-10">
-              <Button size="lg" className="h-14 px-10 text-lg shadow-xl shadow-primary/20 hover:scale-105 transition-transform">
-                Book Your Strategy Call
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
+      {/* Remove previous FAQ as it distracts. Dual Process logic handled by process + tables above. */}
     </div>
   );
 }

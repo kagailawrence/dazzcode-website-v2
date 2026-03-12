@@ -1,14 +1,16 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { blogPosts, allCategories } from "@/lib/blog";
+import { getAllPosts, allCategories } from "@/lib/blog";
 import { ArrowRight, Calendar, Clock } from "lucide-react";
 
 export const metadata = {
-    title: "SaaS Knowledge Hub | Dazzcode Blog",
-    description: "Insights on SaaS engineering, product strategy, and scaling from the Dazzcode team.",
+    title: "SaaS Engineering Blog | Dazzcode",
+    description: "Read elite engineering insights from the Dazzcode team on building, scaling, and maintaining high-performance SaaS products and cloud infrastructure.",
 };
 
 export default function BlogListingPage() {
+    const blogPosts = getAllPosts();
+
     return (
         <div className="flex flex-col min-h-screen">
             {/* Hero Section */}
@@ -45,7 +47,7 @@ export default function BlogListingPage() {
                                     <div className="flex items-center gap-4 text-xs text-muted-foreground mb-4">
                                         <span className="flex items-center gap-1">
                                             <Calendar className="h-3 w-3" />
-                                            {post.date}
+                                            {new Date(post.publishedAt).toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" })}
                                         </span>
                                         <span className="flex items-center gap-1">
                                             <Clock className="h-3 w-3" />
@@ -58,7 +60,7 @@ export default function BlogListingPage() {
                                         {post.title}
                                     </h3>
                                     <p className="text-muted-foreground text-sm line-clamp-3 mb-6 flex-1">
-                                        {post.excerpt}
+                                        {post.description}
                                     </p>
 
                                     {/* Tags & CTA */}

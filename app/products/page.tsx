@@ -5,8 +5,8 @@ import { products } from "@/lib/data";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 
 export const metadata = {
-    title: "Dazzcode Products | Scalable SaaS Solutions",
-    description: "Explore the types of SaaS products we build. From complex platforms to mobile-responsive MVPs.",
+    title: "SaaS Products | Dazzcode",
+    description: "Explore our portfolio of scalable SaaS products and enterprise solutions. We engineer complex platforms focused on performance and revenue generation.",
 };
 
 export default function ProductsPage() {

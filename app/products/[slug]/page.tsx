@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, Check } from "lucide-react";
 import { Metadata } from "next";
+import JsonLd from "@/components/seo/JsonLd";
 
 interface ProductPageProps {
     params: Promise<{ slug: string }>;
@@ -41,8 +42,30 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
     const Icon = product.icon;
 
+    // UX & SEO: Specific SoftwareApplication schema to please AI and indexing algorithms.
+    const productSchema = {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": product.title,
+        "description": product.description,
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web, Windows, macOS, iOS, Android",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/OnlineOnly"
+        },
+        "creator": {
+            "@type": "Organization",
+            "name": "Dazzcode",
+            "url": "https://dazzcode.com"
+        }
+    };
+
     return (
         <div className="flex flex-col min-h-screen">
+            <JsonLd schema={productSchema} />
             {/* Hero Section */}
             <section className="relative py-20 md:py-32 overflow-hidden bg-gradient-to-b from-secondary/20 to-background">
                 <div className="container px-4 md:px-6 relative z-10">

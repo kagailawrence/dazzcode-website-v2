@@ -2,8 +2,8 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 export const metadata = {
-    title: "About Dazzcode | Our Story",
-    description: "Learn about Dazzcode's mission to help founders build scalable software.",
+    title: "About Dazzcode | SaaS Engineering Agency",
+    description: "Meet the engineers behind Dazzcode. We build transparent, investor-ready SaaS products for early-stage founders and SMEs globally.",
 };
 
 export default function AboutPage() {
