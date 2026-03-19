@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Syne, DM_Sans } from "next/font/google";
+import { Syne, DM_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -17,6 +17,13 @@ const dmSans = DM_Sans({
   subsets: ["latin"],
   variable: "--font-dm",
   weight: ["300", "400", "500"],
+  display: "swap",
+});
+
+const jetbrains = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  weight: ["400", "700"],
   display: "swap",
 });
 
@@ -97,10 +104,11 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${syne.variable} ${dmSans.variable} antialiased min-h-screen flex flex-col font-sans selection:bg-primary selection:text-white`}
+        className={`${syne.variable} ${dmSans.variable} ${jetbrains.variable} antialiased min-h-screen flex flex-col font-sans selection:bg-primary selection:text-black`}
       >
         <StructuredData />
         <Navbar />
+
         <main className="flex-1">
           {children}
         </main>

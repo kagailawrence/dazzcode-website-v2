@@ -2,12 +2,12 @@ import { Check, X, AlertTriangle } from "lucide-react";
 
 export default function ComparisonTable() {
     return (
-        <section className="py-24 border-t border-white/5 bg-background">
+        <section className="py-16 md:py-24 border-t border-white/5 bg-background">
             <div className="container px-4 md:px-6 max-w-5xl mx-auto">
-                <div className="text-center mb-16">
+                <div className="text-center mb-12 md:mb-16">
                     {/* UX: Framing "Why founders choose us" instead of "We are better" to build trust */}
-                    <h2 className="text-3xl md:text-5xl font-bold mb-4">Why Founders Choose Dazzcode</h2>
-                    <p className="text-xl text-muted-foreground">The actual cost of your engineering options.</p>
+                    <h2 className="text-3xl md:text-5xl font-black mb-4 tracking-tighter uppercase text-white">Why Founders Choose Dazzcode</h2>
+                    <p className="text-lg md:text-xl text-muted-foreground">The actual cost of your engineering options.</p>
                 </div>
 
                 <div className="overflow-x-auto rounded-2xl border border-white/10 bg-secondary/5">

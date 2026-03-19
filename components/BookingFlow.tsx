@@ -36,12 +36,12 @@ export default function BookingFlow() {
         // UX: "Make successful completion clearly visible"
         // Also eliciting implementation intentions (telling them exactly what happens next)
         return (
-            <div className="bg-background border border-primary/20 rounded-3xl p-8 md:p-12 max-w-2xl mx-auto shadow-[0_0_50px_-15px_var(--color-primary)]">
+            <div className="bg-background border border-primary/20 rounded-3xl p-6 md:p-12 max-w-2xl mx-auto shadow-[0_0_50px_-15px_var(--color-primary)]">
                 <div className="inline-flex items-center justify-center h-16 w-16 rounded-full bg-primary/20 mb-6">
                     <CheckCircle2 className="h-8 w-8 text-primary" />
                 </div>
-                <h2 className="text-3xl font-bold mb-4 text-white">You're booked.</h2>
-                <p className="text-xl text-muted-foreground mb-8">
+                <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white">You're booked.</h2>
+                <p className="text-lg md:text-xl text-muted-foreground mb-8">
                     Your strategy call is confirmed. Here is exactly what happens next:
                 </p>
                 <div className="space-y-6 text-left">
@@ -49,21 +49,21 @@ export default function BookingFlow() {
                         <div className="h-8 w-8 rounded-full bg-secondary/50 flex items-center justify-center font-bold text-white shrink-0">1</div>
                         <div>
                             <h4 className="font-bold text-white text-lg">Prep Questionnaire</h4>
-                            <p className="text-muted-foreground">Check your inbox. We've sent a 3-minute form so we don't waste time on the call gathering basic context.</p>
+                            <p className="text-muted-foreground text-sm md:text-base">Check your inbox. We've sent a 3-minute form so we don't waste time on the call gathering basic context.</p>
                         </div>
                     </div>
                     <div className="flex gap-4">
                         <div className="h-8 w-8 rounded-full bg-secondary/50 flex items-center justify-center font-bold text-white shrink-0">2</div>
                         <div>
                             <h4 className="font-bold text-white text-lg">The Call (30 mins)</h4>
-                            <p className="text-muted-foreground">We'll review your architecture, validate your roadmap, and identify execution risks. <strong className="text-white">Zero sales pitch.</strong></p>
+                            <p className="text-muted-foreground text-sm md:text-base">We'll review your architecture, validate your roadmap, and identify execution risks. <strong className="text-white">Zero sales pitch.</strong></p>
                         </div>
                     </div>
                     <div className="flex gap-4">
                         <div className="h-8 w-8 rounded-full bg-secondary/50 flex items-center justify-center font-bold text-white shrink-0">3</div>
                         <div>
                             <h4 className="font-bold text-white text-lg">Proposal & Kickoff</h4>
-                            <p className="text-muted-foreground">If there's a fit, we'll send a fixed-price proposal. We typically start writing code within 48 hours of approval.</p>
+                            <p className="text-muted-foreground text-sm md:text-base">If there's a fit, we'll send a fixed-price proposal. We typically start writing code within 48 hours of approval.</p>
                         </div>
                     </div>
                 </div>
@@ -72,7 +72,7 @@ export default function BookingFlow() {
     }
 
     return (
-        <div id="book-call" className="bg-secondary/10 border border-white/5 rounded-3xl p-6 md:p-12 max-w-3xl mx-auto">
+        <div id="book-call" className="bg-secondary/10 border border-white/5 rounded-3xl p-5 md:p-12 max-w-3xl mx-auto">
             {/* UX: Make Progress Visible */}
             <div className="flex items-center justify-between mb-8">
                 {step > 1 ? (

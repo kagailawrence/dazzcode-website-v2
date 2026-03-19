@@ -10,12 +10,14 @@ export default function StructuredData() {
             'https://github.com/dazzcode',
             'https://linkedin.com/company/dazzcode'
         ],
-        contactPoint: {
-            '@type': 'ContactPoint',
-            telephone: '',
-            contactType: 'customer service',
-            email: 'hello@dazzcode.com'
-        }
+        contactPoint: [
+            {
+                '@type': 'ContactPoint',
+                telephone: '',
+                contactType: 'customer service',
+                email: 'hello@dazzcode.com'
+            }
+        ]
     };
 
     const websiteSchema = {
@@ -23,44 +25,57 @@ export default function StructuredData() {
         '@type': 'WebSite',
         name: 'Dazzcode',
         url: 'https://dazzcode.com',
+        potentialAction: {
+            '@type': 'SearchAction',
+            target: 'https://dazzcode.com/search?q={search_term_string}',
+            'query-input': 'required name=search_term_string'
+        }
+    };
+
+    const breadcrumbSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+            {
+                '@type': 'ListItem',
+                position: 1,
+                name: 'Home',
+                item: 'https://dazzcode.com'
+            }
+        ]
     };
 
     const servicesSchema = {
         '@context': 'https://schema.org',
-        '@type': 'Service',
-        serviceType: 'SaaS Development & Engineering',
-        provider: {
-            '@type': 'Organization',
-            name: 'Dazzcode'
-        },
-        areaServed: 'Worldwide',
-        hasOfferCatalog: {
-            '@type': 'OfferCatalog',
-            name: 'SaaS Services',
-            itemListElement: [
-                {
-                    '@type': 'Offer',
-                    itemOffered: {
-                        '@type': 'Service',
-                        name: 'SaaS MVP Launch'
-                    }
-                },
-                {
-                    '@type': 'Offer',
-                    itemOffered: {
-                        '@type': 'Service',
-                        name: 'SaaS Audit & Cleanup'
-                    }
-                },
-                {
-                    '@type': 'Offer',
-                    itemOffered: {
-                        '@type': 'Service',
-                        name: 'Growth & Automation'
-                    }
+        '@type': 'OfferCatalog',
+        name: 'SaaS Services',
+        url: 'https://dazzcode.com/services',
+        itemListElement: [
+            {
+                '@type': 'Offer',
+                itemOffered: {
+                    '@type': 'Service',
+                    name: 'SaaS MVP Launch',
+                    description: 'MVP development for SaaS startups using Next.js and TypeScript.'
                 }
-            ]
-        }
+            },
+            {
+                '@type': 'Offer',
+                itemOffered: {
+                    '@type': 'Service',
+                    name: 'SaaS Audit & Cleanup',
+                    description: 'Architecture audits, performance tuning, and code cleanup.'
+                }
+            },
+            {
+                '@type': 'Offer',
+                itemOffered: {
+                    '@type': 'Service',
+                    name: 'Growth & Automation',
+                    description: 'Automation, analytics, and growth engineering for SaaS.'
+                }
+            }
+        ]
     };
 
     return (
@@ -72,6 +87,10 @@ export default function StructuredData() {
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
             />
             <script
                 type="application/ld+json"
