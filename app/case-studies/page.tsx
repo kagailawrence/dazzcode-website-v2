@@ -156,7 +156,7 @@ export default function CaseStudiesPage() {
                 <div className="container px-4 md:px-6 text-center">
                     <h2 className="text-2xl font-bold mb-12">Our Core Stack</h2>
                     <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
-                        {["Next.js", "TypeScript", "Tailwind CSS", "PostgreSQL", "Prisma", "AWS", "Vercel", "Docker", "Stripe", "Redis"].map(tech => (
+                        {["Next.js", "TypeScript", "Tailwind CSS","Rust", "PostgreSQL", "VPS", "AWS", "Vercel", "Docker", "Stripe", "Redis","Mpesa"].map(tech => (
                             <div key={tech} className="px-6 py-3 rounded-xl bg-secondary/10 border border-white/5 text-lg font-medium hover:border-primary/50 hover:bg-primary/5 transition-colors cursor-default">
                                 {tech}
                             </div>
