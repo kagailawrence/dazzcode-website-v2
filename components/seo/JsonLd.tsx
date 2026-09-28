@@ -1,6 +1,5 @@
-import React from 'react';
+// Enhanced JSON-LD schema with Review functionality for service pages
 
-// GEO: Helper component to safely inject JSON-LD schema objects into the page head.
 export default function JsonLd({ schema }: { schema: Record<string, unknown> }) {
     if (!schema) return null;
 
