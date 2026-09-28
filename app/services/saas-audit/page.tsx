@@ -20,6 +20,9 @@ export const metadata: Metadata = {
     'investor readiness',
     'SaaS assessment'
   ],
+  alternates: {
+    canonical: '/services/saas-audit',
+  },
   // Open Graph / Twitter Card
   openGraph: {
     title: 'SaaS Audit & Cleanup Services - Dazzcode',

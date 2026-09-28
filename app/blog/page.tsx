@@ -6,6 +6,9 @@ import { ArrowRight, Calendar, Clock } from "lucide-react";
 export const metadata = {
     title: "SaaS Engineering Blog | Dazzcode",
     description: "Read elite engineering insights from the Dazzcode team on building, scaling, and maintaining high-performance SaaS products and cloud infrastructure.",
+    alternates: {
+        canonical: "/blog",
+    },
 };
 
 export default function BlogListingPage() {

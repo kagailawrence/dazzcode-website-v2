@@ -21,6 +21,9 @@ export const metadata: Metadata = {
     'investor ready MVP',
     'SaaS product development'
   ],
+  alternates: {
+    canonical: '/services/saas-mvp',
+  },
   // Open Graph / Twitter Card
   openGraph: {
     title: 'SaaS MVP Launch Services - Dazzcode',

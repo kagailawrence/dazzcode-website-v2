@@ -16,8 +16,6 @@ export function Footer() {
               We build, fix, and scale SaaS products and web applications for startups and growing businesses.
             </p>
             <div className="flex items-center gap-2 text-xs font-mono text-[#52615B]">
-              <span className="inline-block w-2 h-2 rounded-full bg-[#059669]" />
-              <span>Kenya · Working with clients globally</span>
             </div>
             <div className="flex gap-3 pt-2">
               <Link

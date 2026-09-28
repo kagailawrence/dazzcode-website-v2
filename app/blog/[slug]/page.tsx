@@ -26,12 +26,16 @@ export async function generateMetadata(
     return {
         title: post.title,
         description: post.description,
+        alternates: {
+            canonical: `/blog/${slug}`,
+        },
         openGraph: {
             title: post.title,
             description: post.description,
             type: "article",
             publishedTime: post.publishedAt,
             authors: [post.author],
+            url: `/blog/${slug}`,
         },
         twitter: {
             card: "summary_large_image",

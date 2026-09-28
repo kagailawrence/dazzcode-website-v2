@@ -28,6 +28,14 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
   return {
     title: `${service.title} | Dazzcode Services`,
     description: service.description,
+    alternates: {
+      canonical: `/services/${slug}`,
+    },
+    openGraph: {
+      title: `${service.title} | Dazzcode Services`,
+      description: service.description,
+      url: `/services/${slug}`,
+    },
   };
 }
 

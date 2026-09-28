@@ -29,6 +29,14 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
     return {
         title: `${product.title} | Dazzcode Products`,
         description: product.description,
+        alternates: {
+            canonical: `/products/${slug}`,
+        },
+        openGraph: {
+            title: `${product.title} | Dazzcode Products`,
+            description: product.description,
+            url: `/products/${slug}`,
+        },
     };
 }
 

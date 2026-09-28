@@ -23,6 +23,9 @@ export const metadata: Metadata = {
     'scalability engineering',
     'technical growth'
   ],
+  alternates: {
+    canonical: '/services/platform-scale',
+  },
   // Open Graph / Twitter Card
   openGraph: {
     title: 'Platform Scale & Growth Engineering - Dazzcode',

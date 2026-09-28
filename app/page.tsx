@@ -1460,9 +1460,7 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="pt-4 text-xs font-mono text-[#52615B]">
-            Kenya · Working with clients globally
-          </div>
+         
         </div>
       </section>
     </div>
