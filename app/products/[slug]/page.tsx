@@ -29,6 +29,15 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
     return {
         title: `${product.title} | Dazzcode Products`,
         description: product.description,
+        keywords: [
+            product.title,
+            `${product.title} software`,
+            `${product.title} SaaS`,
+            ...product.details.techStack.map(t => `${t} SaaS`),
+            "custom SaaS product",
+            "enterprise SaaS platform",
+            "production ready software"
+        ],
         alternates: {
             canonical: `/products/${slug}`,
         },

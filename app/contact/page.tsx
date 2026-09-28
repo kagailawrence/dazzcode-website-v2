@@ -4,6 +4,16 @@ import { Mail, MapPin } from "lucide-react";
 export const metadata = {
     title: "Book a Strategy Call | Dazzcode",
     description: "Ready to launch or scale your SaaS? Contact our elite engineering team today for a technical consultation and immediate roadmap evaluation.",
+    keywords: [
+        "hire SaaS developers",
+        "book SaaS strategy call",
+        "SaaS technical consultation",
+        "hire Next.js developers",
+        "custom SaaS development quote",
+        "SaaS MVP consultation",
+        "code audit consultation",
+        "hire remote software engineers",
+    ],
     alternates: {
         canonical: "/contact",
     },

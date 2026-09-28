@@ -28,6 +28,16 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
   return {
     title: `${service.title} | Dazzcode Services`,
     description: service.description,
+    keywords: [
+      service.title,
+      `${service.title} services`,
+      `${service.title} company`,
+      "custom SaaS development",
+      "SaaS engineering agency",
+      ...service.deliverables.slice(0, 4),
+      "full stack engineering",
+      "production cloud deployment",
+    ],
     alternates: {
       canonical: `/services/${slug}`,
     },

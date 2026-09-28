@@ -6,6 +6,16 @@ import { CheckCircle2, Code2, Database, Layout, GitBranch, Rocket } from "lucide
 export const metadata = {
     title: "How We Build | Dazzcode Engineering Process",
     description: "Our transparent, agile development process. From database design to deployment, see how we build scalable SaaS.",
+    keywords: [
+        "SaaS development process",
+        "software engineering case studies",
+        "SaaS architecture methodology",
+        "Next.js SaaS case studies",
+        "SaaS product development lifecycle",
+        "agile SaaS development",
+        "cloud infrastructure case studies",
+        "Dazzcode client work",
+    ],
     alternates: {
         canonical: "/case-studies",
     },

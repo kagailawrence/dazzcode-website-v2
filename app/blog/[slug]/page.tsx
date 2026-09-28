@@ -26,6 +26,15 @@ export async function generateMetadata(
     return {
         title: post.title,
         description: post.description,
+        keywords: [
+            post.title,
+            post.category,
+            `${post.category} SaaS`,
+            "SaaS development guide",
+            "Next.js SaaS architecture",
+            "SaaS engineering best practices",
+            "Dazzcode blog",
+        ],
         alternates: {
             canonical: `/blog/${slug}`,
         },
