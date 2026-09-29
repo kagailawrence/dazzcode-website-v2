@@ -6,7 +6,7 @@ export async function POST(req: Request) {
         const body = await req.json();
         const { name, email, company, message } = body;
 
-        // Simple validation
+        // Form Validation
         if (!name || !email || !message) {
             return NextResponse.json(
                 { error: 'Name, email, and message are required.' },
@@ -14,73 +14,119 @@ export async function POST(req: Request) {
             );
         }
 
-        // Configure transporter
+        const smtpHost = process.env.SMTP_HOST || 'smtp.gmail.com';
+        const smtpPort = Number(process.env.SMTP_PORT) || 587;
+        const smtpUser = process.env.SMTP_USER;
+        const smtpPass = process.env.SMTP_PASS;
+        const recipientEmail = process.env.CONTACT_EMAIL || smtpUser || 'info@dazzcode.com';
+
+        // Check if SMTP is configured
+        if (!smtpUser || !smtpPass) {
+            console.warn(
+                '[Contact Form Warning]: SMTP_USER or SMTP_PASS is missing in .env.local. Logged inquiry to console:'
+            );
+            console.log({
+                timestamp: new Date().toISOString(),
+                name,
+                email,
+                company: company || 'Not provided',
+                message,
+            });
+
+            return NextResponse.json(
+                {
+                    success: true,
+                    note: 'Inquiry received. (SMTP not configured in local environment)',
+                },
+                { status: 200 }
+            );
+        }
+
+        // Configure Nodemailer Transporter
         const transporter = nodemailer.createTransport({
-            host: process.env.SMTP_HOST || 'smtp.gmail.com',
-            port: Number(process.env.SMTP_PORT) || 587,
-            secure: process.env.SMTP_SECURE === 'true', // true for 465, false for other ports
+            host: smtpHost,
+            port: smtpPort,
+            secure: smtpPort === 465 || process.env.SMTP_SECURE === 'true',
             auth: {
-                user: process.env.SMTP_USER,
-                pass: process.env.SMTP_PASS,
+                user: smtpUser,
+                pass: smtpPass,
             },
         });
 
-        // Email content
+        // Email layout
         const mailOptions = {
-            from: `"Dazzcode Contact Form" <${process.env.SMTP_USER}>`,
-            to: process.env.CONTACT_EMAIL || 'info@dazzcode.com',
+            from: `"Dazzcode Website" <${smtpUser}>`,
+            to: recipientEmail,
             replyTo: email,
-            subject: `New Lead: ${name} from ${company || 'Unknown Company'}`,
+            subject: `New Project Inquiry from ${name} ${company ? `(${company})` : ''}`,
             text: `
-        Name: ${name}
-        Email: ${email}
-        Company: ${company || 'Not provided'}
-        
-        Message:
-        ${message}
-      `,
+New Project Inquiry Received
+
+Name: ${name}
+Email: ${email}
+Company: ${company || 'Not provided'}
+
+Message:
+${message}
+            `.trim(),
             html: `
-        <h3>New Contact Form Submission</h3>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Company:</strong> ${company || 'Not provided'}</p>
-        <br/>
-        <p><strong>Message:</strong></p>
-        <p>${message.replace(/\n/g, '<br/>')}</p>
-      `,
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #f8faf9; color: #12201b; margin: 0; padding: 24px; }
+    .card { background-color: #ffffff; border: 1px solid #e1e7e4; border-radius: 16px; padding: 24px; max-width: 560px; margin: 0 auto; box-shadow: 0 4px 12px rgba(0,0,0,0.03); }
+    .badge { display: inline-block; background-color: #ecfdf5; color: #059669; font-weight: bold; font-size: 11px; padding: 4px 10px; border-radius: 20px; text-transform: uppercase; margin-bottom: 12px; }
+    h2 { margin: 0 0 16px 0; font-size: 20px; color: #0f172a; }
+    .field { margin-bottom: 12px; font-size: 14px; }
+    .field-label { font-weight: 600; color: #52605b; font-size: 12px; text-transform: uppercase; margin-bottom: 2px; }
+    .field-value { font-size: 15px; color: #0f172a; }
+    .message-box { background-color: #f8faf9; border: 1px solid #e1e7e4; border-radius: 10px; padding: 16px; font-size: 14px; line-height: 1.6; color: #12201b; white-space: pre-wrap; margin-top: 16px; }
+    .footer { font-size: 12px; color: #8a9993; margin-top: 20px; text-align: center; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="badge">New Lead · Dazzcode Contact Form</div>
+    <h2>Project Inquiry Details</h2>
+    
+    <div class="field">
+      <div class="field-label">Sender Name</div>
+      <div class="field-value"><strong>${name}</strong></div>
+    </div>
+    
+    <div class="field">
+      <div class="field-label">Email Address</div>
+      <div class="field-value"><a href="mailto:${email}" style="color: #059669; text-decoration: none;">${email}</a></div>
+    </div>
+    
+    <div class="field">
+      <div class="field-label">Company / Project</div>
+      <div class="field-value">${company || 'Not provided'}</div>
+    </div>
+    
+    <div class="field">
+      <div class="field-label">Message / Details</div>
+      <div class="message-box">${message.replace(/\n/g, '<br/>')}</div>
+    </div>
+    
+    <div class="footer">
+      Sent directly from the Dazzcode website contact form. Click "Reply" to respond directly to ${email}.
+    </div>
+  </div>
+</body>
+</html>
+            `,
         };
 
-        // Verify connection configuration
-        await new Promise((resolve, reject) => {
-            // only verify if we have credentials, otherwise skip to allow testing error handling
-            if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
-                // If not configured, we might want to log it but for now let's just proceed to send which will fail accordingly or mocking
-                // Actually, let's reject if no creds, to give a clear error
-                // reject(new Error("SMTP credentials missing"));
-                resolve(true); // Let the sendMail call fail if needed, or if mock logic is preferred. 
-                // For production simplicity:
-                transporter.verify(function (error: Error | null, success: true) {
-                    if (error) {
-                        console.log(error);
-                        reject(error);
-                    } else {
-                        console.log("Server is ready to take our messages");
-                        resolve(success);
-                    }
-                });
-            } else {
-                resolve(true);
-            }
-        });
-
-        // Send email
         await transporter.sendMail(mailOptions);
 
         return NextResponse.json({ success: true }, { status: 200 });
     } catch (error: any) {
         console.error('Contact API Error:', error);
         return NextResponse.json(
-            { error: error.message || 'Failed to send message.' },
+            { error: error.message || 'Failed to send email. Please try again later.' },
             { status: 500 }
         );
     }

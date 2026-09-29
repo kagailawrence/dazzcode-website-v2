@@ -1,109 +1,135 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { getAllPosts, allCategories } from "@/lib/blog";
-import { ArrowRight, Calendar, Clock } from "lucide-react";
+import { getAllPosts } from "@/lib/blog";
+import { ArrowRight, BookOpen } from "lucide-react";
+import JsonLd from "@/components/seo/JsonLd";
+import BlogSearchAndFilter from "@/components/blog/BlogSearchAndFilter";
+import { Metadata } from "next";
 
-export const metadata = {
-    title: "SaaS Engineering Blog | Dazzcode",
-    description: "Read elite engineering insights from the Dazzcode team on building, scaling, and maintaining high-performance SaaS products and cloud infrastructure.",
-    keywords: [
-        "SaaS engineering blog",
-        "SaaS development articles",
-        "Next.js SaaS architecture",
-        "SaaS MVP development guide",
-        "SOC 2 compliance for SaaS",
-        "SaaS pricing and MVP cost",
-        "multi-tenant SaaS engineering",
-        "SaaS scalability tips",
+export const metadata: Metadata = {
+  title: "SaaS Engineering & Architecture Blog | Dazzcode",
+  description: "In-depth technical guides, architecture checklists, database optimization strategies, and real-world pricing guides for building and scaling SaaS platforms.",
+  keywords: [
+    "SaaS engineering blog",
+    "SaaS development cost",
+    "SaaS architecture checklist",
+    "Next.js VPS deployment",
+    "PostgreSQL multi-tenancy",
+    "M-Pesa SaaS integration",
+    "SOC2 ready architecture",
+    "Dazzcode blog",
+  ],
+  alternates: {
+    canonical: "https://dazzcode.com/blog",
+  },
+  openGraph: {
+    title: "SaaS Engineering & Architecture Blog | Dazzcode",
+    description: "In-depth technical guides, architecture checklists, database optimization strategies, and real-world pricing guides for building and scaling SaaS platforms.",
+    url: "https://dazzcode.com/blog",
+    siteName: "Dazzcode",
+    type: "website",
+    images: [
+      {
+        url: "/images/hero-saas-dashboard.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Dazzcode Engineering Blog",
+      },
     ],
-    alternates: {
-        canonical: "/blog",
-    },
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "SaaS Engineering & Architecture Blog | Dazzcode",
+    description: "In-depth technical guides, architecture checklists, and real-world pricing guides for building and scaling SaaS platforms.",
+    images: ["/images/hero-saas-dashboard.jpg"],
+  },
 };
 
 export default function BlogListingPage() {
-    const blogPosts = getAllPosts();
+  const blogPosts = getAllPosts();
 
-    return (
-        <div className="flex flex-col min-h-screen">
-            {/* Hero Section */}
-            <section className="relative py-20 md:py-32 overflow-hidden">
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/10 via-background to-background pointer-events-none" />
-                <div className="container px-4 md:px-6 relative z-10 text-center max-w-3xl mx-auto">
-                    <div className="inline-flex items-center rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-sm font-medium text-primary mb-6">
-                        Engineering & Growth Insights
-                    </div>
-                    <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">The SaaS Knowledge Hub</h1>
-                    <p className="text-xl text-muted-foreground leading-relaxed mb-10">
-                        We share everything we learn about building, scaling, and maintaining high-performance software products.
-                    </p>
+  const blogSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Blog",
+        "@id": "https://dazzcode.com/blog#blog",
+        name: "Dazzcode SaaS Engineering & Architecture Blog",
+        description: "In-depth technical guides, architecture checklists, and real-world pricing guides for building and scaling SaaS products.",
+        url: "https://dazzcode.com/blog",
+        publisher: {
+          "@type": "Organization",
+          name: "Dazzcode",
+          url: "https://dazzcode.com",
+          logo: "https://dazzcode.com/images/logo.png",
+        },
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://dazzcode.com/blog#breadcrumb",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: "https://dazzcode.com",
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Blog",
+            item: "https://dazzcode.com/blog",
+          },
+        ],
+      },
+    ],
+  };
 
-                    {/* Categories */}
-                    <div className="flex flex-wrap justify-center gap-2">
-                        {allCategories.map((cat) => (
-                            <span key={cat} className="px-3 py-1 rounded-full border border-white/10 bg-secondary/5 text-sm font-medium text-muted-foreground hover:text-white hover:border-primary/50 transition-colors cursor-pointer">
-                                {cat}
-                            </span>
-                        ))}
-                    </div>
-                </div>
-            </section>
+  return (
+    <div className="flex flex-col min-h-screen bg-[#F8FAF9] text-[#12201B]">
+      <JsonLd schema={blogSchema} />
 
-            {/* Posts Grid */}
-            <section className="pb-24">
-                <div className="container px-4 md:px-6">
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {blogPosts.map((post) => (
-                            <Link key={post.slug} href={`/blog/${post.slug}`} className="group flex flex-col h-full bg-secondary/5 border border-white/5 rounded-2xl overflow-hidden hover:border-primary/20 transition-all hover:-translate-y-1">
-                                <div className="p-6 flex-1 flex flex-col">
-                                    {/* Meta */}
-                                    <div className="flex items-center gap-4 text-xs text-muted-foreground mb-4">
-                                        <span className="flex items-center gap-1">
-                                            <Calendar className="h-3 w-3" />
-                                            {new Date(post.publishedAt).toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" })}
-                                        </span>
-                                        <span className="flex items-center gap-1">
-                                            <Clock className="h-3 w-3" />
-                                            {post.readTime}
-                                        </span>
-                                    </div>
+      {/* Hero Header */}
+      <section className="pt-32 pb-16 md:pt-40 md:pb-20 bg-[#F8FAF9] border-b border-[#E2EAE6]">
+        <div className="container px-4 md:px-6 mx-auto max-w-5xl text-center">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#ECFDF5] border border-[#059669]/20 text-[#059669] text-xs font-mono font-bold uppercase tracking-wider mb-6">
+            <BookOpen className="w-3.5 h-3.5" />
+            <span>Engineering & Architecture Knowledge Base</span>
+          </div>
 
-                                    {/* Title & Excerpt */}
-                                    <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors line-clamp-2">
-                                        {post.title}
-                                    </h3>
-                                    <p className="text-muted-foreground text-sm line-clamp-3 mb-6 flex-1">
-                                        {post.description}
-                                    </p>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-[1.05] text-[#12201B] mb-6">
+            SaaS Engineering & Architecture Blog
+          </h1>
 
-                                    {/* Tags & CTA */}
-                                    <div className="flex items-center justify-between mt-auto">
-                                        <div className="flex gap-2">
-                                            <span className="px-2 py-0.5 rounded bg-primary/10 text-primary text-xs font-medium">
-                                                {post.category}
-                                            </span>
-                                        </div>
-                                        <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
-                                    </div>
-                                </div>
-                            </Link>
-                        ))}
-                    </div>
-                </div>
-            </section>
+          <p className="text-lg md:text-xl text-[#52615B] leading-relaxed max-w-3xl mx-auto mb-10">
+            Real architectural blueprints, honest pricing guides, and technical checklists for building, auditing, deploying, and scaling SaaS platforms.
+          </p>
 
-            {/* Newsletter / CTA */}
-            <section className="py-20 border-t border-white/5">
-                <div className="container px-4 md:px-6 text-center max-w-2xl mx-auto">
-                    <h2 className="text-3xl font-bold mb-4">Have a Question?</h2>
-                    <p className="text-muted-foreground mb-8">
-                        We often write articles based on client questions. If you have a specific technical or product challenge, let us know.
-                    </p>
-                    <Link href="/contact">
-                        <Button variant="outline" size="lg">Ask a Question</Button>
-                    </Link>
-                </div>
-            </section>
+          {/* Interactive Search & Category Filter */}
+          <BlogSearchAndFilter posts={blogPosts} />
         </div>
-    );
+      </section>
+
+      {/* Conversion CTA */}
+      <section className="py-20 bg-[#12201B] text-white">
+        <div className="container px-4 md:px-6 mx-auto max-w-4xl text-center">
+          <h2 className="text-3xl sm:text-4xl font-black tracking-tight mb-4">
+            Have a Specific Software Challenge?
+          </h2>
+          <p className="text-sm md:text-base text-[#E2EAE6]/80 mb-8 max-w-xl mx-auto leading-relaxed">
+            We regularly write guides based on questions from founders and CTOs. Book a discussion with our engineering architects.
+          </p>
+          <Link href="/contact">
+            <Button
+              size="lg"
+              className="h-14 px-8 text-sm font-black uppercase tracking-wider bg-[#059669] text-white hover:bg-[#10B981] rounded-xl transition-all shadow-[0_4px_20px_rgba(5,150,105,0.4)] cursor-pointer"
+            >
+              Start a Project
+              <ArrowRight className="w-4 h-4 ml-2" />
+            </Button>
+          </Link>
+        </div>
+      </section>
+    </div>
+  );
 }
