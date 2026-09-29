@@ -1,0 +1,51 @@
+---
+title: "How to Deploy Next.js on a Linux VPS with Docker & Nginx"
+description: "A production guide to deploying Next.js App Router applications on an Ubuntu VPS with Docker, Nginx reverse proxy, automated SSL, and GitHub Actions CI/CD."
+publishedAt: "2026-09-05"
+author: "Lawrence Maina"
+category: "Infrastructure"
+---
+
+While managed platforms like Vercel provide quick prototypes, deploying Next.js on a high-performance Linux VPS (such as Hetzner, DigitalOcean, or AWS EC2) delivers **predictable low hosting costs**, zero serverless timeout restrictions, and direct database connection pooling.
+
+In this technical guide, we walk through the exact architecture Dazzcode uses for production Next.js VPS deployments.
+
+---
+
+## 1. Next.js Standalone Build Configuration
+
+Enable standalone output in your `next.config.ts` to generate a lean Node.js server bundle:
+
+```typescript
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
+  output: "standalone",
+};
+
+export default nextConfig;
+```
+
+This ensures only the required node_modules and assets are bundled, shrinking your Docker image from 1.2GB down to ~120MB.
+
+## 2. Multi-Stage Dockerfile
+
+Use a multi-stage Docker build separating dependency installation, build execution, and production runtime using Node.js Alpine images for minimal security surface area.
+
+## 3. Nginx Reverse Proxy & Brotli Compression
+
+Place Nginx in front of your Docker container to handle SSL termination (Let's Encrypt / Certbot), static asset caching, rate-limiting, and Brotli/gzip compression.
+
+## 4. GitHub Actions Zero-Downtime Push-to-Deploy
+
+Configure a GitHub Actions workflow that executes automated tests on `git push main`, builds the Docker image, and triggers a rolling container restart via SSH.
+
+---
+
+## VPS vs. Serverless: Why Scale on VPS?
+
+- **Zero Function Timeouts**: Execute long-running reports and PDF generation without 10-second limits.
+- **Predictable Fixed Pricing**: Run high-traffic applications on a $20–$50/month VPS instead of thousands in serverless bandwidth bills.
+- **Native Connection Pooling**: Direct local connection to PostgreSQL and Redis without cold starts.
+
+Need help configuring a rock-solid deployment? Explore our [VPS Deployment Services](/services/vps-deployment) or [talk to our deployment engineers](/contact).

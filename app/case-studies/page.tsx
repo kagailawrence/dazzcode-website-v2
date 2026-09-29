@@ -1,182 +1,252 @@
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import type { Metadata } from "next";
 import Link from "next/link";
-import { CheckCircle2, Code2, Database, Layout, GitBranch, Rocket } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { caseStudies } from "@/lib/data";
+import JsonLd from "@/components/seo/JsonLd";
+import {
+  ArrowRight,
+  CheckCircle2,
+  Code2,
+  Database,
+  Rocket,
+  ShieldCheck,
+  Server,
+  Zap,
+  ArrowUpRight,
+  TrendingUp,
+  Building2
+} from "lucide-react";
 
-export const metadata = {
-    title: "How We Build | Dazzcode Engineering Process",
-    description: "Our transparent, agile development process. From database design to deployment, see how we build scalable SaaS.",
-    keywords: [
-        "SaaS development process",
-        "software engineering case studies",
-        "SaaS architecture methodology",
-        "Next.js SaaS case studies",
-        "SaaS product development lifecycle",
-        "agile SaaS development",
-        "cloud infrastructure case studies",
-        "Dazzcode client work",
+export const metadata: Metadata = {
+  title: "Case Studies & Engineering Process | Dazzcode",
+  description: "Explore real Dazzcode software case studies: DazzPOS offline-first retail POS in Kenya, AI lead automation pipelines, and high-concurrency SaaS platforms.",
+  keywords: [
+    "SaaS case studies",
+    "software engineering case studies",
+    "DazzPOS case study",
+    "AI automation case study",
+    "Next.js SaaS case studies",
+    "offline-first architecture case study",
+    "Dazzcode client work"
+  ],
+  alternates: {
+    canonical: "https://dazzcode.com/case-studies",
+  },
+  openGraph: {
+    title: "Software Engineering Case Studies | Dazzcode",
+    description: "See how Dazzcode engineers production SaaS platforms and web applications. Problem → Decision → Build → Result.",
+    url: "https://dazzcode.com/case-studies",
+    siteName: "Dazzcode",
+    images: [
+      {
+        url: "/images/hero-saas-dashboard.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Dazzcode Software Engineering Case Studies",
+      },
     ],
-    alternates: {
-        canonical: "/case-studies",
-    },
+  },
 };
 
-export default function CaseStudiesPage() {
-    return (
-        <div className="flex flex-col min-h-screen">
-            {/* Hero Section */}
-            <section className="relative py-20 md:py-32 overflow-hidden">
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/10 via-background to-background pointer-events-none" />
-                <div className="container px-4 md:px-6 relative z-10 text-center max-w-3xl mx-auto">
-                    <div className="inline-flex items-center rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-sm font-medium text-primary mb-6 animate-fade-in">
-                        Engineering Process
-                    </div>
-                    <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight animate-slide-up">
-                        How We Eliminate <br /> Technical Execution Risk.
-                    </h1>
-                    <p className="text-xl text-muted-foreground leading-relaxed mb-10 animate-slide-up delay-100">
-                        We don't just write code; we build production-ready assets. Our methodology is designed to translate business goals into scalable technical reality.
-                    </p>
-                </div>
-            </section>
+export default function CaseStudiesIndexPage() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ItemList",
+        "@id": "https://dazzcode.com/case-studies#list",
+        name: "Dazzcode Case Studies",
+        itemListElement: caseStudies.map((cs, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          name: cs.title,
+          url: `https://dazzcode.com/case-studies/${cs.slug}`,
+          description: cs.summary,
+        })),
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://dazzcode.com/case-studies#breadcrumb",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: "https://dazzcode.com",
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Case Studies",
+            item: "https://dazzcode.com/case-studies",
+          },
+        ],
+      },
+    ],
+  };
 
-            {/* Process Steps */}
-            <section className="py-24 bg-secondary/5">
-                <div className="container px-4 md:px-6">
-                    <h2 className="text-3xl font-bold text-center mb-16">The Dazzcode Methodology</h2>
+  return (
+    <div className="flex flex-col min-h-screen bg-[#F8FAF9] text-[#12201B]">
+      <JsonLd schema={structuredData} />
 
-                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                        {/* Step 1 */}
-                        <div className="relative group">
-                            <div className="hidden lg:block absolute top-8 left-1/2 w-full h-0.5 bg-primary/20 -z-10 group-last:hidden"></div>
-                            <div className="bg-card border border-white/10 p-6 rounded-2xl h-full hover:border-primary/40 transition-colors">
-                                <div className="h-12 w-12 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-xl mb-4 shadow-[0_0_15px_-3px_var(--color-primary)]">1</div>
-                                <h3 className="text-xl font-bold mb-2">Discovery & Risk Assessment</h3>
-                                <p className="text-muted-foreground text-sm">
-                                    Engineering starts with defense. We map your data models and user flows to identify technical bottlenecks before they become costly pivots.
-                                </p>
-                            </div>
-                        </div>
+      {/* Hero Section */}
+      <section className="pt-32 pb-16 md:pt-40 md:pb-20 bg-[#F8FAF9] border-b border-[#E2EAE6]">
+        <div className="container px-4 md:px-6 mx-auto max-w-5xl text-center">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#ECFDF5] border border-[#059669]/20 text-[#059669] text-xs font-mono font-semibold uppercase tracking-wider mb-6">
+            <span>Engineering in Production</span>
+          </div>
 
-                        {/* Step 2 */}
-                        <div className="relative group">
-                            <div className="hidden lg:block absolute top-8 left-1/2 w-full h-0.5 bg-primary/20 -z-10 group-last:hidden"></div>
-                            <div className="bg-card border border-white/10 p-6 rounded-2xl h-full hover:border-primary/40 transition-colors">
-                                <div className="h-12 w-12 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-xl mb-4  shadow-[0_0_15px_-3px_var(--color-primary)]">2</div>
-                                <h3 className="text-xl font-bold mb-2">Production-Ready Sprints</h3>
-                                <p className="text-muted-foreground text-sm">
-                                    Bi-weekly delivery cycles with zero-downtime staging environments. You track progress through working code, not abstract charts.
-                                </p>
-                            </div>
-                        </div>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-[1.05] text-[#12201B] mb-6">
+            Real Software. Real Architecture. <br className="hidden sm:inline" />
+            Verifiable Results.
+          </h1>
 
-                        {/* Step 3 */}
-                        <div className="relative group">
-                            <div className="hidden lg:block absolute top-8 left-1/2 w-full h-0.5 bg-primary/20 -z-10 group-last:hidden"></div>
-                            <div className="bg-card border border-white/10 p-6 rounded-2xl h-full hover:border-primary/40 transition-colors">
-                                <div className="h-12 w-12 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-xl mb-4  shadow-[0_0_15px_-3px_var(--color-primary)]">3</div>
-                                <h3 className="text-xl font-bold mb-2">Testing & QA</h3>
-                                <p className="text-muted-foreground text-sm">
-                                    Automated tests ensuring your checkout flows works. Load testing to ensure you can handle 10k users.
-                                </p>
-                            </div>
-                        </div>
-
-                        {/* Step 4 */}
-                        <div className="relative group">
-                            <div className="hidden lg:block absolute top-8 left-1/2 w-full h-0.5 bg-primary/20 -z-10 group-last:hidden"></div>
-                            <div className="bg-card border border-white/10 p-6 rounded-2xl h-full hover:border-primary/40 transition-colors">
-                                <div className="h-12 w-12 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-xl mb-4  shadow-[0_0_15px_-3px_var(--color-primary)]">4</div>
-                                <h3 className="text-xl font-bold mb-2">Enterprise-Grade Deployment</h3>
-                                <p className="text-muted-foreground text-sm">
-                                    Production deployment to AWS or Vercel edge networks. We implement SOC2-ready observability, automated backups, and instant rollback.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Case Studies */}
-            <section className="py-24">
-                <div className="container px-4 md:px-6">
-                    <h2 className="text-3xl font-bold text-center mb-16">Recent Work</h2>
-
-                    <div className="grid lg:grid-cols-2 gap-12">
-                        {/* Project 1 */}
-                        <Card className="glass-dark border-white/5 overflow-hidden group">
-                            <div className="h-64 bg-gradient-to-br from-blue-900/50 to-slate-900/50 p-8 flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
-                                <Layout className="h-24 w-24 text-blue-400 opacity-50" />
-                            </div>
-                            <CardContent className="p-8">
-                                <div className="flex justify-between items-start mb-4">
-                                    <div>
-                                        <h3 className="text-2xl font-bold mb-2">DazzPOS Retail System</h3>
-                                        <div className="flex gap-2">
-                                            <span className="px-2 py-1 rounded bg-secondary text-xs font-mono">Next.js</span>
-                                            <span className="px-2 py-1 rounded bg-secondary text-xs font-mono">Offline-First</span>
-                                        </div>
-                                    </div>
-                                    <Link href="/products/dazzpos-system">
-                                        <Button size="icon" variant="ghost"><Rocket className="h-5 w-5" /></Button>
-                                    </Link>
-                                </div>
-                                <p className="text-muted-foreground mb-6">
-                                    A complex offline-first Point of Sale system capable of syncing thousands of transactions once back online.
-                                    Optimized for sub-second transaction times at scale.
-                                </p>
-                                <ul className="space-y-2 text-sm text-muted-foreground">
-                                    <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-primary" /> Supported 50+ retail locations on launch</li>
-                                    <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-primary" /> 99.9% sync reliability in low-bandwidth zones</li>
-                                </ul>
-                            </CardContent>
-                        </Card>
-
-                        {/* Project 2 */}
-                        <Card className="glass-dark border-white/5 overflow-hidden group">
-                            <div className="h-64 bg-gradient-to-br from-purple-900/50 to-slate-900/50 p-8 flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
-                                <Code2 className="h-24 w-24 text-purple-400 opacity-50" />
-                            </div>
-                            <CardContent className="p-8">
-                                <div className="flex justify-between items-start mb-4">
-                                    <div>
-                                        <h3 className="text-2xl font-bold mb-2">Algo-Trading Engine</h3>
-                                        <div className="flex gap-2">
-                                            <span className="px-2 py-1 rounded bg-secondary text-xs font-mono">Rust</span>
-                                            <span className="px-2 py-1 rounded bg-secondary text-xs font-mono">WebSockets</span>
-                                        </div>
-                                    </div>
-                                    <Link href="/products/trading-bot-systems">
-                                        <Button size="icon" variant="ghost"><Rocket className="h-5 w-5" /></Button>
-                                    </Link>
-                                </div>
-                                <p className="text-muted-foreground mb-6">
-                                    Ultra-low latency trading engine handling thousands of signals per second with sub-1ms execution.
-                                    Institutional-grade architecture for retail traders.
-                                </p>
-                                <ul className="space-y-2 text-sm text-muted-foreground">
-                                    <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-primary" /> Scaled to $1M+ daily trading volume</li>
-                                    <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-primary" /> SOC2-ready audit logging for all transactions</li>
-                                </ul>
-                            </CardContent>
-                        </Card>
-                    </div>
-                </div>
-            </section>
-
-            {/* Stack */}
-            <section className="py-24 bg-black/20 border-t border-white/5">
-                <div className="container px-4 md:px-6 text-center">
-                    <h2 className="text-2xl font-bold mb-12">Our Core Stack</h2>
-                    <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
-                        {["Next.js", "TypeScript", "Tailwind CSS","Rust", "PostgreSQL", "VPS", "AWS", "Vercel", "Docker", "Stripe", "Redis","Mpesa"].map(tech => (
-                            <div key={tech} className="px-6 py-3 rounded-xl bg-secondary/10 border border-white/5 text-lg font-medium hover:border-primary/50 hover:bg-primary/5 transition-colors cursor-default">
-                                {tech}
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
+          <p className="text-lg md:text-xl text-[#52615B] leading-relaxed max-w-3xl mx-auto mb-8">
+            We don't make unsubstantiated claims. Explore our deep architectural case studies following the <strong className="text-[#12201B]">Problem → Decision → Build → Result</strong> framework.
+          </p>
         </div>
-    );
+      </section>
+
+      {/* Case Studies Grid */}
+      <section className="py-20 bg-[#FFFFFF] border-b border-[#E2EAE6]">
+        <div className="container px-4 md:px-6 mx-auto max-w-5xl">
+          <div className="space-y-12">
+            {caseStudies.map((study) => (
+              <div
+                key={study.slug}
+                className="p-8 md:p-12 rounded-3xl bg-[#F8FAF9] border border-[#E2EAE6] hover:border-[#059669]/50 hover:shadow-lg transition-all duration-300 shadow-xs"
+              >
+                <div className="flex flex-wrap items-center gap-2 mb-4">
+                  <span className="px-3 py-1 rounded-full bg-[#ECFDF5] border border-[#059669]/20 text-[#059669] text-xs font-mono font-bold">
+                    {study.category}
+                  </span>
+                  <span className="text-xs font-mono text-[#52615B]">· {study.client}</span>
+                </div>
+
+                <h2 className="text-2xl md:text-3xl font-black text-[#12201B] tracking-tight mb-4">
+                  {study.title}
+                </h2>
+
+                <p className="text-base text-[#52615B] leading-relaxed mb-8 max-w-3xl">
+                  {study.description}
+                </p>
+
+                {/* Metrics */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-6 rounded-2xl bg-[#FFFFFF] border border-[#E2EAE6] mb-8">
+                  {study.metrics.map((m, mIndex) => (
+                    <div key={mIndex}>
+                      <span className="text-2xl md:text-3xl font-black text-[#059669] tracking-tight block">
+                        {m.value}
+                      </span>
+                      <span className="text-xs font-mono text-[#52615B] mt-1 block">
+                        {m.label}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Tech Tags & CTA */}
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 pt-4 border-t border-[#E2EAE6]">
+                  <div className="flex flex-wrap gap-2">
+                    {study.tags.map((tag, tIndex) => (
+                      <span
+                        key={tIndex}
+                        className="px-2.5 py-1 rounded-lg bg-[#FFFFFF] border border-[#E2EAE6] text-xs font-mono text-[#52615B]"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  <Link href={`/case-studies/${study.slug}`}>
+                    <Button className="h-12 px-6 text-xs font-bold uppercase tracking-wider bg-[#059669] hover:bg-[#10B981] text-white rounded-xl shadow-xs cursor-pointer">
+                      <span>Read Deep-Dive</span>
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Methodology / How We Build Section */}
+      <section id="how-we-build" className="py-24 bg-[#F8FAF9] border-b border-[#E2EAE6]">
+        <div className="container px-4 md:px-6 mx-auto max-w-5xl">
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <span className="text-xs font-mono font-bold uppercase tracking-[0.25em] text-[#059669] mb-3 block">
+              Our Process
+            </span>
+            <h2 className="text-3xl md:text-4xl font-black text-[#12201B] tracking-tight">
+              The Problem → Decision → Build → Result Framework
+            </h2>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="p-6 rounded-2xl bg-[#FFFFFF] border border-[#E2EAE6] shadow-xs">
+              <div className="w-10 h-10 rounded-xl bg-[#ECFDF5] text-[#059669] flex items-center justify-center font-mono font-bold text-sm mb-4">
+                01
+              </div>
+              <h3 className="text-lg font-bold text-[#12201B] mb-2">Problem Mapping</h3>
+              <p className="text-xs text-[#52615B] leading-relaxed">
+                We isolate real operational bottlenecks and user friction points before writing any code.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[#FFFFFF] border border-[#E2EAE6] shadow-xs">
+              <div className="w-10 h-10 rounded-xl bg-[#ECFDF5] text-[#059669] flex items-center justify-center font-mono font-bold text-sm mb-4">
+                02
+              </div>
+              <h3 className="text-lg font-bold text-[#12201B] mb-2">Architectural Decision</h3>
+              <p className="text-xs text-[#52615B] leading-relaxed">
+                Choosing the right database schemas, caching layers, and tech stack to avoid costly pivots.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[#FFFFFF] border border-[#E2EAE6] shadow-xs">
+              <div className="w-10 h-10 rounded-xl bg-[#ECFDF5] text-[#059669] flex items-center justify-center font-mono font-bold text-sm mb-4">
+                03
+              </div>
+              <h3 className="text-lg font-bold text-[#12201B] mb-2">Lean Agile Build</h3>
+              <p className="text-xs text-[#52615B] leading-relaxed">
+                Bi-weekly sprints with strict TypeScript typing, live staging, and automated CI/CD.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[#FFFFFF] border border-[#E2EAE6] shadow-xs">
+              <div className="w-10 h-10 rounded-xl bg-[#ECFDF5] text-[#059669] flex items-center justify-center font-mono font-bold text-sm mb-4">
+                04
+              </div>
+              <h3 className="text-lg font-bold text-[#12201B] mb-2">Measurable Result</h3>
+              <p className="text-xs text-[#52615B] leading-relaxed">
+                Production launch with verified uptime, sub-100ms response targets, and full IP transfer.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Bottom CTA */}
+      <section className="py-20 bg-[#12201B] text-white">
+        <div className="container px-4 md:px-6 mx-auto max-w-4xl text-center">
+          <h2 className="text-3xl sm:text-4xl font-black tracking-tight mb-4">
+            Have a Complex Software Project to Build?
+          </h2>
+          <p className="text-sm md:text-base text-[#E2EAE6]/80 mb-8 max-w-xl mx-auto">
+            Talk directly to our systems engineers about your product roadmap and architecture requirements.
+          </p>
+          <Link href="/contact">
+            <Button
+              size="lg"
+              className="h-14 px-8 text-sm font-black uppercase tracking-wider bg-[#059669] text-white hover:bg-[#10B981] rounded-xl transition-all shadow-[0_4px_20px_rgba(5,150,105,0.4)] cursor-pointer"
+            >
+              Start a Project
+              <ArrowRight className="w-4 h-4 ml-2" />
+            </Button>
+          </Link>
+        </div>
+      </section>
+    </div>
+  );
 }

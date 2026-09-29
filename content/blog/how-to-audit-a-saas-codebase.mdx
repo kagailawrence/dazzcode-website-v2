@@ -1,0 +1,43 @@
+---
+title: "How to Audit a SaaS Codebase: A Senior Engineer's Checklist"
+description: "Step-by-step guide to conducting a thorough technical audit on a SaaS application. Learn how to inspect architecture, database query performance, and security."
+publishedAt: "2026-08-25"
+author: "Lawrence Maina"
+category: "Code Audit"
+---
+
+When taking over an inherited application, preparing for venture capital technical due diligence, or diagnosing severe platform slowdowns, conducting a deep technical code audit is essential.
+
+A code audit is not simply running an automated linter. It requires senior systems engineers to inspect repository hygiene, database query efficiency, security vulnerabilities, and architectural bottlenecks.
+
+---
+
+## 1. Architectural Modularity & Dependency Hygiene
+
+- **TypeScript Coverage**: Are types strictly checked, or are `any` types littered throughout the API boundary?
+- **State Management**: Is state localized properly, or do components trigger chaotic global re-renders?
+- **NPM Package Audit**: Are critical dependencies deprecated, unmaintained, or harboring known CVE security flaws?
+
+## 2. Database & SQL Query Profiling
+
+The database is the number one source of SaaS performance degradation. During a [SaaS Code Audit](/services/code-audit), we analyze:
+- **Missing Indexes**: Running `EXPLAIN ANALYZE` on frequent queries to eliminate sequential scans.
+- **N+1 Query Loops**: Identifying ORM calls fetching relational data inside loops instead of batching.
+- **Connection Limits & Pooling**: Ensuring connection poolers like PgBouncer prevent serverless connection exhaustion.
+
+## 3. Security & Access Control (OWASP Standards)
+
+- **Tenant Data Isolation**: Verifying Row-Level Security (RLS) so tenant A can never query tenant B's records.
+- **Secrets Management**: Ensuring zero API keys or database connection strings are committed in client bundles.
+- **Authentication & CSRF/XSS Protections**: Validating secure `httpOnly` cookie handling and CORS policies.
+
+---
+
+## When to Commission a Technical Code Audit
+
+- Before closing a Seed or Series A funding round
+- When acquiring a tech asset or SaaS product
+- When new feature delivery has slowed to a crawl due to technical debt
+- When unexplained server crashes and 504 timeouts are occurring
+
+Need an objective, senior-led audit on your codebase? Learn about our [SaaS Code Audit Services](/services/code-audit) or [book a technical review with Dazzcode](/contact).

@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import Dazzcode from "@/components/ui/dazzcode-logo";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { services } from "@/lib/data";
 
@@ -17,6 +17,7 @@ const navLinks = [
     dropdownItems: services.map((service) => ({
       name: service.title,
       href: `/services/${service.slug}`,
+      tagline: service.tagline,
     })),
   },
   { name: "Case Studies", href: "/case-studies" },
@@ -28,8 +29,9 @@ const navLinks = [
 export function Navbar() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isServicesOpenMobile, setIsServicesOpenMobile] = useState(false);
 
-  // Disable scroll when menu is open
+  // Disable scroll when mobile menu is open
   useEffect(() => {
     if (isMenuOpen) {
       document.body.style.overflow = "hidden";
@@ -44,11 +46,12 @@ export function Navbar() {
 
   return (
     <div className="fixed top-6 inset-x-0 z-50 flex justify-center px-4">
-      <nav className="glass max-w-7xl w-full rounded-2xl flex h-16 items-center justify-between px-6 transition-all duration-300 border border-[#E2EAE6] bg-[#FFFFFF]/90 backdrop-blur-md shadow-xs">
+      <nav className="glass max-w-7xl w-full rounded-2xl flex h-16 items-center justify-between px-6 transition-all duration-300 border border-[#E2EAE6] bg-[#FFFFFF]/95 backdrop-blur-md shadow-sm">
         <Link
           href="/"
           onClick={handleLinkClick}
           className="flex items-center gap-2 transition-transform hover:scale-105 active:scale-95"
+          aria-label="Dazzcode Home"
         >
           <Dazzcode className="text-2xl" />
         </Link>
@@ -62,26 +65,45 @@ export function Navbar() {
                   <Link
                     href="/services"
                     className={cn(
-                      "text-[11px] font-bold uppercase tracking-wider px-3.5 py-2 rounded-lg transition-all duration-200 hover:bg-[#F1F5F3]",
+                      "text-[11px] font-bold uppercase tracking-wider px-3.5 py-2 rounded-lg transition-all duration-200 hover:bg-[#F1F5F3] inline-flex items-center gap-1",
                       pathname === link.href || pathname.startsWith("/services/")
                         ? "text-[#059669] bg-[#F1F5F3]"
                         : "text-[#52615B] hover:text-[#12201B]"
                     )}
                   >
-                    {link.name}
-                    <span className="ml-1 text-[9px] opacity-60">▼</span>
+                    <span>{link.name}</span>
+                    <ChevronDown className="w-3 h-3 opacity-60 group-hover:rotate-180 transition-transform duration-200" />
                   </Link>
                   {/* Dropdown menu */}
-                  <div className="absolute left-0 mt-2 w-64 rounded-xl border border-[#E2EAE6] bg-[#FFFFFF]/98 backdrop-blur-md py-2 hidden group-hover:block z-20 shadow-xl">
+                  <div className="absolute left-0 mt-2 w-80 rounded-2xl border border-[#E2EAE6] bg-[#FFFFFF] py-2 hidden group-hover:block z-30 shadow-xl">
+                    <div className="px-4 py-2 border-b border-[#E2EAE6]">
+                      <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#52615B]">
+                        Engineering Services
+                      </span>
+                    </div>
                     {link.dropdownItems.map((item) => (
                       <Link
                         key={item.href}
                         href={item.href}
-                        className="block px-4 py-2.5 text-xs font-medium text-[#52615B] hover:text-[#059669] hover:bg-[#F1F5F3] transition-colors"
+                        className="block px-4 py-2.5 hover:bg-[#F1F5F3] transition-colors group/item"
                       >
-                        {item.name}
+                        <div className="text-xs font-bold text-[#12201B] group-hover/item:text-[#059669] transition-colors">
+                          {item.name}
+                        </div>
+                        <div className="text-[11px] text-[#52615B] line-clamp-1">
+                          {item.tagline}
+                        </div>
                       </Link>
                     ))}
+                    <div className="p-2 border-t border-[#E2EAE6] bg-[#F8FAF9] rounded-b-2xl">
+                      <Link
+                        href="/services"
+                        className="text-[11px] font-bold text-[#059669] hover:underline flex items-center justify-between px-2 py-1"
+                      >
+                        <span>View All Services</span>
+                        <ArrowRight className="w-3 h-3" />
+                      </Link>
+                    </div>
                   </div>
                 </>
               ) : (
@@ -129,57 +151,96 @@ export function Navbar() {
             transition={{ duration: 0.2, ease: "easeOut" }}
             className="fixed inset-0 top-24 z-40 lg:hidden px-4 pb-10"
           >
-            <div className="bg-[#FFFFFF]/98 border border-[#E1E7E4] h-full rounded-[2rem] p-8 flex flex-col justify-between overflow-y-auto backdrop-blur-xl shadow-2xl">
-              <div className="flex flex-col gap-5">
+            <div className="bg-[#FFFFFF] border border-[#E2EAE6] h-full rounded-[2rem] p-6 flex flex-col justify-between overflow-y-auto backdrop-blur-xl shadow-2xl">
+              <div className="flex flex-col gap-4">
                 <Link
                   href="/"
                   onClick={handleLinkClick}
                   className={cn(
-                    "text-3xl font-black tracking-tight transition-colors",
-                    pathname === "/" ? "text-[#059669]" : "text-[#0F172A]"
+                    "text-2xl font-black tracking-tight transition-colors py-1",
+                    pathname === "/" ? "text-[#059669]" : "text-[#12201B]"
                   )}
                 >
                   Home
                 </Link>
-                {navLinks.map((link, i) => (
-                  <motion.div
-                    key={link.name}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.05 }}
+
+                {/* Mobile Services Accordion */}
+                <div>
+                  <button
+                    onClick={() => setIsServicesOpenMobile(!isServicesOpenMobile)}
+                    className="w-full flex items-center justify-between text-2xl font-black tracking-tight text-[#12201B] py-1"
                   >
-                    <Link
-                      href={link.href}
-                      onClick={handleLinkClick}
-                      className={cn(
-                        "text-3xl font-black tracking-tight transition-colors",
-                        pathname === link.href || (link.isDropdown && pathname.startsWith("/services"))
-                          ? "text-[#059669]"
-                          : "text-[#0F172A]"
-                      )}
-                    >
-                      {link.name}
-                    </Link>
-                  </motion.div>
-                ))}
+                    <span>Services</span>
+                    <ChevronDown className={cn("w-5 h-5 transition-transform", isServicesOpenMobile ? "rotate-180 text-[#059669]" : "")} />
+                  </button>
+                  {isServicesOpenMobile && (
+                    <div className="pl-4 pt-2 pb-2 space-y-2 border-l-2 border-[#059669]/30 mt-2">
+                      {services.map((s) => (
+                        <Link
+                          key={s.slug}
+                          href={`/services/${s.slug}`}
+                          onClick={handleLinkClick}
+                          className="block text-sm font-semibold text-[#52615B] hover:text-[#059669] py-1"
+                        >
+                          {s.title}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+
+                <Link
+                  href="/case-studies"
+                  onClick={handleLinkClick}
+                  className={cn(
+                    "text-2xl font-black tracking-tight transition-colors py-1",
+                    pathname === "/case-studies" ? "text-[#059669]" : "text-[#12201B]"
+                  )}
+                >
+                  Case Studies
+                </Link>
+
+                <Link
+                  href="/case-studies#how-we-build"
+                  onClick={handleLinkClick}
+                  className="text-2xl font-black tracking-tight text-[#12201B] py-1"
+                >
+                  How We Build
+                </Link>
+
+                <Link
+                  href="/blog"
+                  onClick={handleLinkClick}
+                  className={cn(
+                    "text-2xl font-black tracking-tight transition-colors py-1",
+                    pathname.startsWith("/blog") ? "text-[#059669]" : "text-[#12201B]"
+                  )}
+                >
+                  Blog
+                </Link>
+
+                <Link
+                  href="/about"
+                  onClick={handleLinkClick}
+                  className={cn(
+                    "text-2xl font-black tracking-tight transition-colors py-1",
+                    pathname === "/about" ? "text-[#059669]" : "text-[#12201B]"
+                  )}
+                >
+                  About
+                </Link>
               </div>
 
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: (navLinks.length + 1) * 0.05 }}
-                className="space-y-6 pt-6"
-              >
-                <div className="h-px bg-[#E1E7E4]" />
+              <div className="space-y-4 pt-6 border-t border-[#E2EAE6]">
                 <Link href="/contact" onClick={handleLinkClick} className="block w-full">
-                  <button className="w-full bg-[#059669] text-white font-black uppercase tracking-[0.15em] text-sm h-14 rounded-2xl transition-all duration-300 shadow-[0_4px_20px_rgba(5,150,105,0.25)] hover:bg-[#10B981]">
+                  <button className="w-full bg-[#059669] text-white font-black uppercase tracking-[0.15em] text-xs h-12 rounded-xl transition-all shadow-md hover:bg-[#10B981]">
                     Start a Project
                   </button>
                 </Link>
-                <p className="text-[11px] font-mono uppercase tracking-[0.2em] text-[#52605B] text-center">
-                  SaaS Development · Kenya & Global
+                <p className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#52615B] text-center">
+                  SaaS Engineering · Kenya & Global
                 </p>
-              </motion.div>
+              </div>
             </div>
           </motion.div>
         )}

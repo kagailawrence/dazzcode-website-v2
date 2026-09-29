@@ -1,123 +1,224 @@
-"use client";
-
-import { Button } from "@/components/ui/button";
-import { CardContent } from "@/components/ui/card";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { services } from "@/lib/data";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
-import { SpotlightCard } from "@/components/ui/SpotlightCard";
-import { motion } from "framer-motion";
-
-import { FAQ_SCHEMA } from "@/lib/geo-content";
+import { Button } from "@/components/ui/button";
 import JsonLd from "@/components/seo/JsonLd";
+import {
+  ArrowRight,
+  CheckCircle2,
+  Layers,
+  Rocket,
+  ShieldAlert,
+  TrendingUp,
+  Server,
+  Globe,
+  Cpu,
+  ArrowUpRight
+} from "lucide-react";
 
-const MotionLink = motion.create(Link);
+export const metadata: Metadata = {
+  title: "SaaS & Software Engineering Services | Dazzcode",
+  description: "Explore Dazzcode's full software lifecycle services: SaaS development, SaaS MVP launches, code audits, SaaS scaling, VPS server deployments, custom web apps, and AI workflow automation.",
+  keywords: [
+    "SaaS development services",
+    "SaaS development company",
+    "SaaS MVP development",
+    "code audit",
+    "SaaS scaling",
+    "VPS deployment",
+    "custom web application development",
+    "AI automation"
+  ],
+  alternates: {
+    canonical: "https://dazzcode.com/services",
+  },
+  openGraph: {
+    title: "SaaS & Software Engineering Services | Dazzcode",
+    description: "Build, audit, deploy, and scale your software products with Dazzcode's institutional-grade engineering services.",
+    url: "https://dazzcode.com/services",
+    siteName: "Dazzcode",
+    images: [
+      {
+        url: "/images/hero-saas-dashboard.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Dazzcode Software Engineering Services",
+      },
+    ],
+  },
+};
 
-export default function ServicesPage() {
-    const serviceSchemas = services.map(service => ({
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "serviceType": service.title,
-        "provider": {
-            "@type": "Organization",
-            "name": "Dazzcode"
-        },
-        "description": service.description
-    }));
+export default function ServicesOverviewPage() {
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ItemList",
+        "@id": "https://dazzcode.com/services#list",
+        name: "Dazzcode Engineering Services",
+        itemListElement: services.map((service, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          name: service.title,
+          url: `https://dazzcode.com/services/${service.slug}`,
+          description: service.description,
+        })),
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://dazzcode.com/services#breadcrumb",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: "https://dazzcode.com",
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Services",
+            item: "https://dazzcode.com/services",
+          },
+        ],
+      },
+    ],
+  };
 
-    return (
-        <div className="min-h-screen grid-bg pt-32 pb-20 overflow-x-hidden">
-            <JsonLd schema={FAQ_SCHEMA} />
-            {serviceSchemas.map((schema, i) => (
-                <JsonLd key={i} schema={schema} />
-            ))}
-            <div className="container px-4 md:px-6">
-                <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 mb-24">
-                    <motion.div 
-                        className="lg:w-1/3 lg:sticky lg:top-32 h-fit"
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8 }}
-                    >
-                        <div className="inline-block rounded-full bg-primary/10 border border-primary/20 px-4 py-1.5 text-[10px] font-bold text-primary mb-6 uppercase tracking-[0.2em]">
-                            Engineering Services
-                        </div>
-                        <h1 className="text-4xl sm:text-5xl md:text-7xl font-black mb-6 md:mb-8 tracking-tighter text-gradient leading-[0.9]">Strategic <br /> Protocols.</h1>
-                        <p className="text-lg text-muted-foreground leading-relaxed">
-                            Launch, Fix, and Scale your product with institutional-grade logic.
-                            Specialized in cloud-native architectures and high-performance SaaS environments.
-                        </p>
-                    </motion.div>
+  return (
+    <div className="flex flex-col min-h-screen bg-[#F8FAF9] text-[#12201B]">
+      <JsonLd schema={serviceSchema} />
 
-                    <div className="lg:w-2/3">
-                        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-6 gap-6">
-                            {services.map((service, index) => {
-                                const Icon = service.icon;
-                                // Varied spans for Bento effect
-                                const spanClass = index % 3 === 0 ? "xl:col-span-4" : "xl:col-span-2";
-                                
-                                return (
-                                    <MotionLink 
-                                        key={index} 
-                                        href={`/services/${service.slug}`} 
-                                        className={spanClass}
-                                        initial={{ opacity: 0, y: 20 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        viewport={{ once: true }}
-                                        transition={{ duration: 0.5, delay: index * 0.1 }}
-                                    >
-                                        <SpotlightCard className="h-full group">
-                                            <CardContent className="p-8 md:p-10 flex flex-col h-full relative overflow-hidden">
-                                                {/* Decorative background elements */}
-                                                <div className="absolute -top-10 -right-10 w-32 h-32 bg-primary/5 blur-[40px] rounded-full group-hover:bg-primary/10 transition-colors" />
-                                                
-                                                <div className="h-14 w-14 rounded-xl bg-white/5 border border-white/5 flex items-center justify-center text-primary mb-8 group-hover:scale-110 group-hover:bg-primary group-hover:text-black transition-all duration-500 relative z-10">
-                                                    <Icon className="h-7 w-7" />
-                                                </div>
-                                                
-                                                <h3 className="text-xl md:text-2xl font-black mb-4 uppercase tracking-tight group-hover:text-primary transition-colors relative z-10">
-                                                    {service.title}
-                                                </h3>
-                                                <p className="text-muted-foreground leading-relaxed mb-8 md:mb-10 flex-1 text-sm md:text-base relative z-10">
-                                                    {service.description}
-                                                </p>
-                                                <div className="flex items-center text-[10px] font-black uppercase tracking-[0.2em] text-primary group opacity-60 group-hover:opacity-100 transition-all relative z-10">
-                                                    EXECUTE PROTOCOL <ArrowRight className="ml-2 h-3 w-3 transition-transform group-hover:translate-x-1" />
-                                                </div>
-                                            </CardContent>
-                                        </SpotlightCard>
-                                    </MotionLink>
-                                );
-                            })}
-                        </div>
-                    </div>
-                </div>
+      {/* Hero Header */}
+      <section className="pt-32 pb-16 md:pt-40 md:pb-20 bg-[#F8FAF9] border-b border-[#E2EAE6]">
+        <div className="container px-4 md:px-6 mx-auto max-w-5xl text-center">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#ECFDF5] border border-[#059669]/20 text-[#059669] text-xs font-mono font-semibold uppercase tracking-wider mb-6">
+            <span>Software Lifecycle Engineering</span>
+          </div>
 
-                <motion.div 
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    className="glass-card rounded-[2.5rem] p-8 md:p-20 flex flex-col items-center text-center md:text-left md:flex-row md:justify-between gap-10 md:gap-12 relative overflow-hidden"
-                >
-                    <div className="absolute inset-0 bg-primary/5 blur-[100px] pointer-events-none" />
-                    <div className="relative z-10 max-w-2xl">
-                        <div className="inline-block rounded-full bg-primary/10 border border-primary/20 px-4 py-1.5 text-[10px] font-bold text-primary mb-6 uppercase tracking-widest">
-                            Custom Solutions
-                        </div>
-                        <h2 className="text-3xl md:text-5xl font-black mb-6 tracking-tighter text-white uppercase leading-[0.9]">Need a <br className="hidden sm:block" /> custom stack?</h2>
-                        <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">We tailor our engineering to fit your industry specific scale requirements. From custom AI pipelines to deep infrastructure audits.</p>
-                    </div>
-                    <Link href="/contact" className="relative z-10 w-full md:w-auto">
-                        <Button size="lg" className="px-10 font-black uppercase tracking-widest h-16 w-full md:w-auto text-lg">
-                            Request Transmission <ArrowUpRight className="ml-2 h-6 w-6" />
-                        </Button>
-                    </Link>
-                </motion.div>
-            </div>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-[1.05] text-[#12201B] mb-6">
+            Build, Audit, Deploy & Scale <br className="hidden sm:inline" />
+            Your Software
+          </h1>
+
+          <p className="text-lg md:text-xl text-[#52615B] leading-relaxed max-w-3xl mx-auto mb-10">
+            Dazzcode is an engineering partner across your entire software lifecycle. From high-speed SaaS MVP development to deep codebase audits and high-concurrency cloud scaling.
+          </p>
+
+          <div className="flex flex-wrap justify-center gap-3 text-xs font-mono text-[#52615B]">
+            <span className="px-3 py-1 rounded-full bg-[#FFFFFF] border border-[#E2EAE6] shadow-xs">Build</span>
+            <span className="text-[#059669]">→</span>
+            <span className="px-3 py-1 rounded-full bg-[#FFFFFF] border border-[#E2EAE6] shadow-xs">Audit</span>
+            <span className="text-[#059669]">→</span>
+            <span className="px-3 py-1 rounded-full bg-[#FFFFFF] border border-[#E2EAE6] shadow-xs">Fix</span>
+            <span className="text-[#059669]">→</span>
+            <span className="px-3 py-1 rounded-full bg-[#FFFFFF] border border-[#E2EAE6] shadow-xs">Deploy</span>
+            <span className="text-[#059669]">→</span>
+            <span className="px-3 py-1 rounded-full bg-[#FFFFFF] border border-[#E2EAE6] shadow-xs">Scale</span>
+          </div>
         </div>
-    );
+      </section>
+
+      {/* Services List Grid */}
+      <section className="py-20 bg-[#FFFFFF]">
+        <div className="container px-4 md:px-6 mx-auto max-w-6xl">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service, index) => {
+              const Icon = service.icon;
+              return (
+                <div
+                  key={service.slug}
+                  className="p-8 rounded-3xl bg-[#F8FAF9] border border-[#E2EAE6] hover:border-[#059669]/50 hover:shadow-lg transition-all duration-300 flex flex-col justify-between group shadow-xs"
+                >
+                  <div>
+                    <div className="w-12 h-12 rounded-2xl bg-[#FFFFFF] border border-[#E2EAE6] flex items-center justify-center text-[#059669] mb-6 group-hover:scale-110 group-hover:bg-[#059669] group-hover:text-white transition-all duration-300 shadow-xs">
+                      <Icon className="w-6 h-6" />
+                    </div>
+
+                    <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-[#059669] font-bold block mb-2">
+                      0{index + 1} · {service.primaryKeyword}
+                    </span>
+
+                    <h2 className="text-2xl font-black text-[#12201B] tracking-tight mb-3 group-hover:text-[#059669] transition-colors">
+                      {service.title}
+                    </h2>
+
+                    <p className="text-sm text-[#52615B] leading-relaxed mb-6">
+                      {service.description}
+                    </p>
+
+                    <div className="space-y-2 mb-8">
+                      {service.solution.features.slice(0, 3).map((feat, fIndex) => (
+                        <div key={fIndex} className="flex items-start gap-2 text-xs text-[#52615B]">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-[#059669] shrink-0 mt-0.5" />
+                          <span>{feat}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <Link href={`/services/${service.slug}`} className="block">
+                    <Button
+                      variant="outline"
+                      className="w-full h-11 text-xs font-bold uppercase tracking-wider border-[#E2EAE6] bg-[#FFFFFF] hover:bg-[#059669] hover:text-white hover:border-[#059669] rounded-xl transition-colors cursor-pointer"
+                    >
+                      <span>Explore Service</span>
+                      <ArrowRight className="w-3.5 h-3.5 ml-2" />
+                    </Button>
+                  </Link>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Regional Servicing CTA Banner */}
+      <section className="py-16 bg-[#F8FAF9] border-t border-[#E2EAE6]">
+        <div className="container px-4 md:px-6 mx-auto max-w-5xl text-center">
+          <h2 className="text-2xl font-black text-[#12201B] tracking-tight mb-3">
+            Looking for Regional Software Development?
+          </h2>
+          <p className="text-sm text-[#52615B] max-w-2xl mx-auto mb-8">
+            Dazzcode is headquartered in Nairobi, Kenya, engineering software for clients across East Africa, the United Kingdom, and the United States.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link href="/kenya/saas-development-company" className="px-5 py-2.5 rounded-xl bg-[#FFFFFF] border border-[#E2EAE6] text-xs font-bold text-[#12201B] hover:border-[#059669] hover:text-[#059669] transition-colors shadow-xs">
+              Kenya SaaS Engineering
+            </Link>
+            <Link href="/east-africa/saas-development" className="px-5 py-2.5 rounded-xl bg-[#FFFFFF] border border-[#E2EAE6] text-xs font-bold text-[#12201B] hover:border-[#059669] hover:text-[#059669] transition-colors shadow-xs">
+              East Africa Regional Hub
+            </Link>
+            <Link href="/uk/saas-development" className="px-5 py-2.5 rounded-xl bg-[#FFFFFF] border border-[#E2EAE6] text-xs font-bold text-[#12201B] hover:border-[#059669] hover:text-[#059669] transition-colors shadow-xs">
+              UK SaaS Development
+            </Link>
+            <Link href="/us/saas-development" className="px-5 py-2.5 rounded-xl bg-[#FFFFFF] border border-[#E2EAE6] text-xs font-bold text-[#12201B] hover:border-[#059669] hover:text-[#059669] transition-colors shadow-xs">
+              US SaaS Development
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Bottom CTA */}
+      <section className="py-20 bg-[#12201B] text-white">
+        <div className="container px-4 md:px-6 mx-auto max-w-4xl text-center">
+          <h2 className="text-3xl sm:text-4xl font-black tracking-tight mb-4">
+            Need a Custom Architecture or Code Audit?
+          </h2>
+          <p className="text-sm md:text-base text-[#E2EAE6]/80 mb-8 max-w-xl mx-auto">
+            Discuss your requirements with our senior engineers and get a direct technical recommendation.
+          </p>
+          <Link href="/contact">
+            <Button
+              size="lg"
+              className="h-14 px-8 text-sm font-black uppercase tracking-wider bg-[#059669] text-white hover:bg-[#10B981] rounded-xl transition-all shadow-[0_4px_20px_rgba(5,150,105,0.4)] cursor-pointer"
+            >
+              Start a Project
+              <ArrowRight className="w-4 h-4 ml-2" />
+            </Button>
+          </Link>
+        </div>
+      </section>
+    </div>
+  );
 }
-
-
-

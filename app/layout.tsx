@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     default: "Dazzcode | SaaS Development Company & Custom SaaS Engineering",
     template: "%s | Dazzcode",
   },
-  description: "Dazzcode is  SaaS development company providing custom SaaS development services, SaaS MVP development, code audits, AI automation, and robust VPS server deployment.",
+  description: "Dazzcode is  SaaS development company providing SaaS development services, SaaS MVP development, code audits, AI automation, and robust VPS server deployment.",
   keywords: [
     "SaaS development company",
     "SaaS development",
@@ -68,8 +68,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://dazzcode.com",
-    title: "Dazzcode | SaaS Development Company & Custom SaaS Engineering",
-    description: "Premier SaaS development company providing custom SaaS development services, SaaS MVP development, code audits, AI automation, and robust VPS server deployment.",
+    title: "Dazzcode | SaaS Development Company & SaaS Engineering",
+    description: "Premier SaaS development company providing SaaS development services, SaaS MVP development, code audits, AI automation, and robust VPS server deployment.",
     siteName: "Dazzcode",
     images: [
       {

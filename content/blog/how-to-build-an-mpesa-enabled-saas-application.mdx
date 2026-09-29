@@ -1,0 +1,43 @@
+---
+title: "How to Build an M-Pesa Enabled SaaS Application with Daraja 2.0"
+description: "A technical architectural guide on integrating Safaricom's Daraja 2.0 API into a Next.js SaaS platform with automated STK Push, webhook listeners, and subscription reconciliations."
+publishedAt: "2026-09-20"
+author: "Lawrence Maina"
+category: "Kenya Tech"
+---
+
+M-Pesa is the undisputed payment lifeblood of the Kenyan digital economy. While international SaaS platforms rely primarily on credit cards via Stripe, building software for Kenyan businesses requires direct, reliable integration with Safaricom's **Daraja 2.0 API**.
+
+In this guide, we break down the architectural blueprint Dazzcode uses to build production-grade M-Pesa payment workflows.
+
+---
+
+## 1. The Core Architecture: STK Push (Lipa na M-Pesa Online)
+
+Rather than forcing users to manually copy Paybill numbers and account numbers into their phone SIM toolkit, an automated SaaS uses **STK Push (Express)**:
+
+1. User enters their Safaricom phone number on your web app checkout form.
+2. Next.js API route calls Daraja `mpesa/stkpush/v1/processrequest` with encrypted timestamp, passkey, and amount.
+3. A native M-Pesa PIN prompt appears instantly on the user's phone.
+4. User enters PIN and confirms transaction.
+5. Safaricom's servers trigger your webhook callback URL with transaction metadata (`MpesaReceiptNumber`, `Amount`, `ResultCode`).
+
+---
+
+## 2. Preventing Payment Drops with Webhook Idempotency
+
+Network latency can sometimes cause webhook retries. To prevent duplicate credits or race conditions:
+
+- Store every incoming `CheckoutRequestID` in PostgreSQL with a unique constraint.
+- Wrap user account upgrade logic inside an atomic SQL transaction.
+- Return HTTP 200 immediately to Safaricom upon successful signature validation.
+
+---
+
+## 3. Real-World Case Study: DazzPOS Offline-First Retail
+
+In our [DazzPOS Point-of-Sale System](/case-studies/dazzpos), we implemented background webhook queues that confirm M-Pesa payments in under 3.5 seconds directly at supermarket checkout lanes, eliminating cashier receipt fraud.
+
+---
+
+Building an M-Pesa-enabled platform? Explore our [SaaS Development Company in Kenya](/kenya/saas-development-company) or [contact our engineering team in Nairobi](/contact).

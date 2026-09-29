@@ -1,0 +1,55 @@
+---
+title: "PostgreSQL Performance Optimization for SaaS Applications"
+description: "How to eliminate slow database queries, optimize table indexes, and implement connection pooling in PostgreSQL for high-concurrency SaaS platforms."
+publishedAt: "2026-09-10"
+author: "Lawrence Maina"
+category: "Engineering"
+---
+
+As your SaaS application scales from 100 to 10,000+ active users, your PostgreSQL database will encounter scaling bottlenecks unless query paths and connection pools are engineered correctly.
+
+In this deep dive, we outline the primary techniques our platform engineers use during [SaaS Scaling & Optimization engagements](/services/saas-scaling) to achieve sub-50ms API response times.
+
+---
+
+## 1. Using EXPLAIN (ANALYZE, BUFFERS)
+
+Never guess why a query is slow. Inspect the actual query execution plan:
+
+```sql
+EXPLAIN (ANALYZE, BUFFERS) 
+SELECT * FROM orders 
+WHERE tenant_id = 'org_123' 
+ORDER BY created_at DESC 
+LIMIT 50;
+```
+
+Look for `Seq Scan` (sequential scans reading every single table row from disk) and replace them with targeted `Index Scan` paths.
+
+## 2. Composite & Partial Indexes for Multi-Tenant Data
+
+In multi-tenant SaaS platforms, almost all queries filter by `tenant_id` first. Standard single-column indexes on `created_at` or `status` are inefficient:
+
+```sql
+-- Optimal composite index for tenant-scoped feeds
+CREATE INDEX idx_orders_tenant_created 
+ON orders (tenant_id, created_at DESC);
+```
+
+For status flags (like unread notifications or pending payments), use partial indexes to save 90% of index storage:
+
+```sql
+CREATE INDEX idx_unprocessed_invoices 
+ON invoices (tenant_id, created_at) 
+WHERE status = 'pending';
+```
+
+## 3. Connection Pooling with PgBouncer
+
+Serverless runtimes (like Next.js API routes or AWS Lambda) spin up hundreds of transient connections that quickly exhaust PostgreSQL's `max_connections` limit. 
+
+Deploying **PgBouncer** in transaction pooling mode allows 10,000+ client requests to reuse 50 dedicated database connections seamlessly.
+
+---
+
+Facing slow database queries or concurrency deadlocks? Learn about our [SaaS Scaling Services](/services/saas-scaling) or [book a performance audit with Dazzcode](/contact).
