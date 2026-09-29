@@ -791,7 +791,7 @@ export const services: ServiceDetail[] = [
 export const caseStudies: CaseStudyDetail[] = [
     {
         slug: "dazzpos",
-        title: "DazzPOS: High-Performance Offline-First Retail POS & Sync Engine",
+        title: "DazzPOS: Retail POS ",
         client: "Multi-Store Retail & Supermarket Networks (Kenya & East Africa)",
         category: "SaaS Architecture & Offline-First POS",
         description: "How we architected a resilient, offline-first Point of Sale application capable of processing high-volume barcode transactions with zero downtime during internet outages, syncing automatically to PostgreSQL via M-Pesa automated webhooks.",
