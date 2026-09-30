@@ -208,7 +208,7 @@ export const services: ServiceDetail[] = [
             "how-to-hire-a-saas-development-agency"
         ],
         regionalLinks: [
-            { label: "SaaS Development in Kenya", href: "/kenya/saas-development-company", region: "Kenya" },
+            { label: "SaaS Development in Kenya", href: "/ke/saas-development-company", region: "Kenya" },
             { label: "SaaS Development in East Africa", href: "/east-africa/saas-development", region: "East Africa" },
             { label: "SaaS Development in the UK", href: "/uk/saas-development", region: "United Kingdom" },
             { label: "SaaS Development in the US", href: "/us/saas-development", region: "United States" }
@@ -305,7 +305,7 @@ export const services: ServiceDetail[] = [
             "how-long-does-it-take-to-build-a-saas"
         ],
         regionalLinks: [
-            { label: "MVP Development in Kenya", href: "/kenya/mvp-development", region: "Kenya" },
+            { label: "MVP Development in Kenya", href: "/ke/mvp-development", region: "Kenya" },
             { label: "SaaS Development in the UK", href: "/uk/saas-development", region: "United Kingdom" },
             { label: "SaaS Development in the US", href: "/us/saas-development", region: "United States" }
         ]
@@ -596,7 +596,7 @@ export const services: ServiceDetail[] = [
             "postgresql-performance-for-saas"
         ],
         regionalLinks: [
-            { label: "SaaS Development in Kenya", href: "/kenya/saas-development-company", region: "Kenya" },
+            { label: "SaaS Development in Kenya", href: "/ke/saas-development-company", region: "Kenya" },
             { label: "SaaS Scaling in the UK", href: "/uk/saas-scaling", region: "United Kingdom" }
         ]
     },
@@ -689,8 +689,8 @@ export const services: ServiceDetail[] = [
             "how-to-hire-a-saas-development-agency"
         ],
         regionalLinks: [
-            { label: "Web Development Company in Kenya", href: "/kenya/web-development-company", region: "Kenya" },
-            { label: "Software Development Company in Kenya", href: "/kenya/software-development-company", region: "Kenya" }
+            { label: "Web Development Company in Kenya", href: "/ke/web-development-company", region: "Kenya" },
+            { label: "Software Development Company in Kenya", href: "/ke/software-development-company", region: "Kenya" }
         ]
     },
     {
@@ -781,7 +781,7 @@ export const services: ServiceDetail[] = [
             "how-much-does-saas-development-cost"
         ],
         regionalLinks: [
-            { label: "SaaS Development in Kenya", href: "/kenya/saas-development-company", region: "Kenya" },
+            { label: "SaaS Development in Kenya", href: "/ke/saas-development-company", region: "Kenya" },
             { label: "SaaS Development in the UK", href: "/uk/saas-development", region: "United Kingdom" },
             { label: "SaaS Development in the US", href: "/us/saas-development", region: "United States" }
         ]

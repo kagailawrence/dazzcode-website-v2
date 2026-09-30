@@ -183,7 +183,7 @@ export default function ServicesOverviewPage() {
             Dazzcode is headquartered in Nairobi, Kenya, engineering software for clients across East Africa, the United Kingdom, and the United States.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/kenya/saas-development-company" className="px-5 py-2.5 rounded-xl bg-[#FFFFFF] border border-[#E2EAE6] text-xs font-bold text-[#12201B] hover:border-[#059669] hover:text-[#059669] transition-colors shadow-xs">
+            <Link href="/ke/saas-development-company" className="px-5 py-2.5 rounded-xl bg-[#FFFFFF] border border-[#E2EAE6] text-xs font-bold text-[#12201B] hover:border-[#059669] hover:text-[#059669] transition-colors shadow-xs">
               Kenya SaaS Engineering
             </Link>
             <Link href="/east-africa/saas-development" className="px-5 py-2.5 rounded-xl bg-[#FFFFFF] border border-[#E2EAE6] text-xs font-bold text-[#12201B] hover:border-[#059669] hover:text-[#059669] transition-colors shadow-xs">

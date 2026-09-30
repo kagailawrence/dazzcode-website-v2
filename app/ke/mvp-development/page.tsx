@@ -28,12 +28,12 @@ export const metadata: Metadata = {
     "Nairobi startup development"
   ],
   alternates: {
-    canonical: "https://dazzcode.com/kenya/mvp-development",
+    canonical: "https://dazzcode.com/ke/mvp-development",
   },
   openGraph: {
     title: "Startup MVP Development in Kenya | Dazzcode",
     description: "Launch your startup MVP in Kenya in 4 to 6 weeks. Lean engineering, M-Pesa payment integration, and 100% intellectual property ownership.",
-    url: "https://dazzcode.com/kenya/mvp-development",
+    url: "https://dazzcode.com/ke/mvp-development",
     siteName: "Dazzcode",
     images: [
       {
@@ -52,7 +52,7 @@ export default function KenyaMVPPage() {
     "@graph": [
       {
         "@type": "Service",
-        "@id": "https://dazzcode.com/kenya/mvp-development#service",
+        "@id": "https://dazzcode.com/ke/mvp-development#service",
         name: "Startup MVP Development in Kenya",
         description: "Accelerated Minimum Viable Product (MVP) development for Kenyan startups and founders. Turn validated ideas into market-ready software in 4 to 6 weeks.",
         provider: {
@@ -73,7 +73,7 @@ export default function KenyaMVPPage() {
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://dazzcode.com/kenya/mvp-development#breadcrumb",
+        "@id": "https://dazzcode.com/ke/mvp-development#breadcrumb",
         itemListElement: [
           {
             "@type": "ListItem",
@@ -85,13 +85,13 @@ export default function KenyaMVPPage() {
             "@type": "ListItem",
             position: 2,
             name: "Kenya",
-            item: "https://dazzcode.com/kenya",
+            item: "https://dazzcode.com/ke",
           },
           {
             "@type": "ListItem",
             position: 3,
             name: "MVP Development",
-            item: "https://dazzcode.com/kenya/mvp-development",
+            item: "https://dazzcode.com/ke/mvp-development",
           },
         ],
       },
@@ -108,7 +108,7 @@ export default function KenyaMVPPage() {
           <nav className="flex items-center gap-2 text-xs font-mono text-[#52615B] mb-8" aria-label="Breadcrumb">
             <Link href="/" className="hover:text-[#059669] transition-colors">Home</Link>
             <span>/</span>
-            <Link href="/kenya" className="hover:text-[#059669] transition-colors">Kenya</Link>
+            <Link href="/ke" className="hover:text-[#059669] transition-colors">Kenya</Link>
             <span>/</span>
             <span className="text-[#12201B] font-semibold">MVP Development</span>
           </nav>

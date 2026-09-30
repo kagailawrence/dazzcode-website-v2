@@ -1,6 +1,40 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  async headers() {
+    return [
+      {
+        source: "/:path*",
+        headers: [
+          {
+            key: "X-Robots-Tag",
+            value: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+          },
+          {
+            key: "X-Content-Type-Options",
+            value: "nosniff",
+          },
+          {
+            key: "X-Frame-Options",
+            value: "SAMEORIGIN",
+          },
+          {
+            key: "Referrer-Policy",
+            value: "strict-origin-when-cross-origin",
+          },
+        ],
+      },
+      {
+        source: "/api/:path*",
+        headers: [
+          {
+            key: "X-Robots-Tag",
+            value: "noindex, nofollow",
+          },
+        ],
+      },
+    ];
+  },
   async redirects() {
     return [
       // Legacy service routes 301 redirects
@@ -78,6 +112,17 @@ const nextConfig: NextConfig = {
       {
         source: "/products/trading-bot-systems",
         destination: "/case-studies",
+        permanent: true,
+      },
+      // Redirect legacy /kenya paths to /ke
+      {
+        source: "/kenya",
+        destination: "/ke",
+        permanent: true,
+      },
+      {
+        source: "/kenya/:path*",
+        destination: "/ke/:path*",
         permanent: true,
       },
     ];

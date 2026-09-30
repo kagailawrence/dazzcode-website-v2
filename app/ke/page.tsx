@@ -29,12 +29,12 @@ export const metadata: Metadata = {
     "M-Pesa API integration developers"
   ],
   alternates: {
-    canonical: "https://dazzcode.com/kenya",
+    canonical: "https://dazzcode.com/ke",
   },
   openGraph: {
     title: "SaaS & Software Development in Kenya | Dazzcode",
     description: "Kenya-based engineering team building high-performance SaaS, custom software, and M-Pesa integrated applications for Kenyan and global businesses.",
-    url: "https://dazzcode.com/kenya",
+    url: "https://dazzcode.com/ke",
     siteName: "Dazzcode",
     images: [
       {
@@ -53,10 +53,10 @@ export default function KenyaHubPage() {
     "@graph": [
       {
         "@type": "LocalBusiness",
-        "@id": "https://dazzcode.com/kenya#business",
+        "@id": "https://dazzcode.com/ke#business",
         name: "Dazzcode Kenya",
         description: "Premier software development and SaaS engineering company headquartered in Nairobi, Kenya.",
-        url: "https://dazzcode.com/kenya",
+        url: "https://dazzcode.com/ke",
         address: {
           "@type": "PostalAddress",
           addressLocality: "Nairobi",
@@ -70,7 +70,7 @@ export default function KenyaHubPage() {
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://dazzcode.com/kenya#breadcrumb",
+        "@id": "https://dazzcode.com/ke#breadcrumb",
         itemListElement: [
           {
             "@type": "ListItem",
@@ -82,7 +82,7 @@ export default function KenyaHubPage() {
             "@type": "ListItem",
             position: 2,
             name: "Kenya",
-            item: "https://dazzcode.com/kenya",
+            item: "https://dazzcode.com/ke",
           },
         ],
       },
@@ -92,25 +92,25 @@ export default function KenyaHubPage() {
   const pages = [
     {
       title: "SaaS Development Company in Kenya",
-      href: "/kenya/saas-development-company",
+      href: "/ke/saas-development-company",
       keyword: "SaaS development company Kenya",
       desc: "Architecting multi-tenant, cloud-native SaaS platforms with M-Pesa billing, scalable PostgreSQL, and institutional codebases.",
     },
     {
       title: "Custom Software Development Company",
-      href: "/kenya/software-development-company",
+      href: "/ke/software-development-company",
       keyword: "software development company Kenya",
       desc: "Replacing manual spreadsheets and disjointed tools with tailored operational software built for Kenyan enterprise workflows.",
     },
     {
       title: "Web Application Development Company",
-      href: "/kenya/web-development-company",
+      href: "/ke/web-development-company",
       keyword: "web development company Kenya",
       desc: "High-performance business web applications, customer self-service portals, and e-commerce integrations beyond basic websites.",
     },
     {
       title: "Startup MVP Development in Kenya",
-      href: "/kenya/mvp-development",
+      href: "/ke/mvp-development",
       keyword: "MVP development Kenya",
       desc: "Fast 4–6 week production-ready MVP launches for Kenyan and East African founders validating new digital business models.",
     },

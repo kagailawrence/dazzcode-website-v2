@@ -27,12 +27,12 @@ export const metadata: Metadata = {
     "Next.js web developers Kenya"
   ],
   alternates: {
-    canonical: "https://dazzcode.com/kenya/web-development-company",
+    canonical: "https://dazzcode.com/ke/web-development-company",
   },
   openGraph: {
     title: "Web Application & Web Development Company in Kenya | Dazzcode",
     description: "Engineer interactive, high-performance web applications and business portals with Kenya's leading full-stack developers.",
-    url: "https://dazzcode.com/kenya/web-development-company",
+    url: "https://dazzcode.com/ke/web-development-company",
     siteName: "Dazzcode",
     images: [
       {
@@ -51,7 +51,7 @@ export default function KenyaWebDevelopmentPage() {
     "@graph": [
       {
         "@type": "Service",
-        "@id": "https://dazzcode.com/kenya/web-development-company#service",
+        "@id": "https://dazzcode.com/ke/web-development-company#service",
         name: "Web Development Company in Kenya",
         description: "Full-stack web application development services in Kenya. Engineering custom client portals, internal dashboards, and transactional web apps.",
         provider: {
@@ -72,7 +72,7 @@ export default function KenyaWebDevelopmentPage() {
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://dazzcode.com/kenya/web-development-company#breadcrumb",
+        "@id": "https://dazzcode.com/ke/web-development-company#breadcrumb",
         itemListElement: [
           {
             "@type": "ListItem",
@@ -84,13 +84,13 @@ export default function KenyaWebDevelopmentPage() {
             "@type": "ListItem",
             position: 2,
             name: "Kenya",
-            item: "https://dazzcode.com/kenya",
+            item: "https://dazzcode.com/ke",
           },
           {
             "@type": "ListItem",
             position: 3,
             name: "Web Development Company",
-            item: "https://dazzcode.com/kenya/web-development-company",
+            item: "https://dazzcode.com/ke/web-development-company",
           },
         ],
       },
@@ -107,7 +107,7 @@ export default function KenyaWebDevelopmentPage() {
           <nav className="flex items-center gap-2 text-xs font-mono text-[#52615B] mb-8" aria-label="Breadcrumb">
             <Link href="/" className="hover:text-[#059669] transition-colors">Home</Link>
             <span>/</span>
-            <Link href="/kenya" className="hover:text-[#059669] transition-colors">Kenya</Link>
+            <Link href="/ke" className="hover:text-[#059669] transition-colors">Kenya</Link>
             <span>/</span>
             <span className="text-[#12201B] font-semibold">Web Development</span>
           </nav>

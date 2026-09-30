@@ -45,7 +45,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.9,
         },
         {
-            url: `${baseUrl}/kenya`,
+            url: `${baseUrl}/ke`,
             lastModified,
             changeFrequency: 'weekly',
             priority: 0.9,
@@ -60,28 +60,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.9,
     }));
 
-    // 3. Regional Kenya Landing Pages
+    // 3. Regional Kenya Landing Pages (KE)
     const kenyaPages: MetadataRoute.Sitemap = [
         {
-            url: `${baseUrl}/kenya/saas-development-company`,
+            url: `${baseUrl}/ke/saas-development-company`,
             lastModified,
             changeFrequency: 'monthly',
             priority: 0.88,
         },
         {
-            url: `${baseUrl}/kenya/software-development-company`,
+            url: `${baseUrl}/ke/software-development-company`,
             lastModified,
             changeFrequency: 'monthly',
             priority: 0.85,
         },
         {
-            url: `${baseUrl}/kenya/web-development-company`,
+            url: `${baseUrl}/ke/web-development-company`,
             lastModified,
             changeFrequency: 'monthly',
             priority: 0.85,
         },
         {
-            url: `${baseUrl}/kenya/mvp-development`,
+            url: `${baseUrl}/ke/mvp-development`,
             lastModified,
             changeFrequency: 'monthly',
             priority: 0.85,

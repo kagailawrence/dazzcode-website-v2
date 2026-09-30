@@ -359,7 +359,7 @@ export default function AboutPage() {
                 Whether implementing international subscription billing with Stripe, optimizing multi-tenant databases for EU/US clients, or engineering instant M-Pesa STK Push workflows and offline-first POS systems in Africa, our engineering team brings battle-tested expertise to every market.
               </p>
               <div className="pt-2 flex flex-wrap gap-3 text-xs font-mono text-[#0F172A]">
-                <Link href="/kenya" className="inline-flex items-center gap-1 text-[#059669] font-bold hover:underline">
+                <Link href="/ke" className="inline-flex items-center gap-1 text-[#059669] font-bold hover:underline">
                   Kenya Hub <ArrowUpRight className="w-3.5 h-3.5" />
                 </Link>
                 <Link href="/east-africa/saas-development" className="inline-flex items-center gap-1 text-[#059669] font-bold hover:underline">
