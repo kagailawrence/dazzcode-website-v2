@@ -14,11 +14,12 @@ export async function POST(req: Request) {
             );
         }
 
-        const smtpHost = process.env.SMTP_HOST || 'smtp.gmail.com';
+        const smtpHost = process.env.SMTP_HOST?.trim() || 'smtp.gmail.com';
         const smtpPort = Number(process.env.SMTP_PORT) || 587;
-        const smtpUser = process.env.SMTP_USER;
-        const smtpPass = process.env.SMTP_PASS;
-        const recipientEmail = process.env.CONTACT_EMAIL || smtpUser || 'info@dazzcode.com';
+        const smtpUser = process.env.SMTP_USER?.trim();
+        // Remove any spaces or accidental quotes from the app password
+        const smtpPass = process.env.SMTP_PASS?.trim().replace(/\s+/g, '').replace(/['"]/g, '');
+        const recipientEmail = process.env.CONTACT_EMAIL?.trim() || smtpUser || 'info@dazzcode.com';
 
         // Check if SMTP is configured
         if (!smtpUser || !smtpPass) {
@@ -43,15 +44,26 @@ export async function POST(req: Request) {
         }
 
         // Configure Nodemailer Transporter
-        const transporter = nodemailer.createTransport({
-            host: smtpHost,
-            port: smtpPort,
-            secure: smtpPort === 465 || process.env.SMTP_SECURE === 'true',
-            auth: {
-                user: smtpUser,
-                pass: smtpPass,
-            },
-        });
+        const isGmail = smtpHost.includes('gmail.com');
+        const transporter = nodemailer.createTransport(
+            isGmail
+                ? {
+                      service: 'gmail',
+                      auth: {
+                          user: smtpUser,
+                          pass: smtpPass,
+                      },
+                  }
+                : {
+                      host: smtpHost,
+                      port: smtpPort,
+                      secure: smtpPort === 465 || process.env.SMTP_SECURE === 'true',
+                      auth: {
+                          user: smtpUser,
+                          pass: smtpPass,
+                      },
+                  }
+        );
 
         // Email layout
         const mailOptions = {
@@ -126,7 +138,7 @@ ${message}
     } catch (error: any) {
         console.error('Contact API Error:', error);
         return NextResponse.json(
-            { error: error.message || 'Failed to send email. Please try again later.' },
+            { error: error.message || 'Failed to send email. Please check your credentials.' },
             { status: 500 }
         );
     }
