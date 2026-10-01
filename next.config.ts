@@ -64,6 +64,11 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/services/saas-scaling-performance-optimization",
+        destination: "/services/saas-scaling",
+        permanent: true,
+      },
+      {
         source: "/services/saas-api-development",
         destination: "/services/web-application-development",
         permanent: true,

@@ -26,7 +26,12 @@ interface ServicePageProps {
 }
 
 export async function generateStaticParams() {
-  const staticSlugs = ["custom-saas-development", "saas-code-audit", "saas-mvp-development"];
+  const staticSlugs = [
+    "custom-saas-development",
+    "saas-code-audit",
+    "saas-mvp-development",
+    "saas-scaling"
+  ];
   return services
     .filter((service) => !staticSlugs.includes(service.slug))
     .map((service) => ({
