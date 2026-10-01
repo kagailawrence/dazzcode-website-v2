@@ -73,10 +73,6 @@ Existing Store: ${formData.hasExistingStore ? "Yes (" + formData.storeUrl + ")" 
       <div className="absolute top-0 right-0 w-72 h-72 bg-[#059669]/5 rounded-full blur-3xl -z-10 pointer-events-none" />
 
       <div className="mb-8 border-b border-[#E2EAE6] pb-6">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#ECFDF5] border border-[#059669]/20 text-[#059669] text-xs font-mono font-bold tracking-wider uppercase mb-3">
-          <Sparkles className="w-3.5 h-3.5" />
-          <span>Transparent Scoping & Rapid Response</span>
-        </div>
         <h3 className="text-2xl sm:text-3xl font-black text-[#12201B] tracking-tight">
           Tell Us About Your WooCommerce Project
         </h3>
@@ -98,7 +94,7 @@ Existing Store: ${formData.hasExistingStore ? "Yes (" + formData.storeUrl + ")" 
           </p>
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
             <a
-              href={`https://wa.me/254716075199?text=${whatsappMessage}`}
+              href={`https://wa.me/254740938029?text=${whatsappMessage}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#25D366] hover:bg-[#1EBE5D] text-white text-xs font-bold uppercase tracking-wider transition-all shadow-sm"
