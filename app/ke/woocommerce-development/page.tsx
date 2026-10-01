@@ -37,9 +37,9 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "WooCommerce Development Kenya | Ecommerce Website Development | Dazzcode",
+  title: "Ecommerce Website Development in Kenya | Dazzcode",
   description:
-    "WooCommerce development in Kenya for businesses, online sellers and dropshippers. Build, customize, maintain and optimize your WooCommerce store with Dazzcode.",
+    "WooCommerce development in Kenya for businesses, online sellers and dropshippers. Build, customize, maintain and optimize your WooCommerce store.",
   keywords: [
     "WooCommerce Development Kenya",
     "WooCommerce Kenya",
