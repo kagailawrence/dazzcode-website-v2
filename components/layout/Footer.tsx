@@ -53,8 +53,8 @@ export function Footer() {
             </h3>
             <ul className="space-y-2.5 text-xs text-[#52615B] font-medium">
               <li>
-                <Link href="/services/saas-development" className="hover:text-[#059669] transition-colors">
-                  SaaS Development
+                <Link href="/services/custom-saas-development" className="hover:text-[#059669] transition-colors">
+                  Custom SaaS Development
                 </Link>
               </li>
               <li>
@@ -63,7 +63,7 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/services/code-audit" className="hover:text-[#059669] transition-colors">
+                <Link href="/services/saas-code-audit" className="hover:text-[#059669] transition-colors">
                   SaaS Code Audit
                 </Link>
               </li>

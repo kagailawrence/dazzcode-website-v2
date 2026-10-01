@@ -37,7 +37,7 @@ const serviceSlides: ServiceSlide[] = [
     shortDesc: "End-to-end custom SaaS development & scalable architecture.",
     fullDesc: "As a dedicated SaaS development company, we build multi-tenant SaaS platforms with strict type-safety, subscription billing, and institutional architecture.",
     highlights: ["Multi-Tenant Architecture", "Strict TypeScript & Next.js", "Subscription Billing"],
-    href: "/services/saas-development",
+    href: "/services/custom-saas-development",
     icon: Layers,
   },
   {
@@ -57,7 +57,7 @@ const serviceSlides: ServiceSlide[] = [
     shortDesc: "Technical code audit, security reviews & architecture analysis.",
     fullDesc: "Comprehensive codebase audits to eliminate technical debt, profile slow PostgreSQL queries, and prepare for investor due diligence.",
     highlights: ["Deep Static & Query Profiling", "OWASP Security Check", "Prioritized Roadmap"],
-    href: "/services/code-audit",
+    href: "/services/saas-code-audit",
     icon: ShieldAlert,
   },
   {

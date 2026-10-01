@@ -45,7 +45,17 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/services/saas-audit",
-        destination: "/services/code-audit",
+        destination: "/services/saas-code-audit",
+        permanent: true,
+      },
+      {
+        source: "/services/code-audit",
+        destination: "/services/saas-code-audit",
+        permanent: true,
+      },
+      {
+        source: "/services/software-code-audit",
+        destination: "/services/saas-code-audit",
         permanent: true,
       },
       {
@@ -65,7 +75,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/services/maintenance-scaling",
-        destination: "/services/code-audit",
+        destination: "/services/saas-code-audit",
         permanent: true,
       },
       {
@@ -75,12 +85,27 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/services/technical-seo",
-        destination: "/services/saas-development",
+        destination: "/services/custom-saas-development",
+        permanent: true,
+      },
+      {
+        source: "/services/saas-development",
+        destination: "/services/custom-saas-development",
+        permanent: true,
+      },
+      {
+        source: "/services/saas-development-company",
+        destination: "/services/custom-saas-development",
+        permanent: true,
+      },
+      {
+        source: "/services/saas-product-development",
+        destination: "/services/custom-saas-development",
         permanent: true,
       },
       {
         source: "/services/fractional-cto",
-        destination: "/services/code-audit",
+        destination: "/services/saas-code-audit",
         permanent: true,
       },
       {

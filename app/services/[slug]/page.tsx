@@ -26,9 +26,12 @@ interface ServicePageProps {
 }
 
 export async function generateStaticParams() {
-  return services.map((service) => ({
-    slug: service.slug,
-  }));
+  const staticSlugs = ["custom-saas-development", "saas-code-audit", "saas-mvp-development"];
+  return services
+    .filter((service) => !staticSlugs.includes(service.slug))
+    .map((service) => ({
+      slug: service.slug,
+    }));
 }
 
 export async function generateMetadata({ params }: ServicePageProps): Promise<Metadata> {
@@ -46,25 +49,25 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
     canonical: `https://dazzcode.com/services/${slug}`,
   };
 
-  if (slug === "saas-development") {
+  if (slug === "custom-saas-development" || slug === "saas-development") {
     alternates = {
-      canonical: "https://dazzcode.com/services/saas-development",
+      canonical: "https://dazzcode.com/services/custom-saas-development",
       languages: {
-        "en": "https://dazzcode.com/services/saas-development",
+        "en": "https://dazzcode.com/services/custom-saas-development",
         "en-KE": "https://dazzcode.com/ke/saas-development-company",
         "en-GB": "https://dazzcode.com/uk/saas-development",
         "en-US": "https://dazzcode.com/us/saas-development",
-        "x-default": "https://dazzcode.com/services/saas-development",
+        "x-default": "https://dazzcode.com/services/custom-saas-development",
       },
     };
-  } else if (slug === "code-audit") {
+  } else if (slug === "saas-code-audit" || slug === "code-audit") {
     alternates = {
-      canonical: "https://dazzcode.com/services/code-audit",
+      canonical: "https://dazzcode.com/services/saas-code-audit",
       languages: {
-        "en": "https://dazzcode.com/services/code-audit",
+        "en": "https://dazzcode.com/services/saas-code-audit",
         "en-GB": "https://dazzcode.com/uk/code-audit",
         "en-US": "https://dazzcode.com/us/code-audit",
-        "x-default": "https://dazzcode.com/services/code-audit",
+        "x-default": "https://dazzcode.com/services/saas-code-audit",
       },
     };
   } else if (slug === "saas-scaling") {

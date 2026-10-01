@@ -117,23 +117,23 @@ export interface CaseStudyDetail {
 
 export const services: ServiceDetail[] = [
     {
-        slug: "saas-development",
-        title: "SaaS Development Services",
-        shortTitle: "SaaS Development",
-        tagline: "End-to-End SaaS Engineering for Startups & Scaleups",
-        description: "We architect and engineer scalable, multi-tenant SaaS platforms with strict TypeScript type-safety, robust subscription billing, and cloud-native performance.",
+        slug: "custom-saas-development",
+        title: "Custom SaaS Development",
+        shortTitle: "Custom SaaS",
+        tagline: "End-to-End Custom SaaS Engineering for Startups & Scaleups",
+        description: "We architect and engineer custom, multi-tenant SaaS platforms at dazzcode.",
         icon: Layout,
-        primaryKeyword: "SaaS development company",
+        primaryKeyword: "custom SaaS development company",
         secondaryKeywords: [
-            "SaaS development",
-            "SaaS development services",
-            "SaaS product development",
             "custom SaaS development",
+            "custom SaaS development services",
+            "SaaS development company",
+            "SaaS product development",
             "SaaS application development"
         ],
         hero: {
-            headline: "Custom SaaS Development Company",
-            subheadline: "We engineer institutional-grade, multi-tenant SaaS platforms from discovery to launch. Built with Next.js, TypeScript, PostgreSQL, and scalable cloud architectures.",
+            headline: "Custom SaaS Development for Products Built to Grow",
+            subheadline: "We design and build custom SaaS products around your customers, business model and workflows — from the first release to a platform that can grow with your users.",
             cta: "Start Your SaaS Project",
             ctaHref: "/contact"
         },
@@ -311,25 +311,25 @@ export const services: ServiceDetail[] = [
         ]
     },
     {
-        slug: "code-audit",
-        title: "SaaS Code Audit & Technical Due Diligence",
+        slug: "saas-code-audit",
+        title: "SaaS Code Audit & Architecture Review",
         shortTitle: "Code Audit",
         tagline: "Identify Technical Debt, Security Risks & Scaling Bottlenecks",
         description: "Comprehensive software codebase and architecture audits for founders, CTOs, and investors. We inspect code quality, database performance, security, and scalability.",
         icon: ShieldAlert,
         primaryKeyword: "SaaS code audit",
         secondaryKeywords: [
-            "code audit",
+            "SaaS architecture review",
+            "SaaS code audit services",
             "SaaS technical audit",
             "codebase audit",
             "software code audit",
-            "software architecture audit",
-            "technical debt audit"
+            "SaaS security audit"
         ],
         hero: {
-            headline: "SaaS Code Audit & Architecture Review",
-            subheadline: "Untangle spaghetti code, uncover hidden security vulnerabilities, and fix slow database bottlenecks. We deliver deep technical audits with actionable remediation roadmaps.",
-            cta: "Book a Technical Review",
+            headline: "Understand Your SaaS Before You Build More",
+            subheadline: "We inspect your existing codebase, architecture, database, APIs, security, performance and technical debt to show you what needs attention — and what doesn't.",
+            cta: "Request a SaaS Audit",
             ctaHref: "/contact"
         },
         problems: {
