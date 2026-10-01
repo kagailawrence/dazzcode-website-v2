@@ -115,6 +115,8 @@ export default function Home() {
         },
         sameAs: [
           "https://twitter.com/dazzcode",
+          "https://instagram.com/dazzcode",
+          "https://facebook.com/dazzcodeofficial",
           "https://github.com/dazzcode",
           "https://linkedin.com/company/dazzcode",
         ],

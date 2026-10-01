@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Github, Twitter, Linkedin, ArrowUpRight, Globe } from "lucide-react";
+import { Github, Twitter, Linkedin, Instagram, Facebook, ArrowUpRight, Globe } from "lucide-react";
 import Dazzcode from "@/components/ui/dazzcode-logo";
 
 export function Footer() {
@@ -15,15 +15,33 @@ export function Footer() {
             <p className="text-sm text-[#52615B] max-w-sm leading-relaxed">
               Dazzcode is a software engineering company based in Kenya, building, auditing, deploying, and scaling SaaS products and web applications for businesses across East Africa, the UK, and the US.
             </p>
-            <div className="flex gap-3 pt-2">
+            <div className="flex flex-wrap gap-2 pt-2">
               <Link
                 href="https://twitter.com/dazzcode"
                 target="_blank"
                 rel="noreferrer"
                 className="text-[#52615B] hover:text-[#059669] transition-colors p-2 rounded-lg hover:bg-[#F1F5F3]"
-                aria-label="Twitter"
+                aria-label="Twitter / X"
               >
                 <Twitter className="h-4 w-4" />
+              </Link>
+              <Link
+                href="https://instagram.com/dazzcode"
+                target="_blank"
+                rel="noreferrer"
+                className="text-[#52615B] hover:text-[#059669] transition-colors p-2 rounded-lg hover:bg-[#F1F5F3]"
+                aria-label="Instagram"
+              >
+                <Instagram className="h-4 w-4" />
+              </Link>
+              <Link
+                href="https://facebook.com/dazzcodeofficial"
+                target="_blank"
+                rel="noreferrer"
+                className="text-[#52615B] hover:text-[#059669] transition-colors p-2 rounded-lg hover:bg-[#F1F5F3]"
+                aria-label="Facebook"
+              >
+                <Facebook className="h-4 w-4" />
               </Link>
               <Link
                 href="https://github.com/dazzcode"
@@ -147,7 +165,7 @@ export function Footer() {
 
         {/* Bottom copyright and legal */}
         <div className="mt-16 border-t border-[#E2EAE6] pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-[#52615B] font-mono">
-          <p>&copy; {new Date().getFullYear()} Dazzcode. All rights reserved. Based in Nairobi, Kenya.</p>
+          <p>&copy; {new Date().getFullYear()} Dazzcode. All rights reserved</p>
           <div className="flex gap-6">
             <Link href="/privacy" className="hover:text-[#059669] transition-colors">
               Privacy Policy

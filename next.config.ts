@@ -89,6 +89,26 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/services/ai-business-workflow-automation",
+        destination: "/services/ai-automation",
+        permanent: true,
+      },
+      {
+        source: "/services/ai-workflow-automation",
+        destination: "/services/ai-automation",
+        permanent: true,
+      },
+      {
+        source: "/services/business-workflow-automation",
+        destination: "/services/ai-automation",
+        permanent: true,
+      },
+      {
+        source: "/services/business-automation",
+        destination: "/services/ai-automation",
+        permanent: true,
+      },
+      {
         source: "/services/maintenance-scaling",
         destination: "/services/saas-code-audit",
         permanent: true,
