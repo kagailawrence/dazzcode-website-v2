@@ -48,7 +48,7 @@ export default function NotFound() {
       />
 
       <div className="container max-w-3xl mx-auto text-center relative z-10">
-        {/* Eyebrow Badge */}
+  
      
 
         {/* 404 Large Display */}

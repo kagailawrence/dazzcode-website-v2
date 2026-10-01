@@ -285,11 +285,7 @@ export default function SaasScalingPage() {
             <span className="text-[#12201B] font-semibold">SaaS Scaling & Performance</span>
           </nav>
 
-          {/* Eyebrow */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#ECFDF5] border border-[#A7F3D0] text-[#059669] text-xs font-mono font-bold uppercase tracking-wider mb-6">
-            <Activity className="w-3.5 h-3.5" />
-            <span>SAAS SCALING & PERFORMANCE</span>
-          </div>
+       
 
           {/* Main H1 */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-[1.05] text-[#12201B] mb-4">

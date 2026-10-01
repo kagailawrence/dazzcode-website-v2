@@ -69,6 +69,16 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/services/saas-vps-deployment",
+        destination: "/services/vps-deployment",
+        permanent: true,
+      },
+      {
+        source: "/services/custom-web-application-development",
+        destination: "/services/web-application-development",
+        permanent: true,
+      },
+      {
         source: "/services/saas-api-development",
         destination: "/services/web-application-development",
         permanent: true,

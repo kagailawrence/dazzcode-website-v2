@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-export default function SaasScalingLeadForm() {
+export default function CustomWebApplicationLeadForm() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -25,7 +25,7 @@ export default function SaasScalingLeadForm() {
   const [errorMessage, setErrorMessage] = useState("");
 
   const whatsappMessage = encodeURIComponent(
-    "Hello Dazzcode! I would like to request a SaaS Scaling & Performance Optimization review for our application."
+    "Hello Dazzcode! I would like to inquire about building a custom web application for our business."
   );
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -41,8 +41,8 @@ export default function SaasScalingLeadForm() {
           name: formData.name,
           email: formData.email,
           company: formData.phone || "Not provided",
-          message: `Phone / WhatsApp: ${formData.phone}\n\nSaaS Scaling / Performance Details:\n${formData.message}`,
-          source: "SaaS Scaling & Performance Page",
+          message: `Phone / WhatsApp: ${formData.phone}\n\nCustom Web App Requirements:\n${formData.message}`,
+          source: "Custom Web Application Development Service Page",
         }),
       });
 
@@ -115,7 +115,7 @@ export default function SaasScalingLeadForm() {
               Message Received!
             </h4>
             <p className="text-sm text-[#52615B] max-w-sm mx-auto leading-relaxed">
-              Thank you for reaching out. We will review your application details and get back to you within 2 to 4 business hours.
+              Thank you for reaching out. We will review your web application requirements and get back to you within 2 to 4 business hours.
             </p>
             <div className="pt-4">
               <Button
@@ -137,7 +137,7 @@ export default function SaasScalingLeadForm() {
                 Send Us a Message
               </h3>
               <p className="text-xs text-[#52615B] leading-relaxed">
-                Tell us about your SaaS performance, database, or scaling challenges.
+                Tell us about the custom web application, portal, or workflow you want to build.
               </p>
             </div>
 
@@ -165,7 +165,7 @@ export default function SaasScalingLeadForm() {
                   required
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  placeholder="e.g. alex@yourcompany.com"
+                  placeholder="e.g. alex@yourbusiness.co.ke"
                   className="w-full h-11 px-3.5 rounded-xl bg-[#F8FAF9] border border-[#E2EAE6] text-sm text-[#12201B] placeholder:text-[#52615B]/40 focus:bg-white focus:outline-none focus:border-[#059669] transition-all"
                 />
               </div>
@@ -193,7 +193,7 @@ export default function SaasScalingLeadForm() {
                 required
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                placeholder="Tell us about what's slow, your database, tech stack, or scaling goals..."
+                placeholder="Tell us about the software you need (e.g. customer portal, business management system, inventory dashboard, M-Pesa integration)..."
                 className="w-full px-3.5 py-3 rounded-xl bg-[#F8FAF9] border border-[#E2EAE6] text-sm text-[#12201B] placeholder:text-[#52615B]/40 focus:bg-white focus:outline-none focus:border-[#059669] transition-all leading-relaxed"
               />
             </div>

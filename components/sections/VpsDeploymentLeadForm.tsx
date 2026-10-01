@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-export default function SaasScalingLeadForm() {
+export default function VpsDeploymentLeadForm() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -25,7 +25,7 @@ export default function SaasScalingLeadForm() {
   const [errorMessage, setErrorMessage] = useState("");
 
   const whatsappMessage = encodeURIComponent(
-    "Hello Dazzcode! I would like to request a SaaS Scaling & Performance Optimization review for our application."
+    "Hello Dazzcode! I would like to inquire about deploying our Next.js / Node.js / Docker application to a Linux VPS."
   );
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -41,8 +41,8 @@ export default function SaasScalingLeadForm() {
           name: formData.name,
           email: formData.email,
           company: formData.phone || "Not provided",
-          message: `Phone / WhatsApp: ${formData.phone}\n\nSaaS Scaling / Performance Details:\n${formData.message}`,
-          source: "SaaS Scaling & Performance Page",
+          message: `Phone / WhatsApp: ${formData.phone}\n\nProject / Deployment Details:\n${formData.message}`,
+          source: "VPS Deployment Service Page",
         }),
       });
 
@@ -137,7 +137,7 @@ export default function SaasScalingLeadForm() {
                 Send Us a Message
               </h3>
               <p className="text-xs text-[#52615B] leading-relaxed">
-                Tell us about your SaaS performance, database, or scaling challenges.
+                Tell us about the application you want to deploy or troubleshoot on VPS.
               </p>
             </div>
 
@@ -186,14 +186,14 @@ export default function SaasScalingLeadForm() {
 
             <div className="space-y-1.5">
               <label className="block text-xs font-semibold text-[#12201B]">
-                How can we help? <span className="text-[#059669]">*</span>
+                Project / Deployment Details <span className="text-[#059669]">*</span>
               </label>
               <textarea
                 rows={4}
                 required
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                placeholder="Tell us about what's slow, your database, tech stack, or scaling goals..."
+                placeholder="Tell us what you want to deploy (e.g. Next.js SaaS, Node.js API, Docker Compose, domain, SSL, PostgreSQL)..."
                 className="w-full px-3.5 py-3 rounded-xl bg-[#F8FAF9] border border-[#E2EAE6] text-sm text-[#12201B] placeholder:text-[#52615B]/40 focus:bg-white focus:outline-none focus:border-[#059669] transition-all leading-relaxed"
               />
             </div>

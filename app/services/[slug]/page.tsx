@@ -30,7 +30,9 @@ export async function generateStaticParams() {
     "custom-saas-development",
     "saas-code-audit",
     "saas-mvp-development",
-    "saas-scaling"
+    "saas-scaling",
+    "vps-deployment",
+    "web-application-development"
   ];
   return services
     .filter((service) => !staticSlugs.includes(service.slug))
