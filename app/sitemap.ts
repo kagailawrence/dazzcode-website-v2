@@ -63,6 +63,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // 3. Regional Kenya Landing Pages (KE)
     const kenyaPages: MetadataRoute.Sitemap = [
         {
+            url: `${baseUrl}/ke/web-development`,
+            lastModified,
+            changeFrequency: 'weekly',
+            priority: 0.92,
+        },
+        {
             url: `${baseUrl}/ke/woocommerce-development`,
             lastModified,
             changeFrequency: 'weekly',

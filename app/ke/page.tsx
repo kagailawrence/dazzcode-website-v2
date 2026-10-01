@@ -91,7 +91,13 @@ export default function KenyaHubPage() {
 
   const pages = [
     {
-      title: "WooCommerce Development in Kenya",
+      title: "Web Development & Web Applications in Kenya",
+      href: "/ke/web-development",
+      keyword: "web development company Kenya",
+      desc: "Professional business websites (from KSh 25,000), custom web applications, customer portals, M-Pesa integration, website redesigns, and ongoing SEO.",
+    },
+    {
+      title: "WooCommerce & Ecommerce Development in Kenya",
       href: "/ke/woocommerce-development",
       keyword: "WooCommerce development Kenya",
       desc: "High-converting online stores, Safaricom M-Pesa STK Push integration, custom WooCommerce plugins, maintenance, and ecommerce SEO.",
@@ -107,12 +113,6 @@ export default function KenyaHubPage() {
       href: "/ke/software-development-company",
       keyword: "software development company Kenya",
       desc: "Replacing manual spreadsheets and disjointed tools with tailored operational software built for Kenyan enterprise workflows.",
-    },
-    {
-      title: "Web Application Development Company",
-      href: "/ke/web-development-company",
-      keyword: "web development company Kenya",
-      desc: "High-performance business web applications, customer self-service portals, and e-commerce integrations beyond basic websites.",
     },
     {
       title: "Startup MVP Development in Kenya",
