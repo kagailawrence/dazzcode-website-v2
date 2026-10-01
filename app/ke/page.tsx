@@ -130,7 +130,6 @@ export default function KenyaHubPage() {
       <section className="pt-32 pb-16 md:pt-40 md:pb-20 bg-[#F8FAF9] border-b border-[#E2EAE6]">
         <div className="container px-4 md:px-6 mx-auto max-w-5xl text-center">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#ECFDF5] border border-[#059669]/20 text-[#059669] text-xs font-mono font-semibold uppercase tracking-wider mb-6">
-            <span>Nairobi, Kenya Headquarters</span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-[1.05] text-[#12201B] mb-6">

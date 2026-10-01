@@ -61,7 +61,7 @@ export default function WooCommerceLeadForm() {
   return (
     <div className="w-full max-w-4xl mx-auto grid md:grid-cols-12 gap-8 items-stretch">
       {/* Direct WhatsApp & Quick Contact Card */}
-      <div className="md:col-span-5 rounded-3xl bg-[#12201B] text-white p-8 flex flex-col justify-between shadow-xl relative overflow-hidden">
+      <div className="md:col-span-5 rounded-3xl bg-[#12201B] text-white p-4 flex flex-col justify-between shadow-xl relative overflow-hidden">
         <div className="space-y-6">
           <div>
             <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-[#10B981] font-bold block mb-2">
@@ -70,9 +70,7 @@ export default function WooCommerceLeadForm() {
             <h3 className="text-2xl font-black tracking-tight text-white">
               Chat Directly on WhatsApp
             </h3>
-            <p className="text-sm text-[#E2EAE6]/80 mt-2 leading-relaxed">
-              Have a quick question about WooCommerce, M-Pesa setup, store costs, or speed audits? Message our Nairobi engineering team directly.
-            </p>
+
           </div>
 
           <a
@@ -94,10 +92,7 @@ export default function WooCommerceLeadForm() {
               <Clock className="w-4 h-4 text-[#10B981]" />
               <span>Fast reply within minutes</span>
             </div>
-            <div className="flex items-center gap-2.5">
-              <ShieldCheck className="w-4 h-4 text-[#10B981]" />
-              <span>Nairobi, Kenya Headquarters</span>
-            </div>
+        
           </div>
         </div>
 
