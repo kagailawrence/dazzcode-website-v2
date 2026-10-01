@@ -35,7 +35,7 @@ export function Footer() {
                 <Instagram className="h-4 w-4" />
               </Link>
               <Link
-                href="https://facebook.com/dazzcodeofficial"
+                href="https://web.facebook.com/profile.php?id=61582300424215"
                 target="_blank"
                 rel="noreferrer"
                 className="text-[#52615B] hover:text-[#059669] transition-colors p-2 rounded-lg hover:bg-[#F1F5F3]"
