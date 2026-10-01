@@ -7,30 +7,10 @@ import ContactForm from "@/components/contact-form";
 import {
   ArrowRight,
   CheckCircle2,
-  Globe,
-  CreditCard,
-  Server,
-  Zap,
-  ShieldCheck,
-  Code2,
-  HelpCircle,
-  Building2,
+
   Sparkles,
-  Layers,
   ArrowUpRight,
-  TrendingUp,
-  Cpu,
-  RefreshCw,
-  Search,
-  Package,
-  Clock,
-  Shield,
-  Send,
-  MessageSquare,
-  Users,
-  Compass,
-  Rocket,
-  Settings,
+
 } from "lucide-react";
 
 export const metadata: Metadata = {

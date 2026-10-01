@@ -91,6 +91,12 @@ export default function KenyaHubPage() {
 
   const pages = [
     {
+      title: "WooCommerce Development in Kenya",
+      href: "/ke/woocommerce-development",
+      keyword: "WooCommerce development Kenya",
+      desc: "High-converting online stores, Safaricom M-Pesa STK Push integration, custom WooCommerce plugins, maintenance, and ecommerce SEO.",
+    },
+    {
       title: "SaaS Development Company in Kenya",
       href: "/ke/saas-development-company",
       keyword: "SaaS development company Kenya",

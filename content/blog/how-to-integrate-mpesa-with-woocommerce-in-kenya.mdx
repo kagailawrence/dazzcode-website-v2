@@ -1,0 +1,47 @@
+---
+title: "How to Integrate M-Pesa with WooCommerce in Kenya (Daraja API Guide)"
+description: "A technical guide to implementing Safaricom Lipa na M-Pesa STK Push and C2B automated payment callbacks on your WooCommerce store in Kenya."
+publishedAt: "2026-09-29"
+author: "Lawrence Maina"
+category: "Payments"
+---
+
+In Kenya, over 80% of online shopping transactions happen through **Safaricom M-Pesa**. For WooCommerce store owners, providing a smooth, automated M-Pesa payment experience is the single highest-leverage optimization to reduce cart abandonment.
+
+In this guide, we explore how M-Pesa integration works on WooCommerce, the difference between manual Paybill entry and **Daraja STK Push**, and how automated webhooks keep your accounting clean.
+
+---
+
+## 1. Manual Paybill vs. Lipa na M-Pesa STK Push
+
+There are two primary ways Kenyan stores accept M-Pesa:
+
+### The Legacy Manual Method (High Cart Abandonment)
+1. Customer reaches checkout and is given a Paybill number and Account number.
+2. Customer leaves their mobile browser, opens the M-Pesa SIM Toolkit, and manually enters the details.
+3. Customer receives a Safaricom SMS receipt, copies the 10-character transaction code (e.g. `QKT892H10`), and pastes it back into the website.
+4. Store owner has to manually verify if money arrived before shipping the product.
+
+### The Modern STK Push Method (Automated in 0.8s)
+1. Customer enters their Safaricom mobile number at checkout.
+2. An instant PIN prompt pops up on their handset screen automatically.
+3. The customer enters their 4-digit M-Pesa PIN.
+4. Safaricom's Daraja API fires an instant encrypted webhook callback to your WooCommerce server.
+5. The order status automatically switches to **"Processing"**, inventory is decremented, and an SMS receipt is dispatched.
+
+---
+
+## 2. Technical Architecture of Daraja 2.0 Webhooks
+
+To ensure zero payment leakage and complete security, a production WooCommerce M-Pesa integration requires:
+- **SSL/TLS 1.3 Encryption**: All API communication with Safaricom endpoints must be securely encrypted.
+- **Idempotent Transaction Handling**: Ensuring a single M-Pesa transaction receipt cannot be submitted twice to prevent duplicate order fraud.
+- **Public IP & Reverse Proxy**: A stable Linux server or VPS environment capable of receiving webhook callbacks reliably. Learn about our [Linux VPS Deployment Services](/services/vps-deployment).
+
+---
+
+## 3. Need Professional M-Pesa Integration?
+
+Dazzcode provides turn-key M-Pesa Daraja integration included in our [WooCommerce Development in Kenya](/ke/woocommerce-development) package (KSh 35,000 complete setup).
+
+If you have an existing WooCommerce store and only need M-Pesa integrated or fixed, [get in touch with our engineering team in Nairobi](/contact).
