@@ -131,7 +131,7 @@ export default function VpsDeploymentLeadForm() {
             </div>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form onSubmit={handleSubmit} aria-label="Project inquiry form" className="space-y-4">
             <div>
               <h3 className="text-xl font-bold text-[#12201B] tracking-tight mb-1">
                 Send Us a Message
@@ -147,6 +147,9 @@ export default function VpsDeploymentLeadForm() {
                   Your Name <span className="text-[#059669]">*</span>
                 </label>
                 <input
+                  aria-label="Your name"
+                  name="name"
+                  autoComplete="name"
                   type="text"
                   required
                   value={formData.name}
@@ -161,6 +164,9 @@ export default function VpsDeploymentLeadForm() {
                   Email Address <span className="text-[#059669]">*</span>
                 </label>
                 <input
+                  aria-label="Email address"
+                  name="email"
+                  autoComplete="email"
                   type="email"
                   required
                   value={formData.email}
@@ -176,6 +182,9 @@ export default function VpsDeploymentLeadForm() {
                 Phone / WhatsApp Number
               </label>
               <input
+                aria-label="Phone or WhatsApp number"
+                name="phone"
+                autoComplete="tel"
                 type="tel"
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
@@ -189,6 +198,8 @@ export default function VpsDeploymentLeadForm() {
                 Project / Deployment Details <span className="text-[#059669]">*</span>
               </label>
               <textarea
+                aria-label="Project details"
+                name="message"
                 rows={4}
                 required
                 value={formData.message}

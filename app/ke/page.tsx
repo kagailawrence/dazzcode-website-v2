@@ -29,12 +29,12 @@ export const metadata: Metadata = {
     "M-Pesa API integration developers"
   ],
   alternates: {
-    canonical: "https://dazzcode.com/ke",
+    canonical: "https://www.dazzcode.com/ke",
   },
   openGraph: {
     title: "SaaS & Software Development in Kenya | Dazzcode",
     description: "Kenya-based engineering team building high-performance SaaS, custom software, and M-Pesa integrated applications for Kenyan and global businesses.",
-    url: "https://dazzcode.com/ke",
+    url: "https://www.dazzcode.com/ke",
     siteName: "Dazzcode",
     images: [
       {
@@ -53,10 +53,10 @@ export default function KenyaHubPage() {
     "@graph": [
       {
         "@type": "LocalBusiness",
-        "@id": "https://dazzcode.com/ke#business",
+        "@id": "https://www.dazzcode.com/ke#business",
         name: "Dazzcode Kenya",
         description: "Premier software development and SaaS engineering company headquartered in Nairobi, Kenya.",
-        url: "https://dazzcode.com/ke",
+        url: "https://www.dazzcode.com/ke",
         address: {
           "@type": "PostalAddress",
           addressLocality: "Nairobi",
@@ -70,19 +70,19 @@ export default function KenyaHubPage() {
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://dazzcode.com/ke#breadcrumb",
+        "@id": "https://www.dazzcode.com/ke#breadcrumb",
         itemListElement: [
           {
             "@type": "ListItem",
             position: 1,
             name: "Home",
-            item: "https://dazzcode.com",
+            item: "https://www.dazzcode.com",
           },
           {
             "@type": "ListItem",
             position: 2,
             name: "Kenya",
-            item: "https://dazzcode.com/ke",
+            item: "https://www.dazzcode.com/ke",
           },
         ],
       },

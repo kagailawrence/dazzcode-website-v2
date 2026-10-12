@@ -131,9 +131,12 @@ export default function SaasQuiz() {
                         <p className="text-muted-foreground mb-8">
                             We've calculated your Readiness Score. Enter your email to view your score and personalized launch recommendation.
                         </p>
-                        <form onSubmit={handleEmailSubmit} className="max-w-md mx-auto space-y-4">
+                        <form onSubmit={handleEmailSubmit} aria-label="SaaS readiness score email form" className="max-w-md mx-auto space-y-4">
                             <input
                                 type="email"
+                                name="email"
+                                aria-label="Email address for your SaaS readiness score"
+                                autoComplete="email"
                                 placeholder="founder@startup.com"
                                 required
                                 value={email}

@@ -28,19 +28,19 @@ export const metadata: Metadata = {
     "Next.js SaaS development agency"
   ],
   alternates: {
-    canonical: "https://dazzcode.com/us/saas-development",
+    canonical: "https://www.dazzcode.com/us/saas-development",
     languages: {
-      "en": "https://dazzcode.com/services/saas-development",
-      "en-KE": "https://dazzcode.com/ke/saas-development-company",
-      "en-GB": "https://dazzcode.com/uk/saas-development",
-      "en-US": "https://dazzcode.com/us/saas-development",
-      "x-default": "https://dazzcode.com/services/saas-development",
+      "en": "https://www.dazzcode.com/services/saas-development",
+      "en-KE": "https://www.dazzcode.com/ke/saas-development-company",
+      "en-GB": "https://www.dazzcode.com/uk/saas-development",
+      "en-US": "https://www.dazzcode.com/us/saas-development",
+      "x-default": "https://www.dazzcode.com/services/saas-development",
     },
   },
   openGraph: {
     title: "SaaS Development Company US | Dazzcode",
     description: "Launch, fix, and scale your SaaS with Dazzcode. Senior-led full-stack engineering, rapid 4-6 week MVPs, and institutional codebases for US founders.",
-    url: "https://dazzcode.com/us/saas-development",
+    url: "https://www.dazzcode.com/us/saas-development",
     siteName: "Dazzcode",
     images: [
       {
@@ -59,14 +59,14 @@ export default function USSaaSPage() {
     "@graph": [
       {
         "@type": "Service",
-        "@id": "https://dazzcode.com/us/saas-development#service",
+        "@id": "https://www.dazzcode.com/us/saas-development#service",
         name: "SaaS Development Company US",
         description: "End-to-end SaaS development, MVP engineering, and architecture scaling for US tech startups and growth-stage companies.",
         provider: {
           "@type": "Organization",
           name: "Dazzcode",
-          url: "https://dazzcode.com",
-          logo: "https://dazzcode.com/images/logo.png",
+          url: "https://www.dazzcode.com",
+          logo: "https://www.dazzcode.com/images/logo.png",
         },
         areaServed: {
           "@type": "Country",
@@ -76,25 +76,25 @@ export default function USSaaSPage() {
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://dazzcode.com/us/saas-development#breadcrumb",
+        "@id": "https://www.dazzcode.com/us/saas-development#breadcrumb",
         itemListElement: [
           {
             "@type": "ListItem",
             position: 1,
             name: "Home",
-            item: "https://dazzcode.com",
+            item: "https://www.dazzcode.com",
           },
           {
             "@type": "ListItem",
             position: 2,
             name: "US",
-            item: "https://dazzcode.com/us/saas-development",
+            item: "https://www.dazzcode.com/us/saas-development",
           },
           {
             "@type": "ListItem",
             position: 3,
             name: "SaaS Development",
-            item: "https://dazzcode.com/us/saas-development",
+            item: "https://www.dazzcode.com/us/saas-development",
           },
         ],
       },

@@ -4,10 +4,10 @@ export default function StructuredData() {
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "@id": "https://dazzcode.com/#organization",
+    "@id": "https://www.dazzcode.com/#organization",
     name: "Dazzcode",
-    url: "https://dazzcode.com",
-    logo: "https://dazzcode.com/images/logo.png",
+    url: "https://www.dazzcode.com",
+    logo: "https://www.dazzcode.com/images/logo.png",
     description: "Dazzcode is a Kenya-based software engineering and SaaS development company helping startups and businesses build, audit, deploy, and scale software products.",
     address: {
       "@type": "PostalAddress",
@@ -26,12 +26,20 @@ export default function StructuredData() {
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "@id": "https://dazzcode.com/#website",
+    "@id": "https://www.dazzcode.com/#website",
     name: "Dazzcode",
-    url: "https://dazzcode.com",
+    url: "https://www.dazzcode.com",
     description: "Build, Fix & Scale Your SaaS. Software engineering company in Kenya serving East Africa, the UK, and the US.",
     publisher: {
-      "@id": "https://dazzcode.com/#organization",
+      "@id": "https://www.dazzcode.com/#organization",
+    },
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: "https://www.dazzcode.com/blog?query={search_term_string}",
+      },
+      "query-input": "required name=search_term_string",
     },
   };
 

@@ -20,12 +20,12 @@ export const metadata: Metadata = {
     "Dazzcode blog",
   ],
   alternates: {
-    canonical: "https://dazzcode.com/blog",
+    canonical: "https://www.dazzcode.com/blog",
   },
   openGraph: {
     title: "SaaS Engineering & Architecture Blog | Dazzcode",
     description: "In-depth technical guides, architecture checklists, database optimization strategies, and real-world pricing guides for building and scaling SaaS platforms.",
-    url: "https://dazzcode.com/blog",
+    url: "https://www.dazzcode.com/blog",
     siteName: "Dazzcode",
     type: "website",
     images: [
@@ -45,40 +45,46 @@ export const metadata: Metadata = {
   },
 };
 
-export default function BlogListingPage() {
+export default async function BlogListingPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ query?: string | string[] }>;
+}) {
+  const { query } = await searchParams;
   const blogPosts = getAllPosts();
+  const initialSearchQuery = typeof query === "string" ? query : "";
 
   const blogSchema = {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "Blog",
-        "@id": "https://dazzcode.com/blog#blog",
+        "@id": "https://www.dazzcode.com/blog#blog",
         name: "Dazzcode SaaS Engineering & Architecture Blog",
         description: "In-depth technical guides, architecture checklists, and real-world pricing guides for building and scaling SaaS products.",
-        url: "https://dazzcode.com/blog",
+        url: "https://www.dazzcode.com/blog",
         publisher: {
           "@type": "Organization",
           name: "Dazzcode",
-          url: "https://dazzcode.com",
-          logo: "https://dazzcode.com/images/logo.png",
+          url: "https://www.dazzcode.com",
+          logo: "https://www.dazzcode.com/images/logo.png",
         },
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://dazzcode.com/blog#breadcrumb",
+        "@id": "https://www.dazzcode.com/blog#breadcrumb",
         itemListElement: [
           {
             "@type": "ListItem",
             position: 1,
             name: "Home",
-            item: "https://dazzcode.com",
+            item: "https://www.dazzcode.com",
           },
           {
             "@type": "ListItem",
             position: 2,
             name: "Blog",
-            item: "https://dazzcode.com/blog",
+            item: "https://www.dazzcode.com/blog",
           },
         ],
       },
@@ -103,7 +109,7 @@ export default function BlogListingPage() {
           </p>
 
           {/* Interactive Search & Category Filter */}
-          <BlogSearchAndFilter posts={blogPosts} />
+          <BlogSearchAndFilter posts={blogPosts} initialSearchQuery={initialSearchQuery} />
         </div>
       </section>
 

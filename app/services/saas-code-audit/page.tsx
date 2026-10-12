@@ -73,19 +73,19 @@ export const metadata: Metadata = {
     "SaaS code audit in canada"
   ],
   alternates: {
-    canonical: "https://dazzcode.com/services/saas-code-audit",
+    canonical: "https://www.dazzcode.com/services/saas-code-audit",
     languages: {
-      "en": "https://dazzcode.com/services/saas-code-audit",
-      "en-GB": "https://dazzcode.com/uk/code-audit",
-      "en-US": "https://dazzcode.com/us/code-audit",
-      "x-default": "https://dazzcode.com/services/saas-code-audit",
+      "en": "https://www.dazzcode.com/services/saas-code-audit",
+      "en-GB": "https://www.dazzcode.com/uk/code-audit",
+      "en-US": "https://www.dazzcode.com/us/code-audit",
+      "x-default": "https://www.dazzcode.com/services/saas-code-audit",
     },
   },
   openGraph: {
     title: "SaaS Code Audit & Architecture Review | Dazzcode",
     description:
       "Get an independent SaaS code audit and architecture review. Understand the health of your codebase, identify risks, and get a practical remediation roadmap.",
-    url: "https://dazzcode.com/services/saas-code-audit",
+    url: "https://www.dazzcode.com/services/saas-code-audit",
     siteName: "Dazzcode",
     images: [
       {
@@ -179,15 +179,15 @@ export default function SaasCodeAuditPage() {
     "@graph": [
       {
         "@type": "Service",
-        "@id": "https://dazzcode.com/services/saas-code-audit#service",
+        "@id": "https://www.dazzcode.com/services/saas-code-audit#service",
         name: "SaaS Code Audit & Architecture Review",
         description:
           "Get an independent SaaS code audit and architecture review. Dazzcode reviews code quality, architecture, security, performance, technical debt and scalability.",
         provider: {
           "@type": "Organization",
           name: "Dazzcode",
-          url: "https://dazzcode.com",
-          logo: "https://dazzcode.com/images/logo.png",
+          url: "https://www.dazzcode.com",
+          logo: "https://www.dazzcode.com/images/logo.png",
           address: {
             "@type": "PostalAddress",
             addressLocality: "Nairobi",
@@ -199,31 +199,31 @@ export default function SaasCodeAuditPage() {
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://dazzcode.com/services/saas-code-audit#breadcrumb",
+        "@id": "https://www.dazzcode.com/services/saas-code-audit#breadcrumb",
         itemListElement: [
           {
             "@type": "ListItem",
             position: 1,
             name: "Home",
-            item: "https://dazzcode.com",
+            item: "https://www.dazzcode.com",
           },
           {
             "@type": "ListItem",
             position: 2,
             name: "Services",
-            item: "https://dazzcode.com/services",
+            item: "https://www.dazzcode.com/services",
           },
           {
             "@type": "ListItem",
             position: 3,
             name: "SaaS Code Audit",
-            item: "https://dazzcode.com/services/saas-code-audit",
+            item: "https://www.dazzcode.com/services/saas-code-audit",
           },
         ],
       },
       {
         "@type": "FAQPage",
-        "@id": "https://dazzcode.com/services/saas-code-audit#faq",
+        "@id": "https://www.dazzcode.com/services/saas-code-audit#faq",
         mainEntity: auditFaqs.map((faq) => ({
           "@type": "Question",
           name: faq.q,

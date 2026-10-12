@@ -1,0 +1,67 @@
+# Dazzcode
+
+> Dazzcode is a SaaS development company offering custom SaaS engineering, MVP development, code audits, AI automation, web applications, WooCommerce development, and VPS deployment.
+
+
+The main homepage is available at: [Dazzcode](https://www.dazzcode.com)
+
+## Main Pages
+
+- [Services](https://www.dazzcode.com/services)
+- [Ke](https://www.dazzcode.com/ke)
+- [us](https://www.dazzcode.com/us)
+- [uk](https://www.dazzcode.com/uk)
+- [Blog](https://www.dazzcode.com/blog)
+
+## Blog & Articles
+
+- [RSS feed](https://www.dazzcode.com/feed.xml): Syndicated updates from the Dazzcode Engineering Blog.
+
+- [Custom Saas Vs Off The Shelf Software](https://www.dazzcode.com/blog/custom-saas-vs-off-the-shelf-software)
+- [How Long Does It Take To Build An Mvp In Kenya](https://www.dazzcode.com/blog/how-long-does-it-take-to-build-an-mvp-in-kenya)
+- [How Much Does A Saas Code Audit Cost](https://www.dazzcode.com/blog/how-much-does-a-saas-code-audit-cost)
+- [How Much Does Custom Saas Development Cost](https://www.dazzcode.com/blog/how-much-does-custom-saas-development-cost)
+- [How Much Does Mvp Development Cost In Kenya](https://www.dazzcode.com/blog/how-much-does-mvp-development-cost-in-kenya)
+- [Mvp Vs Prototype Difference](https://www.dazzcode.com/blog/mvp-vs-prototype-difference)
+- [Should You Rewrite Your Saas](https://www.dazzcode.com/blog/should-you-rewrite-your-saas)
+- [How Much Does A Website Cost In Kenya](https://www.dazzcode.com/blog/how-much-does-a-website-cost-in-kenya)
+- [How To Choose A Web Development Company In Kenya](https://www.dazzcode.com/blog/how-to-choose-a-web-development-company-in-kenya)
+- [Website Vs Web Application Difference](https://www.dazzcode.com/blog/website-vs-web-application-difference)
+- [Woocommerce Seo Guide For Kenyan Online Stores](https://www.dazzcode.com/blog/woocommerce-seo-guide-for-kenyan-online-stores)
+- [How To Integrate Mpesa With Woocommerce In Kenya](https://www.dazzcode.com/blog/how-to-integrate-mpesa-with-woocommerce-in-kenya)
+- [How Much Does A Woocommerce Website Cost In Kenya](https://www.dazzcode.com/blog/how-much-does-a-woocommerce-website-cost-in-kenya)
+- [How To Build An Mpesa Enabled Saas Application](https://www.dazzcode.com/blog/how-to-build-an-mpesa-enabled-saas-application)
+- [How Much Does Saas Development Cost In Kenya](https://www.dazzcode.com/blog/how-much-does-saas-development-cost-in-kenya)
+- [Postgresql Performance For Saas](https://www.dazzcode.com/blog/postgresql-performance-for-saas)
+- [How To Deploy Nextjs On A Vps](https://www.dazzcode.com/blog/how-to-deploy-nextjs-on-a-vps)
+- [10 Signs Your Saas Has Technical Debt](https://www.dazzcode.com/blog/10-signs-your-saas-has-technical-debt)
+- [How To Audit A Saas Codebase](https://www.dazzcode.com/blog/how-to-audit-a-saas-codebase)
+- [How Long Does It Take To Build A Saas](https://www.dazzcode.com/blog/how-long-does-it-take-to-build-a-saas)
+
+## Services
+
+- [Custom Saas Development](https://www.dazzcode.com/services/custom-saas-development)
+- [Saas Mvp Development](https://www.dazzcode.com/services/saas-mvp-development)
+- [Saas Code Audit](https://www.dazzcode.com/services/saas-code-audit)
+- [Saas Scaling](https://www.dazzcode.com/services/saas-scaling)
+- [Vps Deployment](https://www.dazzcode.com/services/vps-deployment)
+- [Web Application Development](https://www.dazzcode.com/services/web-application-development)
+- [Ai Automation](https://www.dazzcode.com/services/ai-automation)
+
+## Case Studies
+
+- [Case Studies](https://www.dazzcode.com/case-studies)
+- [Dazzpos](https://www.dazzcode.com/case-studies/dazzpos)
+- [Ai Lead Automation](https://www.dazzcode.com/case-studies/ai-lead-automation)
+
+## About
+
+- [About](https://www.dazzcode.com/about)
+
+
+- [Contact](https://www.dazzcode.com/contact): Contact
+- [Web Development](https://www.dazzcode.com/ke/web-development): Other
+- [Woocommerce Development](https://www.dazzcode.com/ke/woocommerce-development): Other
+- [Saas Development Company](https://www.dazzcode.com/ke/saas-development-company): Other
+- [Software Development Company](https://www.dazzcode.com/ke/software-development-company): Other
+- [Web Development Company](https://www.dazzcode.com/ke/web-development-company): Other

@@ -54,38 +54,38 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
 
   // Define hreflang alternates only when localized counterparts exist
   let alternates: Record<string, unknown> = {
-    canonical: `https://dazzcode.com/services/${slug}`,
+    canonical: `https://www.dazzcode.com/services/${slug}`,
   };
 
   if (slug === "custom-saas-development" || slug === "saas-development") {
     alternates = {
-      canonical: "https://dazzcode.com/services/custom-saas-development",
+      canonical: "https://www.dazzcode.com/services/custom-saas-development",
       languages: {
-        "en": "https://dazzcode.com/services/custom-saas-development",
-        "en-KE": "https://dazzcode.com/ke/saas-development-company",
-        "en-GB": "https://dazzcode.com/uk/saas-development",
-        "en-US": "https://dazzcode.com/us/saas-development",
-        "x-default": "https://dazzcode.com/services/custom-saas-development",
+        "en": "https://www.dazzcode.com/services/custom-saas-development",
+        "en-KE": "https://www.dazzcode.com/ke/saas-development-company",
+        "en-GB": "https://www.dazzcode.com/uk/saas-development",
+        "en-US": "https://www.dazzcode.com/us/saas-development",
+        "x-default": "https://www.dazzcode.com/services/custom-saas-development",
       },
     };
   } else if (slug === "saas-code-audit" || slug === "code-audit") {
     alternates = {
-      canonical: "https://dazzcode.com/services/saas-code-audit",
+      canonical: "https://www.dazzcode.com/services/saas-code-audit",
       languages: {
-        "en": "https://dazzcode.com/services/saas-code-audit",
-        "en-GB": "https://dazzcode.com/uk/code-audit",
-        "en-US": "https://dazzcode.com/us/code-audit",
-        "x-default": "https://dazzcode.com/services/saas-code-audit",
+        "en": "https://www.dazzcode.com/services/saas-code-audit",
+        "en-GB": "https://www.dazzcode.com/uk/code-audit",
+        "en-US": "https://www.dazzcode.com/us/code-audit",
+        "x-default": "https://www.dazzcode.com/services/saas-code-audit",
       },
     };
   } else if (slug === "saas-scaling") {
     alternates = {
-      canonical: "https://dazzcode.com/services/saas-scaling",
+      canonical: "https://www.dazzcode.com/services/saas-scaling",
       languages: {
-        "en": "https://dazzcode.com/services/saas-scaling",
-        "en-GB": "https://dazzcode.com/uk/saas-scaling",
-        "en-US": "https://dazzcode.com/us/saas-scaling",
-        "x-default": "https://dazzcode.com/services/saas-scaling",
+        "en": "https://www.dazzcode.com/services/saas-scaling",
+        "en-GB": "https://www.dazzcode.com/uk/saas-scaling",
+        "en-US": "https://www.dazzcode.com/us/saas-scaling",
+        "x-default": "https://www.dazzcode.com/services/saas-scaling",
       },
     };
   }
@@ -102,7 +102,7 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
     openGraph: {
       title: `${service.title} | Dazzcode`,
       description: service.description,
-      url: `https://dazzcode.com/services/${slug}`,
+      url: `https://www.dazzcode.com/services/${slug}`,
       siteName: "Dazzcode",
       images: [
         {
@@ -139,14 +139,14 @@ export default async function ServicePage({ params }: ServicePageProps) {
     "@graph": [
       {
         "@type": "Service",
-        "@id": `https://dazzcode.com/services/${service.slug}#service`,
+        "@id": `https://www.dazzcode.com/services/${service.slug}#service`,
         name: service.title,
         description: service.description,
         provider: {
           "@type": "Organization",
           name: "Dazzcode",
-          url: "https://dazzcode.com",
-          logo: "https://dazzcode.com/images/logo.png",
+          url: "https://www.dazzcode.com",
+          logo: "https://www.dazzcode.com/images/logo.png",
           address: {
             "@type": "PostalAddress",
             addressLocality: "Nairobi",
@@ -158,31 +158,31 @@ export default async function ServicePage({ params }: ServicePageProps) {
       },
       {
         "@type": "BreadcrumbList",
-        "@id": `https://dazzcode.com/services/${service.slug}#breadcrumb`,
+        "@id": `https://www.dazzcode.com/services/${service.slug}#breadcrumb`,
         itemListElement: [
           {
             "@type": "ListItem",
             position: 1,
             name: "Home",
-            item: "https://dazzcode.com",
+            item: "https://www.dazzcode.com",
           },
           {
             "@type": "ListItem",
             position: 2,
             name: "Services",
-            item: "https://dazzcode.com/services",
+            item: "https://www.dazzcode.com/services",
           },
           {
             "@type": "ListItem",
             position: 3,
             name: service.title,
-            item: `https://dazzcode.com/services/${service.slug}`,
+            item: `https://www.dazzcode.com/services/${service.slug}`,
           },
         ],
       },
       {
         "@type": "FAQPage",
-        "@id": `https://dazzcode.com/services/${service.slug}#faq`,
+        "@id": `https://www.dazzcode.com/services/${service.slug}#faq`,
         mainEntity: service.faqs.map((faq) => ({
           "@type": "Question",
           name: faq.question,

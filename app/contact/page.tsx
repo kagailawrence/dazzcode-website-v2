@@ -20,13 +20,13 @@ export const metadata: Metadata = {
     "contact Dazzcode",
   ],
   alternates: {
-    canonical: "https://dazzcode.com/contact",
+    canonical: "https://www.dazzcode.com/contact",
   },
   openGraph: {
     title: "Contact Dazzcode | Start Your SaaS & Software Project",
     description:
       "Connect directly with senior software architects. Get technical roadmap validation, fixed-price sprint scoping, and zero vendor lock-in.",
-    url: "https://dazzcode.com/contact",
+    url: "https://www.dazzcode.com/contact",
     siteName: "Dazzcode",
     type: "website",
     images: [
@@ -53,16 +53,16 @@ export default function ContactPage() {
     "@graph": [
       {
         "@type": "ContactPage",
-        "@id": "https://dazzcode.com/contact#webpage",
-        url: "https://dazzcode.com/contact",
+        "@id": "https://www.dazzcode.com/contact#webpage",
+        url: "https://www.dazzcode.com/contact",
         name: "Contact Dazzcode | Software Engineering & Scoping",
         description:
           "Connect with senior software engineers to scope your SaaS MVP, request a codebase audit, or scale your platform with fixed milestones.",
         publisher: {
           "@type": "Organization",
-          "@id": "https://dazzcode.com/#organization",
+          "@id": "https://www.dazzcode.com/#organization",
           name: "Dazzcode",
-          url: "https://dazzcode.com",
+          url: "https://www.dazzcode.com",
           email: "info@dazzcode.com",
           address: {
             "@type": "PostalAddress",
@@ -73,19 +73,19 @@ export default function ContactPage() {
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://dazzcode.com/contact#breadcrumb",
+        "@id": "https://www.dazzcode.com/contact#breadcrumb",
         itemListElement: [
           {
             "@type": "ListItem",
             position: 1,
             name: "Home",
-            item: "https://dazzcode.com",
+            item: "https://www.dazzcode.com",
           },
           {
             "@type": "ListItem",
             position: 2,
             name: "Contact Us",
-            item: "https://dazzcode.com/contact",
+            item: "https://www.dazzcode.com/contact",
           },
         ],
       },

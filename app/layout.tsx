@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     "Linux server deployment",
     "SaaS deployment"
   ],
-  authors: [{ name: "Dazzcode Team", url: "https://dazzcode.com" }],
+  authors: [{ name: "Dazzcode Team", url: "https://www.dazzcode.com" }],
   creator: "Dazzcode",
   publisher: "Lawrence Maina Kagai (Dazzcode)",
   formatDetection: {
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://dazzcode.com",
+    url: "https://www.dazzcode.com",
     title: "Dazzcode | SaaS Development Company & SaaS Engineering",
     description: "Premier SaaS development company providing SaaS development services, SaaS MVP development, code audits, AI automation, and robust VPS server deployment.",
     siteName: "Dazzcode",
@@ -103,7 +103,7 @@ export const metadata: Metadata = {
     shortcut: "/images/logo.png",
     apple: "/images/logo.png",
   },
-  metadataBase: new URL("https://dazzcode.com"),
+  metadataBase: new URL("https://www.dazzcode.com"),
   alternates: {
     canonical: "/",
   },

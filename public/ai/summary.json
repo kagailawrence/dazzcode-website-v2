@@ -1,0 +1,11 @@
+{
+  "name": "Dazzcode",
+  "description": "Dazzcode is a SaaS development company that designs, builds, audits, deploys, and scales custom SaaS products, web applications, AI automation, and business software for clients in Kenya and globally.",
+  "url": "https://www.dazzcode.com",
+  "resources": {
+    "faq": "https://www.dazzcode.com/ai/faq.json",
+    "services": "https://www.dazzcode.com/ai/service.json",
+    "feed": "https://www.dazzcode.com/feed.xml",
+    "llms": "https://www.dazzcode.com/llms.txt"
+  }
+}

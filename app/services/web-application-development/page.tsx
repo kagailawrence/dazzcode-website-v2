@@ -70,21 +70,21 @@ export const metadata: Metadata = {
     "SaaS web application development"
   ],
   alternates: {
-    canonical: "https://dazzcode.com/services/web-application-development",
+    canonical: "https://www.dazzcode.com/services/web-application-development",
     languages: {
-      "en": "https://dazzcode.com/services/web-application-development",
-      "x-default": "https://dazzcode.com/services/web-application-development"
+      "en": "https://www.dazzcode.com/services/web-application-development",
+      "x-default": "https://www.dazzcode.com/services/web-application-development"
     }
   },
   openGraph: {
     title: "Custom Web Application Development Company | Dazzcode",
     description:
       "Build custom web applications designed around your business. Dazzcode develops dashboards, portals, SaaS platforms, workflow systems and custom business software.",
-    url: "https://dazzcode.com/services/web-application-development",
+    url: "https://www.dazzcode.com/services/web-application-development",
     siteName: "Dazzcode",
     images: [
       {
-        url: "https://dazzcode.com/opengraph-image",
+        url: "https://www.dazzcode.com/opengraph-image",
         width: 1200,
         height: 630,
         alt: "Custom Web Application Development Company - Dazzcode"
@@ -202,10 +202,10 @@ export default function WebApplicationDevelopmentPage() {
     "@graph": [
       {
         "@type": "Organization",
-        "@id": "https://dazzcode.com/#organization",
+        "@id": "https://www.dazzcode.com/#organization",
         "name": "Dazzcode",
-        "url": "https://dazzcode.com",
-        "logo": "https://dazzcode.com/opengraph-image",
+        "url": "https://www.dazzcode.com",
+        "logo": "https://www.dazzcode.com/opengraph-image",
         "contactPoint": {
           "@type": "ContactPoint",
           "telephone": "+254740938029",
@@ -216,10 +216,10 @@ export default function WebApplicationDevelopmentPage() {
       },
       {
         "@type": "Service",
-        "@id": "https://dazzcode.com/services/web-application-development#service",
+        "@id": "https://www.dazzcode.com/services/web-application-development#service",
         "name": "Custom Web Application Development Company",
         "provider": {
-          "@id": "https://dazzcode.com/#organization"
+          "@id": "https://www.dazzcode.com/#organization"
         },
         "description":
           "Custom web application development company building bespoke business software, customer portals, dashboards, workflow systems, and SaaS platforms in Kenya and globally.",
@@ -229,7 +229,7 @@ export default function WebApplicationDevelopmentPage() {
           "@type": "Offer",
           "priceCurrency": "USD",
           "price": "Custom Scope",
-          "url": "https://dazzcode.com/services/web-application-development"
+          "url": "https://www.dazzcode.com/services/web-application-development"
         }
       },
       {
@@ -239,19 +239,19 @@ export default function WebApplicationDevelopmentPage() {
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://dazzcode.com"
+            "item": "https://www.dazzcode.com"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Services",
-            "item": "https://dazzcode.com/services"
+            "item": "https://www.dazzcode.com/services"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Custom Web Application Development",
-            "item": "https://dazzcode.com/services/web-application-development"
+            "item": "https://www.dazzcode.com/services/web-application-development"
           }
         ]
       },

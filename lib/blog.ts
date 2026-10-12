@@ -259,6 +259,7 @@ export function getPostBySlug(slug: string): BlogPost | null {
     title: data.title || realSlug,
     description: data.description || '',
     publishedAt: data.publishedAt || new Date().toISOString(),
+    updatedAt: data.updatedAt || data.publishedAt || new Date().toISOString(),
     author: data.author || 'Dazzcode Engineering Team',
     category: data.category || 'Engineering',
     readTime: `${readingTime} min read`,

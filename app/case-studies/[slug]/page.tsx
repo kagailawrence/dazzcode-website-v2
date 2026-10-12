@@ -51,12 +51,12 @@ export async function generateMetadata({ params }: CaseStudyPageProps): Promise<
       "Dazzcode client work",
     ],
     alternates: {
-      canonical: `https://dazzcode.com/case-studies/${slug}`,
+      canonical: `https://www.dazzcode.com/case-studies/${slug}`,
     },
     openGraph: {
       title: `${study.title} | Dazzcode Case Study`,
       description: study.summary,
-      url: `https://dazzcode.com/case-studies/${slug}`,
+      url: `https://www.dazzcode.com/case-studies/${slug}`,
       siteName: "Dazzcode",
       images: [
         {
@@ -84,45 +84,45 @@ export default async function CaseStudyDetailPage({ params }: CaseStudyPageProps
     "@graph": [
       {
         "@type": "Article",
-        "@id": `https://dazzcode.com/case-studies/${study.slug}#article`,
+        "@id": `https://www.dazzcode.com/case-studies/${study.slug}#article`,
         headline: study.title,
         description: study.summary,
         author: {
           "@type": "Organization",
           name: "Dazzcode Team",
-          url: "https://dazzcode.com",
+          url: "https://www.dazzcode.com",
         },
         publisher: {
           "@type": "Organization",
           name: "Dazzcode",
           logo: {
             "@type": "ImageObject",
-            url: "https://dazzcode.com/images/logo.png",
+            url: "https://www.dazzcode.com/images/logo.png",
           },
         },
-        image: "https://dazzcode.com/images/hero-saas-dashboard.jpg",
+        image: "https://www.dazzcode.com/images/hero-saas-dashboard.jpg",
       },
       {
         "@type": "BreadcrumbList",
-        "@id": `https://dazzcode.com/case-studies/${study.slug}#breadcrumb`,
+        "@id": `https://www.dazzcode.com/case-studies/${study.slug}#breadcrumb`,
         itemListElement: [
           {
             "@type": "ListItem",
             position: 1,
             name: "Home",
-            item: "https://dazzcode.com",
+            item: "https://www.dazzcode.com",
           },
           {
             "@type": "ListItem",
             position: 2,
             name: "Case Studies",
-            item: "https://dazzcode.com/case-studies",
+            item: "https://www.dazzcode.com/case-studies",
           },
           {
             "@type": "ListItem",
             position: 3,
             name: study.title,
-            item: `https://dazzcode.com/case-studies/${study.slug}`,
+            item: `https://www.dazzcode.com/case-studies/${study.slug}`,
           },
         ],
       },

@@ -28,12 +28,12 @@ export const metadata: Metadata = {
     "mobile money integration East Africa"
   ],
   alternates: {
-    canonical: "https://dazzcode.com/east-africa/saas-development",
+    canonical: "https://www.dazzcode.com/east-africa/saas-development",
   },
   openGraph: {
     title: "SaaS Development for East Africa | Dazzcode",
     description: "Engineer scalable, multi-country SaaS platforms across East Africa. Multi-currency, mobile money integration, and offline-first data sync.",
-    url: "https://dazzcode.com/east-africa/saas-development",
+    url: "https://www.dazzcode.com/east-africa/saas-development",
     siteName: "Dazzcode",
     images: [
       {
@@ -52,14 +52,14 @@ export default function EastAfricaSaaSPage() {
     "@graph": [
       {
         "@type": "Service",
-        "@id": "https://dazzcode.com/east-africa/saas-development#service",
+        "@id": "https://www.dazzcode.com/east-africa/saas-development#service",
         name: "SaaS Development for East Africa",
         description: "Multi-country software and SaaS development services for businesses operating across Kenya, Uganda, Tanzania, and Rwanda.",
         provider: {
           "@type": "Organization",
           name: "Dazzcode",
-          url: "https://dazzcode.com",
-          logo: "https://dazzcode.com/images/logo.png",
+          url: "https://www.dazzcode.com",
+          logo: "https://www.dazzcode.com/images/logo.png",
         },
         areaServed: [
           { "@type": "Country", name: "Kenya" },
@@ -71,25 +71,25 @@ export default function EastAfricaSaaSPage() {
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://dazzcode.com/east-africa/saas-development#breadcrumb",
+        "@id": "https://www.dazzcode.com/east-africa/saas-development#breadcrumb",
         itemListElement: [
           {
             "@type": "ListItem",
             position: 1,
             name: "Home",
-            item: "https://dazzcode.com",
+            item: "https://www.dazzcode.com",
           },
           {
             "@type": "ListItem",
             position: 2,
             name: "East Africa",
-            item: "https://dazzcode.com/east-africa/saas-development",
+            item: "https://www.dazzcode.com/east-africa/saas-development",
           },
           {
             "@type": "ListItem",
             position: 3,
             name: "SaaS Development",
-            item: "https://dazzcode.com/east-africa/saas-development",
+            item: "https://www.dazzcode.com/east-africa/saas-development",
           },
         ],
       },

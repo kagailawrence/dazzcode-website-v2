@@ -47,20 +47,20 @@ export const metadata: Metadata = {
     "SaaS application development company",
   ],
   alternates: {
-    canonical: "https://dazzcode.com/ke/saas-development-company",
+    canonical: "https://www.dazzcode.com/ke/saas-development-company",
     languages: {
-      "en": "https://dazzcode.com/services/saas-development",
-      "en-KE": "https://dazzcode.com/ke/saas-development-company",
-      "en-GB": "https://dazzcode.com/uk/saas-development",
-      "en-US": "https://dazzcode.com/us/saas-development",
-      "x-default": "https://dazzcode.com/services/saas-development",
+      "en": "https://www.dazzcode.com/services/saas-development",
+      "en-KE": "https://www.dazzcode.com/ke/saas-development-company",
+      "en-GB": "https://www.dazzcode.com/uk/saas-development",
+      "en-US": "https://www.dazzcode.com/us/saas-development",
+      "x-default": "https://www.dazzcode.com/services/saas-development",
     },
   },
   openGraph: {
     title: "SaaS Development Company in Kenya | Dazzcode",
     description:
       "Turn your software idea into a reliable, scalable SaaS product. Custom SaaS engineering, MVP development, AI features, deployment, and scaling.",
-    url: "https://dazzcode.com/ke/saas-development-company",
+    url: "https://www.dazzcode.com/ke/saas-development-company",
     siteName: "Dazzcode",
     images: [
       {
@@ -86,14 +86,14 @@ export default function KenyaSaaSPage() {
     "@graph": [
       {
         "@type": "Service",
-        "@id": "https://dazzcode.com/ke/saas-development-company#service",
+        "@id": "https://www.dazzcode.com/ke/saas-development-company#service",
         name: "SaaS Development Company in Kenya",
         description:
           "Custom SaaS development and product engineering services for startups and established businesses in Kenya and East Africa. From product strategy and MVP launch to deployment and scaling.",
         provider: {
           "@type": "LocalBusiness",
           name: "Dazzcode",
-          url: "https://dazzcode.com",
+          url: "https://www.dazzcode.com",
           address: {
             "@type": "PostalAddress",
             addressLocality: "Nairobi",
@@ -112,31 +112,31 @@ export default function KenyaSaaSPage() {
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://dazzcode.com/ke/saas-development-company#breadcrumb",
+        "@id": "https://www.dazzcode.com/ke/saas-development-company#breadcrumb",
         itemListElement: [
           {
             "@type": "ListItem",
             position: 1,
             name: "Home",
-            item: "https://dazzcode.com",
+            item: "https://www.dazzcode.com",
           },
           {
             "@type": "ListItem",
             position: 2,
             name: "Kenya",
-            item: "https://dazzcode.com/ke",
+            item: "https://www.dazzcode.com/ke",
           },
           {
             "@type": "ListItem",
             position: 3,
             name: "SaaS Development Company",
-            item: "https://dazzcode.com/ke/saas-development-company",
+            item: "https://www.dazzcode.com/ke/saas-development-company",
           },
         ],
       },
       {
         "@type": "FAQPage",
-        "@id": "https://dazzcode.com/ke/saas-development-company#faq",
+        "@id": "https://www.dazzcode.com/ke/saas-development-company#faq",
         mainEntity: [
           {
             "@type": "Question",

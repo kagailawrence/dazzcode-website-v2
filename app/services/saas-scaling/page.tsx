@@ -68,23 +68,23 @@ export const metadata: Metadata = {
     "SaaS development company Kenya"
   ],
   alternates: {
-    canonical: "https://dazzcode.com/services/saas-scaling",
+    canonical: "https://www.dazzcode.com/services/saas-scaling",
     languages: {
-      "en": "https://dazzcode.com/services/saas-scaling",
-      "en-GB": "https://dazzcode.com/uk/saas-scaling",
-      "en-US": "https://dazzcode.com/us/saas-scaling",
-      "x-default": "https://dazzcode.com/services/saas-scaling"
+      "en": "https://www.dazzcode.com/services/saas-scaling",
+      "en-GB": "https://www.dazzcode.com/uk/saas-scaling",
+      "en-US": "https://www.dazzcode.com/us/saas-scaling",
+      "x-default": "https://www.dazzcode.com/services/saas-scaling"
     }
   },
   openGraph: {
     title: "SaaS Scaling & Performance Optimization | Dazzcode",
     description:
       "Scale your SaaS with better performance, database optimization, architecture improvements and reliable infrastructure. Dazzcode helps growing SaaS products handle more users and workload.",
-    url: "https://dazzcode.com/services/saas-scaling",
+    url: "https://www.dazzcode.com/services/saas-scaling",
     siteName: "Dazzcode",
     images: [
       {
-        url: "https://dazzcode.com/opengraph-image",
+        url: "https://www.dazzcode.com/opengraph-image",
         width: 1200,
         height: 630,
         alt: "SaaS Scaling & Performance Optimization - Dazzcode"
@@ -194,10 +194,10 @@ export default function SaasScalingPage() {
     "@graph": [
       {
         "@type": "Organization",
-        "@id": "https://dazzcode.com/#organization",
+        "@id": "https://www.dazzcode.com/#organization",
         "name": "Dazzcode",
-        "url": "https://dazzcode.com",
-        "logo": "https://dazzcode.com/opengraph-image",
+        "url": "https://www.dazzcode.com",
+        "logo": "https://www.dazzcode.com/opengraph-image",
         "contactPoint": {
           "@type": "ContactPoint",
           "telephone": "+254740938029",
@@ -208,10 +208,10 @@ export default function SaasScalingPage() {
       },
       {
         "@type": "Service",
-        "@id": "https://dazzcode.com/services/saas-scaling#service",
+        "@id": "https://www.dazzcode.com/services/saas-scaling#service",
         "name": "SaaS Scaling & Performance Optimization",
         "provider": {
-          "@id": "https://dazzcode.com/#organization"
+          "@id": "https://www.dazzcode.com/#organization"
         },
         "description":
           "Scale your SaaS with better performance, database optimization, architecture improvements, and reliable infrastructure. Dazzcode helps growing SaaS products handle more users, more data, and heavier workloads without runaway costs.",
@@ -221,7 +221,7 @@ export default function SaasScalingPage() {
           "@type": "Offer",
           "priceCurrency": "USD",
           "price": "Custom Scope",
-          "url": "https://dazzcode.com/services/saas-scaling"
+          "url": "https://www.dazzcode.com/services/saas-scaling"
         }
       },
       {
@@ -231,19 +231,19 @@ export default function SaasScalingPage() {
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://dazzcode.com"
+            "item": "https://www.dazzcode.com"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Services",
-            "item": "https://dazzcode.com/services"
+            "item": "https://www.dazzcode.com/services"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "SaaS Scaling & Performance",
-            "item": "https://dazzcode.com/services/saas-scaling"
+            "item": "https://www.dazzcode.com/services/saas-scaling"
           }
         ]
       },

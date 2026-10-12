@@ -28,17 +28,17 @@ export default function AboutPage() {
     "@graph": [
       {
         "@type": "AboutPage",
-        "@id": "https://dazzcode.com/about#webpage",
-        url: "https://dazzcode.com/about",
+        "@id": "https://www.dazzcode.com/about#webpage",
+        url: "https://www.dazzcode.com/about",
         name: "About Dazzcode | SaaS Engineering Agency & Product Lab",
         description:
           "Meet Dazzcode: We build transparent, investor-ready SaaS products, scalable web apps, and cloud systems for high-growth founders and businesses globally.",
         publisher: {
           "@type": "Organization",
-          "@id": "https://dazzcode.com/#organization",
+          "@id": "https://www.dazzcode.com/#organization",
           name: "Dazzcode",
-          url: "https://dazzcode.com",
-          logo: "https://dazzcode.com/images/hero-saas-dashboard.jpg",
+          url: "https://www.dazzcode.com",
+          logo: "https://www.dazzcode.com/images/hero-saas-dashboard.jpg",
           address: {
             "@type": "PostalAddress",
             addressLocality: "Nairobi",
@@ -48,19 +48,19 @@ export default function AboutPage() {
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://dazzcode.com/about#breadcrumb",
+        "@id": "https://www.dazzcode.com/about#breadcrumb",
         itemListElement: [
           {
             "@type": "ListItem",
             position: 1,
             name: "Home",
-            item: "https://dazzcode.com",
+            item: "https://www.dazzcode.com",
           },
           {
             "@type": "ListItem",
             position: 2,
             name: "About Us",
-            item: "https://dazzcode.com/about",
+            item: "https://www.dazzcode.com/about",
           },
         ],
       },

@@ -189,6 +189,9 @@ export default function WooCommerceHeroPreview() {
                         </label>
                         <input
                           type="text"
+                          aria-label="Safaricom M-Pesa phone number"
+                          inputMode="tel"
+                          autoComplete="tel"
                           value={mpesaPhone}
                           onChange={(e) => setMpesaPhone(e.target.value)}
                           className="w-full px-3 py-2 rounded-lg bg-white border border-[#E2EAE6] text-xs font-mono text-[#12201B] focus:outline-none focus:border-[#059669]"

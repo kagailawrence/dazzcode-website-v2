@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { BlogPost, allCategories } from "@/lib/blog-types";
 import { ArrowRight, Calendar, Clock, Search, BookOpen } from "lucide-react";
@@ -8,11 +8,16 @@ import { Button } from "@/components/ui/button";
 
 interface BlogSearchAndFilterProps {
   posts: BlogPost[];
+  initialSearchQuery?: string;
 }
 
-export default function BlogSearchAndFilter({ posts }: BlogSearchAndFilterProps) {
+export default function BlogSearchAndFilter({ posts, initialSearchQuery = "" }: BlogSearchAndFilterProps) {
   const [selectedCategory, setSelectedCategory] = useState("All");
-  const [searchQuery, setSearchQuery] = useState("");
+  const [searchQuery, setSearchQuery] = useState(initialSearchQuery);
+
+  useEffect(() => {
+    setSearchQuery(initialSearchQuery);
+  }, [initialSearchQuery]);
 
   const filteredPosts = posts.filter((post) => {
     const matchesCategory =
@@ -32,16 +37,18 @@ export default function BlogSearchAndFilter({ posts }: BlogSearchAndFilterProps)
   return (
     <>
       {/* Search Bar & Category Pills */}
-      <div className="max-w-xl mx-auto relative mb-8">
+      <form action="/blog" method="get" role="search" aria-label="Search Dazzcode engineering articles" className="max-w-xl mx-auto relative mb-8">
         <Search className="w-4 h-4 text-[#52615B] absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none" />
         <input
           type="text"
+          name="query"
+          aria-label="Search Dazzcode engineering articles"
           placeholder="Search articles on pricing, database indexing, Next.js, M-Pesa..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           className="w-full h-12 pl-11 pr-4 rounded-2xl bg-[#FFFFFF] border border-[#E2EAE6] text-sm text-[#12201B] placeholder:text-[#52615B]/70 shadow-xs focus:outline-hidden focus:border-[#059669] focus:ring-2 focus:ring-[#059669]/10 transition-all"
         />
-      </div>
+      </form>
 
       {/* Category Filter Pills */}
       <div className="flex flex-wrap justify-center gap-2 mb-4">

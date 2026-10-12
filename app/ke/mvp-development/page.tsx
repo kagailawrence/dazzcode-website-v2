@@ -79,18 +79,18 @@ export const metadata: Metadata = {
     "MVP development timeline Kenya"
   ],
   alternates: {
-    canonical: "https://dazzcode.com/ke/mvp-development",
+    canonical: "https://www.dazzcode.com/ke/mvp-development",
     languages: {
-      "en": "https://dazzcode.com/services/saas-mvp-development",
-      "en-KE": "https://dazzcode.com/ke/mvp-development",
-      "x-default": "https://dazzcode.com/ke/mvp-development",
+      "en": "https://www.dazzcode.com/services/saas-mvp-development",
+      "en-KE": "https://www.dazzcode.com/ke/mvp-development",
+      "x-default": "https://www.dazzcode.com/ke/mvp-development",
     },
   },
   openGraph: {
     title: "MVP Development Kenya | Startup MVP Development | Dazzcode",
     description:
       "Dazzcode builds production-ready MVPs for Kenyan startups, founders, and growing businesses. Turn your validated software idea into a working product.",
-    url: "https://dazzcode.com/ke/mvp-development",
+    url: "https://www.dazzcode.com/ke/mvp-development",
     siteName: "Dazzcode",
     images: [
       {
@@ -176,14 +176,14 @@ export default function KenyaMVPDevelopmentPage() {
     "@graph": [
       {
         "@type": "Service",
-        "@id": "https://dazzcode.com/ke/mvp-development#service",
+        "@id": "https://www.dazzcode.com/ke/mvp-development#service",
         name: "Startup MVP Development in Kenya",
         description:
           "Dazzcode provides MVP development in Kenya for startups and businesses. Turn your idea into a working web or SaaS product with development, deployment and post-launch support.",
         provider: {
           "@type": "LocalBusiness",
           name: "Dazzcode Kenya",
-          url: "https://dazzcode.com",
+          url: "https://www.dazzcode.com",
           address: {
             "@type": "PostalAddress",
             addressLocality: "Nairobi",
@@ -198,31 +198,31 @@ export default function KenyaMVPDevelopmentPage() {
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://dazzcode.com/ke/mvp-development#breadcrumb",
+        "@id": "https://www.dazzcode.com/ke/mvp-development#breadcrumb",
         itemListElement: [
           {
             "@type": "ListItem",
             position: 1,
             name: "Home",
-            item: "https://dazzcode.com",
+            item: "https://www.dazzcode.com",
           },
           {
             "@type": "ListItem",
             position: 2,
             name: "Kenya",
-            item: "https://dazzcode.com/ke",
+            item: "https://www.dazzcode.com/ke",
           },
           {
             "@type": "ListItem",
             position: 3,
             name: "Startup MVP Development",
-            item: "https://dazzcode.com/ke/mvp-development",
+            item: "https://www.dazzcode.com/ke/mvp-development",
           },
         ],
       },
       {
         "@type": "FAQPage",
-        "@id": "https://dazzcode.com/ke/mvp-development#faq",
+        "@id": "https://www.dazzcode.com/ke/mvp-development#faq",
         mainEntity: mvpFaqs.map((faq) => ({
           "@type": "Question",
           name: faq.q,

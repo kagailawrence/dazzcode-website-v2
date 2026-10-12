@@ -73,21 +73,21 @@ export const metadata: Metadata = {
     "VPS deployment company Kenya"
   ],
   alternates: {
-    canonical: "https://dazzcode.com/services/vps-deployment",
+    canonical: "https://www.dazzcode.com/services/vps-deployment",
     languages: {
-      "en": "https://dazzcode.com/services/vps-deployment",
-      "x-default": "https://dazzcode.com/services/vps-deployment"
+      "en": "https://www.dazzcode.com/services/vps-deployment",
+      "x-default": "https://www.dazzcode.com/services/vps-deployment"
     }
   },
   openGraph: {
     title: "VPS Deployment for Next.js, Node.js & Docker | Dazzcode",
     description:
       "Deploy your Next.js, Node.js or Docker SaaS to a production VPS. Dazzcode handles Linux setup, Docker, reverse proxy, SSL, domains, databases and deployment configuration.",
-    url: "https://dazzcode.com/services/vps-deployment",
+    url: "https://www.dazzcode.com/services/vps-deployment",
     siteName: "Dazzcode",
     images: [
       {
-        url: "https://dazzcode.com/opengraph-image",
+        url: "https://www.dazzcode.com/opengraph-image",
         width: 1200,
         height: 630,
         alt: "VPS Deployment for Next.js, Node.js & Docker SaaS - Dazzcode"
@@ -217,10 +217,10 @@ export default function VpsDeploymentPage() {
     "@graph": [
       {
         "@type": "Organization",
-        "@id": "https://dazzcode.com/#organization",
+        "@id": "https://www.dazzcode.com/#organization",
         "name": "Dazzcode",
-        "url": "https://dazzcode.com",
-        "logo": "https://dazzcode.com/opengraph-image",
+        "url": "https://www.dazzcode.com",
+        "logo": "https://www.dazzcode.com/opengraph-image",
         "contactPoint": {
           "@type": "ContactPoint",
           "telephone": "+254740938029",
@@ -231,10 +231,10 @@ export default function VpsDeploymentPage() {
       },
       {
         "@type": "Service",
-        "@id": "https://dazzcode.com/services/vps-deployment#service",
+        "@id": "https://www.dazzcode.com/services/vps-deployment#service",
         "name": "VPS Deployment for Next.js, Node.js & Docker SaaS",
         "provider": {
-          "@id": "https://dazzcode.com/#organization"
+          "@id": "https://www.dazzcode.com/#organization"
         },
         "description":
           "Deploy your Next.js, Node.js or Docker SaaS to a production Linux VPS. Dazzcode handles server hardening, Docker Compose, Nginx reverse proxies, SSL certificates, domains, databases, and CI/CD automation.",
@@ -244,7 +244,7 @@ export default function VpsDeploymentPage() {
           "@type": "Offer",
           "priceCurrency": "USD",
           "price": "Custom Scope",
-          "url": "https://dazzcode.com/services/vps-deployment"
+          "url": "https://www.dazzcode.com/services/vps-deployment"
         }
       },
       {
@@ -254,19 +254,19 @@ export default function VpsDeploymentPage() {
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://dazzcode.com"
+            "item": "https://www.dazzcode.com"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Services",
-            "item": "https://dazzcode.com/services"
+            "item": "https://www.dazzcode.com/services"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "VPS Deployment",
-            "item": "https://dazzcode.com/services/vps-deployment"
+            "item": "https://www.dazzcode.com/services/vps-deployment"
           }
         ]
       },

@@ -26,18 +26,18 @@ export const metadata: Metadata = {
     "due diligence code audit London"
   ],
   alternates: {
-    canonical: "https://dazzcode.com/uk/code-audit",
+    canonical: "https://www.dazzcode.com/uk/code-audit",
     languages: {
-      "en": "https://dazzcode.com/services/code-audit",
-      "en-GB": "https://dazzcode.com/uk/code-audit",
-      "en-US": "https://dazzcode.com/us/code-audit",
-      "x-default": "https://dazzcode.com/services/code-audit",
+      "en": "https://www.dazzcode.com/services/code-audit",
+      "en-GB": "https://www.dazzcode.com/uk/code-audit",
+      "en-US": "https://www.dazzcode.com/us/code-audit",
+      "x-default": "https://www.dazzcode.com/services/code-audit",
     },
   },
   openGraph: {
     title: "Software Code Audit UK | Dazzcode",
     description: "Deep codebase inspection, security vulnerability assessment, and architectural due diligence for UK SaaS platforms.",
-    url: "https://dazzcode.com/uk/code-audit",
+    url: "https://www.dazzcode.com/uk/code-audit",
     siteName: "Dazzcode",
     images: [
       {
@@ -56,13 +56,13 @@ export default function UKCodeAuditPage() {
     "@graph": [
       {
         "@type": "Service",
-        "@id": "https://dazzcode.com/uk/code-audit#service",
+        "@id": "https://www.dazzcode.com/uk/code-audit#service",
         name: "Software Code Audit UK",
         description: "Comprehensive software codebase audit, security review, and technical due diligence for UK startups and investors.",
         provider: {
           "@type": "Organization",
           name: "Dazzcode",
-          url: "https://dazzcode.com",
+          url: "https://www.dazzcode.com",
         },
         areaServed: {
           "@type": "Country",
@@ -72,25 +72,25 @@ export default function UKCodeAuditPage() {
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://dazzcode.com/uk/code-audit#breadcrumb",
+        "@id": "https://www.dazzcode.com/uk/code-audit#breadcrumb",
         itemListElement: [
           {
             "@type": "ListItem",
             position: 1,
             name: "Home",
-            item: "https://dazzcode.com",
+            item: "https://www.dazzcode.com",
           },
           {
             "@type": "ListItem",
             position: 2,
             name: "UK",
-            item: "https://dazzcode.com/uk/saas-development",
+            item: "https://www.dazzcode.com/uk/saas-development",
           },
           {
             "@type": "ListItem",
             position: 3,
             name: "Code Audit",
-            item: "https://dazzcode.com/uk/code-audit",
+            item: "https://www.dazzcode.com/uk/code-audit",
           },
         ],
       },

@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "audit:lighthouse": "lighthouse http://localhost:3000 --output html --output-path ./lighthouse/report.html --chrome-flags='--headless'",
-    "audit:remote": "lighthouse https://dazzcode.com --output html --output-path ./lighthouse/report-remote.html --chrome-flags='--headless'"
+    "audit:remote": "lighthouse https://www.dazzcode.com --output html --output-path ./lighthouse/report-remote.html --chrome-flags='--headless'"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.12",

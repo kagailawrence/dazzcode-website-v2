@@ -77,18 +77,18 @@ export const metadata: Metadata = {
     "M-Pesa website integration Kenya"
   ],
   alternates: {
-    canonical: "https://dazzcode.com/ke/web-development-in-kenya",
+    canonical: "https://www.dazzcode.com/ke/web-development",
     languages: {
-      "en": "https://dazzcode.com/services/web-application-development",
-      "en-KE": "https://dazzcode.com/ke/web-development-in-kenya",
-      "x-default": "https://dazzcode.com/ke/web-development-in-kenya",
+      "en": "https://www.dazzcode.com/services/web-application-development",
+      "en-KE": "https://www.dazzcode.com/ke/web-development",
+      "x-default": "https://www.dazzcode.com/ke/web-development",
     },
   },
   openGraph: {
     title: "Web Development Company Kenya | Web Applications & Websites | Dazzcode",
     description:
       "Dazzcode builds professional websites and custom web applications for Kenyan businesses, startups and growing organizations. Development, SEO and ongoing support.",
-    url: "https://dazzcode.com/ke/web-development",
+    url: "https://www.dazzcode.com/ke/web-development",
     siteName: "Dazzcode",
     images: [
       {
@@ -177,14 +177,14 @@ export default function KenyaWebDevelopmentPage() {
     "@graph": [
       {
         "@type": "Service",
-        "@id": "https://dazzcode.com/ke/web-development#service",
+        "@id": "https://www.dazzcode.com/ke/web-development#service",
         name: "Web Development Company in Kenya",
         description:
           "Professional website development and custom web application engineering in Kenya. Building company websites, client portals, internal business systems, M-Pesa integrations, and ongoing SEO.",
         provider: {
           "@type": "LocalBusiness",
           name: "Dazzcode",
-          url: "https://dazzcode.com",
+          url: "https://www.dazzcode.com",
           address: {
             "@type": "PostalAddress",
             addressLocality: "Nairobi",
@@ -239,31 +239,31 @@ export default function KenyaWebDevelopmentPage() {
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://dazzcode.com/ke/web-development#breadcrumb",
+        "@id": "https://www.dazzcode.com/ke/web-development#breadcrumb",
         itemListElement: [
           {
             "@type": "ListItem",
             position: 1,
             name: "Home",
-            item: "https://dazzcode.com",
+            item: "https://www.dazzcode.com",
           },
           {
             "@type": "ListItem",
             position: 2,
             name: "Kenya",
-            item: "https://dazzcode.com/ke",
+            item: "https://www.dazzcode.com/ke",
           },
           {
             "@type": "ListItem",
             position: 3,
             name: "Web Development",
-            item: "https://dazzcode.com/ke/web-development",
+            item: "https://www.dazzcode.com/ke/web-development",
           },
         ],
       },
       {
         "@type": "FAQPage",
-        "@id": "https://dazzcode.com/ke/web-development#faq",
+        "@id": "https://www.dazzcode.com/ke/web-development#faq",
         mainEntity: faqs.map((f) => ({
           "@type": "Question",
           name: f.question,

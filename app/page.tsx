@@ -103,10 +103,10 @@ export default function Home() {
     "@graph": [
       {
         "@type": "Organization",
-        "@id": "https://dazzcode.com/#organization",
+        "@id": "https://www.dazzcode.com/#organization",
         name: "Dazzcode",
-        url: "https://dazzcode.com",
-        logo: "https://dazzcode.com/images/logo.png",
+        url: "https://www.dazzcode.com",
+        logo: "https://www.dazzcode.com/images/logo.png",
         description: "Dazzcode is a premier SaaS development company providing custom SaaS engineering, SaaS MVP launches, code audits, Linux VPS deployment, and multi-tenant SaaS scaling.",
         address: {
           "@type": "PostalAddress",
@@ -123,17 +123,17 @@ export default function Home() {
       },
       {
         "@type": "WebSite",
-        "@id": "https://dazzcode.com/#website",
-        url: "https://dazzcode.com",
+        "@id": "https://www.dazzcode.com/#website",
+        url: "https://www.dazzcode.com",
         name: "Dazzcode",
         description: "Build, Fix & Scale Your SaaS. SaaS development company based in Kenya serving clients across East Africa, the UK, and the US.",
         publisher: {
-          "@id": "https://dazzcode.com/#organization",
+          "@id": "https://www.dazzcode.com/#organization",
         },
       },
       {
         "@type": "FAQPage",
-        "@id": "https://dazzcode.com/#faq",
+        "@id": "https://www.dazzcode.com/#faq",
         mainEntity: faqItems.map((item) => ({
           "@type": "Question",
           name: item.question,

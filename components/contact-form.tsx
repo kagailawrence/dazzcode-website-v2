@@ -71,7 +71,7 @@ export default function ContactForm() {
 
   return (
     <div className="rounded-2xl bg-white border border-[#E1E7E4] p-6 sm:p-8 shadow-sm text-left">
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form onSubmit={handleSubmit} aria-label="Contact Dazzcode" className="space-y-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div className="space-y-1.5">
             <Label htmlFor="name" className="text-xs font-semibold text-[#0F172A]">
@@ -80,6 +80,8 @@ export default function ContactForm() {
             <Input
               id="name"
               name="name"
+              aria-label="Your name"
+              autoComplete="name"
               placeholder="e.g. Alex Kamau"
               required
               className="h-11 rounded-xl bg-[#F8FAF9] border-[#E1E7E4] text-sm focus:bg-white"
@@ -94,6 +96,8 @@ export default function ContactForm() {
               id="email"
               name="email"
               type="email"
+              aria-label="Work email address"
+              autoComplete="email"
               placeholder="alex@company.com"
               required
               className="h-11 rounded-xl bg-[#F8FAF9] border-[#E1E7E4] text-sm focus:bg-white"
@@ -108,6 +112,8 @@ export default function ContactForm() {
           <Input
             id="company"
             name="company"
+            aria-label="Company or project name"
+            autoComplete="organization"
             placeholder="e.g. Acme Health or Startup Idea"
             className="h-11 rounded-xl bg-[#F8FAF9] border-[#E1E7E4] text-sm focus:bg-white"
           />
@@ -120,6 +126,7 @@ export default function ContactForm() {
           <Textarea
             id="message"
             name="message"
+            aria-label="How Dazzcode can help"
             placeholder="Tell us what you want to build or solve..."
             rows={4}
             required

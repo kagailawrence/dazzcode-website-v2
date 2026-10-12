@@ -30,12 +30,12 @@ export const metadata: Metadata = {
     "Dazzcode client work"
   ],
   alternates: {
-    canonical: "https://dazzcode.com/case-studies",
+    canonical: "https://www.dazzcode.com/case-studies",
   },
   openGraph: {
     title: "Software Engineering Case Studies | Dazzcode",
     description: "See how Dazzcode engineers production SaaS platforms and web applications. Problem → Decision → Build → Result.",
-    url: "https://dazzcode.com/case-studies",
+    url: "https://www.dazzcode.com/case-studies",
     siteName: "Dazzcode",
     images: [
       {
@@ -54,31 +54,31 @@ export default function CaseStudiesIndexPage() {
     "@graph": [
       {
         "@type": "ItemList",
-        "@id": "https://dazzcode.com/case-studies#list",
+        "@id": "https://www.dazzcode.com/case-studies#list",
         name: "Dazzcode Case Studies",
         itemListElement: caseStudies.map((cs, index) => ({
           "@type": "ListItem",
           position: index + 1,
           name: cs.title,
-          url: `https://dazzcode.com/case-studies/${cs.slug}`,
+          url: `https://www.dazzcode.com/case-studies/${cs.slug}`,
           description: cs.summary,
         })),
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://dazzcode.com/case-studies#breadcrumb",
+        "@id": "https://www.dazzcode.com/case-studies#breadcrumb",
         itemListElement: [
           {
             "@type": "ListItem",
             position: 1,
             name: "Home",
-            item: "https://dazzcode.com",
+            item: "https://www.dazzcode.com",
           },
           {
             "@type": "ListItem",
             position: 2,
             name: "Case Studies",
-            item: "https://dazzcode.com/case-studies",
+            item: "https://www.dazzcode.com/case-studies",
           },
         ],
       },

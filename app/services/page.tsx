@@ -30,12 +30,12 @@ export const metadata: Metadata = {
     "AI automation"
   ],
   alternates: {
-    canonical: "https://dazzcode.com/services",
+    canonical: "https://www.dazzcode.com/services",
   },
   openGraph: {
     title: "SaaS & Software Engineering Services | Dazzcode",
     description: "Build, audit, deploy, and scale your software products with Dazzcode's institutional-grade engineering services.",
-    url: "https://dazzcode.com/services",
+    url: "https://www.dazzcode.com/services",
     siteName: "Dazzcode",
     images: [
       {
@@ -54,31 +54,31 @@ export default function ServicesOverviewPage() {
     "@graph": [
       {
         "@type": "ItemList",
-        "@id": "https://dazzcode.com/services#list",
+        "@id": "https://www.dazzcode.com/services#list",
         name: "Dazzcode Engineering Services",
         itemListElement: services.map((service, index) => ({
           "@type": "ListItem",
           position: index + 1,
           name: service.title,
-          url: `https://dazzcode.com/services/${service.slug}`,
+          url: `https://www.dazzcode.com/services/${service.slug}`,
           description: service.description,
         })),
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://dazzcode.com/services#breadcrumb",
+        "@id": "https://www.dazzcode.com/services#breadcrumb",
         itemListElement: [
           {
             "@type": "ListItem",
             position: 1,
             name: "Home",
-            item: "https://dazzcode.com",
+            item: "https://www.dazzcode.com",
           },
           {
             "@type": "ListItem",
             position: 2,
             name: "Services",
-            item: "https://dazzcode.com/services",
+            item: "https://www.dazzcode.com/services",
           },
         ],
       },

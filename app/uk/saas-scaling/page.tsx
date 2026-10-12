@@ -27,18 +27,18 @@ export const metadata: Metadata = {
     "PostgreSQL optimization UK"
   ],
   alternates: {
-    canonical: "https://dazzcode.com/uk/saas-scaling",
+    canonical: "https://www.dazzcode.com/uk/saas-scaling",
     languages: {
-      "en": "https://dazzcode.com/services/saas-scaling",
-      "en-GB": "https://dazzcode.com/uk/saas-scaling",
-      "en-US": "https://dazzcode.com/us/saas-scaling",
-      "x-default": "https://dazzcode.com/services/saas-scaling",
+      "en": "https://www.dazzcode.com/services/saas-scaling",
+      "en-GB": "https://www.dazzcode.com/uk/saas-scaling",
+      "en-US": "https://www.dazzcode.com/us/saas-scaling",
+      "x-default": "https://www.dazzcode.com/services/saas-scaling",
     },
   },
   openGraph: {
     title: "SaaS Scaling Services UK | Dazzcode",
     description: "Scale your UK SaaS application without crashing or multiplying cloud bills. Database indexing, Redis caching, and edge performance engineering.",
-    url: "https://dazzcode.com/uk/saas-scaling",
+    url: "https://www.dazzcode.com/uk/saas-scaling",
     siteName: "Dazzcode",
     images: [
       {
@@ -57,13 +57,13 @@ export default function UKSaaSScalingPage() {
     "@graph": [
       {
         "@type": "Service",
-        "@id": "https://dazzcode.com/uk/saas-scaling#service",
+        "@id": "https://www.dazzcode.com/uk/saas-scaling#service",
         name: "SaaS Scaling Services UK",
         description: "High-concurrency SaaS performance optimization and architecture scaling services for UK tech companies.",
         provider: {
           "@type": "Organization",
           name: "Dazzcode",
-          url: "https://dazzcode.com",
+          url: "https://www.dazzcode.com",
         },
         areaServed: {
           "@type": "Country",
@@ -73,25 +73,25 @@ export default function UKSaaSScalingPage() {
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://dazzcode.com/uk/saas-scaling#breadcrumb",
+        "@id": "https://www.dazzcode.com/uk/saas-scaling#breadcrumb",
         itemListElement: [
           {
             "@type": "ListItem",
             position: 1,
             name: "Home",
-            item: "https://dazzcode.com",
+            item: "https://www.dazzcode.com",
           },
           {
             "@type": "ListItem",
             position: 2,
             name: "UK",
-            item: "https://dazzcode.com/uk/saas-development",
+            item: "https://www.dazzcode.com/uk/saas-development",
           },
           {
             "@type": "ListItem",
             position: 3,
             name: "SaaS Scaling",
-            item: "https://dazzcode.com/uk/saas-scaling",
+            item: "https://www.dazzcode.com/uk/saas-scaling",
           },
         ],
       },

@@ -97,18 +97,18 @@ export const metadata: Metadata = {
     "WooCommerce website cost Kenya"
   ],
   alternates: {
-    canonical: "https://dazzcode.com/ke/woocommerce-development",
+    canonical: "https://www.dazzcode.com/ke/woocommerce-development",
     languages: {
-      "en": "https://dazzcode.com/services/web-application-development",
-      "en-KE": "https://dazzcode.com/ke/woocommerce-development",
-      "x-default": "https://dazzcode.com/ke/woocommerce-development",
+      "en": "https://www.dazzcode.com/services/web-application-development",
+      "en-KE": "https://www.dazzcode.com/ke/woocommerce-development",
+      "x-default": "https://www.dazzcode.com/ke/woocommerce-development",
     },
   },
   openGraph: {
     title: "WooCommerce Development Kenya | Ecommerce Website Development | Dazzcode",
     description:
       "WooCommerce development in Kenya for businesses, online sellers and dropshippers. Build, customize, maintain and optimize your WooCommerce store with Dazzcode.",
-    url: "https://dazzcode.com/ke/woocommerce-development",
+    url: "https://www.dazzcode.com/ke/woocommerce-development",
     siteName: "Dazzcode",
     images: [
       {
@@ -185,14 +185,14 @@ export default function WooCommerceKenyaLandingPage() {
     "@graph": [
       {
         "@type": "Service",
-        "@id": "https://dazzcode.com/ke/woocommerce-development#service",
+        "@id": "https://www.dazzcode.com/ke/woocommerce-development#service",
         name: "WooCommerce Development Kenya",
         description:
           "Professional WooCommerce and ecommerce development in Kenya. Custom store setups, M-Pesa Daraja payment integration, custom WooCommerce plugins, basic maintenance, SEO optimization, and technical code audits for Kenyan businesses.",
         provider: {
           "@type": "LocalBusiness",
           name: "Dazzcode",
-          url: "https://dazzcode.com",
+          url: "https://www.dazzcode.com",
           address: {
             "@type": "PostalAddress",
             addressLocality: "Nairobi",
@@ -277,31 +277,31 @@ export default function WooCommerceKenyaLandingPage() {
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://dazzcode.com/ke/woocommerce-development#breadcrumb",
+        "@id": "https://www.dazzcode.com/ke/woocommerce-development#breadcrumb",
         itemListElement: [
           {
             "@type": "ListItem",
             position: 1,
             name: "Home",
-            item: "https://dazzcode.com",
+            item: "https://www.dazzcode.com",
           },
           {
             "@type": "ListItem",
             position: 2,
             name: "Kenya",
-            item: "https://dazzcode.com/ke",
+            item: "https://www.dazzcode.com/ke",
           },
           {
             "@type": "ListItem",
             position: 3,
             name: "WooCommerce Development",
-            item: "https://dazzcode.com/ke/woocommerce-development",
+            item: "https://www.dazzcode.com/ke/woocommerce-development",
           },
         ],
       },
       {
         "@type": "FAQPage",
-        "@id": "https://dazzcode.com/ke/woocommerce-development#faq",
+        "@id": "https://www.dazzcode.com/ke/woocommerce-development#faq",
         mainEntity: faqs.map((f) => ({
           "@type": "Question",
           name: f.question,

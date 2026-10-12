@@ -1,0 +1,36 @@
+{
+  "name": "Dazzcode FAQ",
+  "url": "https://www.dazzcode.com",
+  "faqs": [
+    {
+      "question": "What does Dazzcode do?",
+      "answer": "Dazzcode designs, builds, audits, deploys, and scales custom SaaS products, web applications, AI automation, and business software.",
+      "url": "https://www.dazzcode.com/services"
+    },
+    {
+      "question": "Does Dazzcode build custom SaaS products?",
+      "answer": "Yes. Dazzcode engineers multi-tenant SaaS platforms with authentication, role-based access, billing integrations, and scalable database architecture.",
+      "url": "https://www.dazzcode.com/services/custom-saas-development"
+    },
+    {
+      "question": "Can Dazzcode build a SaaS MVP?",
+      "answer": "Yes. Dazzcode scopes and delivers production-ready SaaS MVPs for founders validating new product ideas.",
+      "url": "https://www.dazzcode.com/services/saas-mvp-development"
+    },
+    {
+      "question": "Does Dazzcode audit existing SaaS codebases?",
+      "answer": "Yes. Code audits cover architecture, technical debt, security risks, database performance, and a prioritized remediation plan.",
+      "url": "https://www.dazzcode.com/services/saas-code-audit"
+    },
+    {
+      "question": "Does Dazzcode provide VPS deployment?",
+      "answer": "Yes. Dazzcode deploys and operates Next.js, Node.js, and Docker applications on secure Linux VPS infrastructure with CI/CD and monitoring.",
+      "url": "https://www.dazzcode.com/services/vps-deployment"
+    },
+    {
+      "question": "Can Dazzcode integrate AI automation into business workflows?",
+      "answer": "Yes. Dazzcode builds AI-assisted workflows for lead qualification, CRM updates, document processing, and other operational processes.",
+      "url": "https://www.dazzcode.com/services/ai-automation"
+    }
+  ]
+}

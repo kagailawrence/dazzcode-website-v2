@@ -70,20 +70,20 @@ export const metadata: Metadata = {
     "SaaS development company US"
   ],
   alternates: {
-    canonical: "https://dazzcode.com/services/custom-saas-development",
+    canonical: "https://www.dazzcode.com/services/custom-saas-development",
     languages: {
-      "en": "https://dazzcode.com/services/custom-saas-development",
-      "en-KE": "https://dazzcode.com/ke/saas-development-company",
-      "en-GB": "https://dazzcode.com/uk/saas-development",
-      "en-US": "https://dazzcode.com/us/saas-development",
-      "x-default": "https://dazzcode.com/services/custom-saas-development",
+      "en": "https://www.dazzcode.com/services/custom-saas-development",
+      "en-KE": "https://www.dazzcode.com/ke/saas-development-company",
+      "en-GB": "https://www.dazzcode.com/uk/saas-development",
+      "en-US": "https://www.dazzcode.com/us/saas-development",
+      "x-default": "https://www.dazzcode.com/services/custom-saas-development",
     },
   },
   openGraph: {
     title: "Custom SaaS Development Company | Build & Scale SaaS Products | Dazzcode",
     description:
       "Dazzcode designs, builds, deploys, audits and scales custom SaaS platforms for startups and growing companies worldwide. Build → Audit → Fix → Deploy → Scale.",
-    url: "https://dazzcode.com/services/custom-saas-development",
+    url: "https://www.dazzcode.com/services/custom-saas-development",
     siteName: "Dazzcode",
     images: [
       {
@@ -177,15 +177,15 @@ export default function CustomSaasDevelopmentPage() {
     "@graph": [
       {
         "@type": "Service",
-        "@id": "https://dazzcode.com/services/custom-saas-development#service",
+        "@id": "https://www.dazzcode.com/services/custom-saas-development#service",
         name: "Custom SaaS Development Company",
         description:
           "Dazzcode provides custom SaaS development for startups and growing businesses. We design, build, deploy, audit and scale SaaS products from MVP to production.",
         provider: {
           "@type": "Organization",
           name: "Dazzcode",
-          url: "https://dazzcode.com",
-          logo: "https://dazzcode.com/images/logo.png",
+          url: "https://www.dazzcode.com",
+          logo: "https://www.dazzcode.com/images/logo.png",
           address: {
             "@type": "PostalAddress",
             addressLocality: "Nairobi",
@@ -197,31 +197,31 @@ export default function CustomSaasDevelopmentPage() {
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://dazzcode.com/services/custom-saas-development#breadcrumb",
+        "@id": "https://www.dazzcode.com/services/custom-saas-development#breadcrumb",
         itemListElement: [
           {
             "@type": "ListItem",
             position: 1,
             name: "Home",
-            item: "https://dazzcode.com",
+            item: "https://www.dazzcode.com",
           },
           {
             "@type": "ListItem",
             position: 2,
             name: "Services",
-            item: "https://dazzcode.com/services",
+            item: "https://www.dazzcode.com/services",
           },
           {
             "@type": "ListItem",
             position: 3,
             name: "Custom SaaS Development",
-            item: "https://dazzcode.com/services/custom-saas-development",
+            item: "https://www.dazzcode.com/services/custom-saas-development",
           },
         ],
       },
       {
         "@type": "FAQPage",
-        "@id": "https://dazzcode.com/services/custom-saas-development#faq",
+        "@id": "https://www.dazzcode.com/services/custom-saas-development#faq",
         mainEntity: saasFaqs.map((faq) => ({
           "@type": "Question",
           name: faq.q,

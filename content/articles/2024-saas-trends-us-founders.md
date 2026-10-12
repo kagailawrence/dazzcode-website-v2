@@ -45,7 +45,7 @@ As a US-based SaaS founder, staying ahead of the curve is crucial for success. H
 ## Ready to Future-Proof Your SaaS?
 At Dazzcode, we help US founders build compliant, AI-ready, and scalable SaaS products that stand out in a crowded market. Whether you're launching an MVP or scaling an existing product, our team has the expertise to turn these trends into competitive advantages.
 
-[Contact us today](https://dazzcode.com/contact) for a free SaaS strategy consultation tailored to your US market goals.
+[Contact us today](https://www.dazzcode.com/contact) for a free SaaS strategy consultation tailored to your US market goals.
 
 ---
 

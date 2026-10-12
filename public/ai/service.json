@@ -1,0 +1,42 @@
+{
+  "name": "Dazzcode",
+  "url": "https://www.dazzcode.com/services",
+  "description": "Dazzcode is a SaaS and software engineering company serving clients in Kenya and globally.",
+  "capabilities": [
+    {
+      "name": "Custom SaaS Development",
+      "description": "Multi-tenant SaaS platforms, authentication, subscription billing, role-based access, and scalable architecture.",
+      "url": "https://www.dazzcode.com/services/custom-saas-development"
+    },
+    {
+      "name": "SaaS MVP Development",
+      "description": "Production-ready MVPs for validating and launching new SaaS products.",
+      "url": "https://www.dazzcode.com/services/saas-mvp-development"
+    },
+    {
+      "name": "SaaS Code Audit",
+      "description": "Architecture review, technical due diligence, security analysis, and remediation planning.",
+      "url": "https://www.dazzcode.com/services/saas-code-audit"
+    },
+    {
+      "name": "SaaS Scaling",
+      "description": "Database optimization, caching, background jobs, and high-concurrency performance engineering.",
+      "url": "https://www.dazzcode.com/services/saas-scaling"
+    },
+    {
+      "name": "VPS Deployment",
+      "description": "Linux VPS, Docker, CI/CD, monitoring, and production operations for web applications.",
+      "url": "https://www.dazzcode.com/services/vps-deployment"
+    },
+    {
+      "name": "Custom Web Application Development",
+      "description": "Internal tools, dashboards, client portals, and workflow software tailored to business operations.",
+      "url": "https://www.dazzcode.com/services/web-application-development"
+    },
+    {
+      "name": "AI and Business Workflow Automation",
+      "description": "AI-assisted lead qualification, CRM workflows, document processing, and operational automation.",
+      "url": "https://www.dazzcode.com/services/ai-automation"
+    }
+  ]
+}

@@ -75,21 +75,21 @@ export const metadata: Metadata = {
     "AI automation Nairobi"
   ],
   alternates: {
-    canonical: "https://dazzcode.com/services/ai-automation",
+    canonical: "https://www.dazzcode.com/services/ai-automation",
     languages: {
-      "en": "https://dazzcode.com/services/ai-automation",
-      "x-default": "https://dazzcode.com/services/ai-automation"
+      "en": "https://www.dazzcode.com/services/ai-automation",
+      "x-default": "https://www.dazzcode.com/services/ai-automation"
     }
   },
   openGraph: {
     title: "AI & Business Workflow Automation | Dazzcode",
     description:
       "Automate repetitive business workflows with AI, integrations and custom software. Dazzcode builds practical automation systems for businesses in Kenya and beyond.",
-    url: "https://dazzcode.com/services/ai-automation",
+    url: "https://www.dazzcode.com/services/ai-automation",
     siteName: "Dazzcode",
     images: [
       {
-        url: "https://dazzcode.com/opengraph-image",
+        url: "https://www.dazzcode.com/opengraph-image",
         width: 1200,
         height: 630,
         alt: "AI & Business Workflow Automation - Dazzcode"
@@ -195,10 +195,10 @@ export default function AiAutomationPage() {
     "@graph": [
       {
         "@type": "Organization",
-        "@id": "https://dazzcode.com/#organization",
+        "@id": "https://www.dazzcode.com/#organization",
         "name": "Dazzcode",
-        "url": "https://dazzcode.com",
-        "logo": "https://dazzcode.com/opengraph-image",
+        "url": "https://www.dazzcode.com",
+        "logo": "https://www.dazzcode.com/opengraph-image",
         "contactPoint": {
           "@type": "ContactPoint",
           "telephone": "+254740938029",
@@ -209,10 +209,10 @@ export default function AiAutomationPage() {
       },
       {
         "@type": "Service",
-        "@id": "https://dazzcode.com/services/ai-automation#service",
+        "@id": "https://www.dazzcode.com/services/ai-automation#service",
         "name": "AI & Business Workflow Automation",
         "provider": {
-          "@id": "https://dazzcode.com/#organization"
+          "@id": "https://www.dazzcode.com/#organization"
         },
         "description":
           "Automate repetitive business workflows with AI, integrations and custom software. Dazzcode builds practical automation systems for businesses in Kenya and beyond.",
@@ -222,7 +222,7 @@ export default function AiAutomationPage() {
           "@type": "Offer",
           "priceCurrency": "USD",
           "price": "Custom Scope",
-          "url": "https://dazzcode.com/services/ai-automation"
+          "url": "https://www.dazzcode.com/services/ai-automation"
         }
       },
       {
@@ -232,19 +232,19 @@ export default function AiAutomationPage() {
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://dazzcode.com"
+            "item": "https://www.dazzcode.com"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Services",
-            "item": "https://dazzcode.com/services"
+            "item": "https://www.dazzcode.com/services"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "AI & Workflow Automation",
-            "item": "https://dazzcode.com/services/ai-automation"
+            "item": "https://www.dazzcode.com/services/ai-automation"
           }
         ]
       },

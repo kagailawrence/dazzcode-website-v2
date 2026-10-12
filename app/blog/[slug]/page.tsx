@@ -21,6 +21,10 @@ import {
 import JsonLd from "@/components/seo/JsonLd";
 import { Metadata } from "next";
 
+function toIsoDate(date: string) {
+  return new Date(date.includes("T") ? date : `${date}T00:00:00.000Z`).toISOString();
+}
+
 export async function generateStaticParams() {
   const posts = getAllPosts();
   return posts.map((post) => ({
@@ -40,6 +44,9 @@ export async function generateMetadata(
     };
   }
 
+  const publishedTime = toIsoDate(post.publishedAt);
+  const modifiedTime = toIsoDate(post.updatedAt ?? post.publishedAt);
+
   return {
     title: `${post.title} | Dazzcode Engineering Blog`,
     description: post.description,
@@ -53,15 +60,16 @@ export async function generateMetadata(
       "Dazzcode blog",
     ],
     alternates: {
-      canonical: `https://dazzcode.com/blog/${slug}`,
+      canonical: `https://www.dazzcode.com/blog/${slug}`,
     },
     openGraph: {
       title: post.title,
       description: post.description,
       type: "article",
-      publishedTime: post.publishedAt,
+      publishedTime,
+      modifiedTime,
       authors: [post.author],
-      url: `https://dazzcode.com/blog/${slug}`,
+      url: `https://www.dazzcode.com/blog/${slug}`,
       siteName: "Dazzcode",
       images: [
         {
@@ -89,6 +97,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     notFound();
   }
 
+  const publishedTime = toIsoDate(post.publishedAt);
+  const modifiedTime = toIsoDate(post.updatedAt ?? post.publishedAt);
+
   const allPosts = getAllPosts();
   const relatedPosts = allPosts
     .filter((p) => p.slug !== post.slug)
@@ -99,52 +110,53 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Article",
-        "@id": `https://dazzcode.com/blog/${post.slug}#article`,
+        "@type": "BlogPosting",
+        "@id": `https://www.dazzcode.com/blog/${post.slug}#article`,
         headline: post.title,
         description: post.description,
         author: {
           "@type": "Person",
           name: post.author,
-          url: "https://dazzcode.com/about",
+          url: "https://www.dazzcode.com/about",
         },
         publisher: {
           "@type": "Organization",
           name: "Dazzcode",
-          url: "https://dazzcode.com",
+          url: "https://www.dazzcode.com",
           logo: {
             "@type": "ImageObject",
-            url: "https://dazzcode.com/images/logo.png",
+            url: "https://www.dazzcode.com/images/logo.png",
           },
         },
-        datePublished: post.publishedAt,
-        image: "https://dazzcode.com/images/hero-saas-dashboard.jpg",
+        datePublished: publishedTime,
+        dateModified: modifiedTime,
+        image: "https://www.dazzcode.com/images/hero-saas-dashboard.jpg",
         mainEntityOfPage: {
           "@type": "WebPage",
-          "@id": `https://dazzcode.com/blog/${post.slug}`,
+          "@id": `https://www.dazzcode.com/blog/${post.slug}`,
         },
       },
       {
         "@type": "BreadcrumbList",
-        "@id": `https://dazzcode.com/blog/${post.slug}#breadcrumb`,
+        "@id": `https://www.dazzcode.com/blog/${post.slug}#breadcrumb`,
         itemListElement: [
           {
             "@type": "ListItem",
             position: 1,
             name: "Home",
-            item: "https://dazzcode.com",
+            item: "https://www.dazzcode.com",
           },
           {
             "@type": "ListItem",
             position: 2,
             name: "Blog",
-            item: "https://dazzcode.com/blog",
+            item: "https://www.dazzcode.com/blog",
           },
           {
             "@type": "ListItem",
             position: 3,
             name: post.title,
-            item: `https://dazzcode.com/blog/${post.slug}`,
+            item: `https://www.dazzcode.com/blog/${post.slug}`,
           },
         ],
       },
@@ -172,14 +184,14 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             <span className="px-3 py-1 rounded-full bg-[#ECFDF5] border border-[#059669]/20 text-[#059669] font-bold uppercase tracking-wider">
               {post.category}
             </span>
-            <span className="flex items-center gap-1">
+            <time className="flex items-center gap-1" dateTime={publishedTime}>
               <Calendar className="w-3.5 h-3.5" />
               {new Date(post.publishedAt).toLocaleDateString("en-US", {
                 year: "numeric",
                 month: "long",
                 day: "numeric",
               })}
-            </span>
+            </time>
             <span>•</span>
             <span className="flex items-center gap-1">
               <Clock className="w-3.5 h-3.5" />

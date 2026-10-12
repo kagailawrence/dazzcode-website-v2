@@ -27,19 +27,19 @@ export const metadata: Metadata = {
     "Next.js SaaS developers UK"
   ],
   alternates: {
-    canonical: "https://dazzcode.com/uk/saas-development",
+    canonical: "https://www.dazzcode.com/uk/saas-development",
     languages: {
-      "en": "https://dazzcode.com/services/saas-development",
-      "en-KE": "https://dazzcode.com/ke/saas-development-company",
-      "en-GB": "https://dazzcode.com/uk/saas-development",
-      "en-US": "https://dazzcode.com/us/saas-development",
-      "x-default": "https://dazzcode.com/services/saas-development",
+      "en": "https://www.dazzcode.com/services/saas-development",
+      "en-KE": "https://www.dazzcode.com/ke/saas-development-company",
+      "en-GB": "https://www.dazzcode.com/uk/saas-development",
+      "en-US": "https://www.dazzcode.com/us/saas-development",
+      "x-default": "https://www.dazzcode.com/services/saas-development",
     },
   },
   openGraph: {
     title: "SaaS Development Company UK | Dazzcode",
     description: "Accelerate your SaaS roadmap. High-velocity full-stack engineering, GMT timezone collaboration, and institutional-grade codebases for UK founders.",
-    url: "https://dazzcode.com/uk/saas-development",
+    url: "https://www.dazzcode.com/uk/saas-development",
     siteName: "Dazzcode",
     images: [
       {
@@ -58,14 +58,14 @@ export default function UKSaaSPage() {
     "@graph": [
       {
         "@type": "Service",
-        "@id": "https://dazzcode.com/uk/saas-development#service",
+        "@id": "https://www.dazzcode.com/uk/saas-development#service",
         name: "SaaS Development Company UK",
         description: "B2B SaaS development and architecture engineering for UK startups and growth-stage platforms, featuring Next.js, TypeScript, and GDPR-compliant cloud infrastructure.",
         provider: {
           "@type": "Organization",
           name: "Dazzcode",
-          url: "https://dazzcode.com",
-          logo: "https://dazzcode.com/images/logo.png",
+          url: "https://www.dazzcode.com",
+          logo: "https://www.dazzcode.com/images/logo.png",
         },
         areaServed: {
           "@type": "Country",
@@ -75,25 +75,25 @@ export default function UKSaaSPage() {
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://dazzcode.com/uk/saas-development#breadcrumb",
+        "@id": "https://www.dazzcode.com/uk/saas-development#breadcrumb",
         itemListElement: [
           {
             "@type": "ListItem",
             position: 1,
             name: "Home",
-            item: "https://dazzcode.com",
+            item: "https://www.dazzcode.com",
           },
           {
             "@type": "ListItem",
             position: 2,
             name: "UK",
-            item: "https://dazzcode.com/uk/saas-development",
+            item: "https://www.dazzcode.com/uk/saas-development",
           },
           {
             "@type": "ListItem",
             position: 3,
             name: "SaaS Development",
-            item: "https://dazzcode.com/uk/saas-development",
+            item: "https://www.dazzcode.com/uk/saas-development",
           },
         ],
       },

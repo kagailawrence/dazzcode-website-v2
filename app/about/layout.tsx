@@ -16,13 +16,13 @@ export const metadata: Metadata = {
     "software engineers Nairobi",
   ],
   alternates: {
-    canonical: "https://dazzcode.com/about",
+    canonical: "https://www.dazzcode.com/about",
   },
   openGraph: {
     title: "About Dazzcode | SaaS Engineering Agency & Product Lab",
     description:
       "Meet Dazzcode: We build transparent, investor-ready SaaS products, scalable web apps, and cloud systems for high-growth founders and businesses globally.",
-    url: "https://dazzcode.com/about",
+    url: "https://www.dazzcode.com/about",
     siteName: "Dazzcode",
     type: "website",
     images: [

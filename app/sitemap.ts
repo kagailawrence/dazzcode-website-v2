@@ -3,7 +3,7 @@ import { services, caseStudies } from '@/lib/data';
 import { getAllPosts } from '@/lib/blog';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://dazzcode.com';
+    const baseUrl = 'https://www.dazzcode.com';
     const lastModified = new Date();
 
     // 1. Static Core Pages

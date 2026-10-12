@@ -65,21 +65,21 @@ export const metadata: Metadata = {
     "SaaS MVP development for startups"
   ],
   alternates: {
-    canonical: "https://dazzcode.com/services/saas-mvp-development",
+    canonical: "https://www.dazzcode.com/services/saas-mvp-development",
     languages: {
-      "en": "https://dazzcode.com/services/saas-mvp-development",
-      "en-KE": "https://dazzcode.com/ke/mvp-development"
+      "en": "https://www.dazzcode.com/services/saas-mvp-development",
+      "en-KE": "https://www.dazzcode.com/ke/mvp-development"
     }
   },
   openGraph: {
     title: "SaaS MVP Development Company | Dazzcode",
     description:
       "Turn your validated SaaS idea into a high-performance, launchable product in 4–8 weeks with modern architecture, multi-tenancy, and automated billing.",
-    url: "https://dazzcode.com/services/saas-mvp-development",
+    url: "https://www.dazzcode.com/services/saas-mvp-development",
     siteName: "Dazzcode",
     images: [
       {
-        url: "https://dazzcode.com/opengraph-image",
+        url: "https://www.dazzcode.com/opengraph-image",
         width: 1200,
         height: 630,
         alt: "Dazzcode SaaS MVP Development"
@@ -161,10 +161,10 @@ export default function SaasMvpDevelopmentPage() {
     "@graph": [
       {
         "@type": "Organization",
-        "@id": "https://dazzcode.com/#organization",
+        "@id": "https://www.dazzcode.com/#organization",
         "name": "Dazzcode",
-        "url": "https://dazzcode.com",
-        "logo": "https://dazzcode.com/opengraph-image",
+        "url": "https://www.dazzcode.com",
+        "logo": "https://www.dazzcode.com/opengraph-image",
         "contactPoint": {
           "@type": "ContactPoint",
           "telephone": "+254740938029",
@@ -175,10 +175,10 @@ export default function SaasMvpDevelopmentPage() {
       },
       {
         "@type": "Service",
-        "@id": "https://dazzcode.com/services/saas-mvp-development#service",
+        "@id": "https://www.dazzcode.com/services/saas-mvp-development#service",
         "name": "SaaS MVP Development Services",
         "provider": {
-          "@id": "https://dazzcode.com/#organization"
+          "@id": "https://www.dazzcode.com/#organization"
         },
         "description":
           "End-to-end SaaS MVP development for high-conviction founders. We design, engineer, and deploy launch-ready SaaS products in 4 to 8 weeks with multi-tenant PostgreSQL architecture, subscription billing, and zero vendor lock-in.",
@@ -188,7 +188,7 @@ export default function SaasMvpDevelopmentPage() {
           "@type": "Offer",
           "priceCurrency": "USD",
           "price": "Custom Scope",
-          "url": "https://dazzcode.com/services/saas-mvp-development"
+          "url": "https://www.dazzcode.com/services/saas-mvp-development"
         }
       },
       {
@@ -198,19 +198,19 @@ export default function SaasMvpDevelopmentPage() {
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://dazzcode.com"
+            "item": "https://www.dazzcode.com"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Services",
-            "item": "https://dazzcode.com/services"
+            "item": "https://www.dazzcode.com/services"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "SaaS MVP Development",
-            "item": "https://dazzcode.com/services/saas-mvp-development"
+            "item": "https://www.dazzcode.com/services/saas-mvp-development"
           }
         ]
       },
