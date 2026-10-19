@@ -42,7 +42,7 @@ import AiAutomationLeadForm from "@/components/sections/AiAutomationLeadForm";
 export const metadata: Metadata = {
   title: "AI Business Automation Services | Dazzcode",
   description:
-    "Automate repetitive business workflows with AI, integrations and custom software. Dazzcode builds practical automation systems for businesses in Kenya and beyond.",
+    "Automate business workflows with AI, integrations, and custom software. Dazzcode builds practical systems for businesses in Kenya and beyond.",
   keywords: [
     "AI business automation",
     "AI automation services",

@@ -62,7 +62,7 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
       canonical: "https://www.dazzcode.com/services/custom-saas-development",
       languages: {
         "en": "https://www.dazzcode.com/services/custom-saas-development",
-        "en-KE": "https://www.dazzcode.com/ke/saas-development-company",
+        "en-KE": "https://www.dazzcode.com/ke/saas-development-company-kenya-nairobi",
         "en-GB": "https://www.dazzcode.com/uk/saas-development",
         "en-US": "https://www.dazzcode.com/us/saas-development",
         "x-default": "https://www.dazzcode.com/services/custom-saas-development",

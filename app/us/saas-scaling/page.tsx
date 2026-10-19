@@ -17,7 +17,7 @@ import {
 
 export const metadata: Metadata = {
   title: "SaaS Scaling Services US | Performance Optimization | Dazzcode",
-  description: "Dazzcode provides high-concurrency SaaS scaling and performance optimization services for US startups. Fix database bottlenecks, lower cloud compute costs, and scale your application effortlessly.",
+  description: "Dazzcode helps US SaaS teams remove database bottlenecks, reduce cloud costs, and scale application performance.",
   keywords: [
     "SaaS scaling services US",
     "SaaS performance optimization",

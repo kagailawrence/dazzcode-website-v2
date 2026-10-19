@@ -71,14 +71,14 @@ export default function AboutPage() {
     {
       title: "SaaS Platform Engineering",
       icon: Layers,
-      href: "/services/saas-development",
+      href: "/services/custom-saas-development",
       description:
         "We architect multi-tenant SaaS platforms with strict TypeScript type-safety, robust subscription billing, role-based access control, and scalable database schemas designed to pass technical due diligence.",
     },
     {
       title: "Codebase Audits & Optimization",
       icon: ShieldCheck,
-      href: "/services/code-audit",
+      href: "/services/saas-code-audit",
       description:
         "We inspect legacy and inherited repositories line-by-line to uncover security risks, eliminate N+1 query bottlenecks, and establish clear refactoring roadmaps without requiring panic rewrites.",
     },
@@ -443,7 +443,7 @@ export default function AboutPage() {
           {/* Quick links footer */}
           <div className="pt-8 border-t border-[#E1E7E4] max-w-3xl mx-auto">
             <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs text-[#52605B]">
-              <Link href="/services/saas-development" className="hover:text-[#059669] underline">
+              <Link href="/services/custom-saas-development" className="hover:text-[#059669] underline">
                 SaaS Development
               </Link>
               <span>·</span>
@@ -451,7 +451,7 @@ export default function AboutPage() {
                 SaaS MVP Launch
               </Link>
               <span>·</span>
-              <Link href="/services/code-audit" className="hover:text-[#059669] underline">
+              <Link href="/services/saas-code-audit" className="hover:text-[#059669] underline">
                 Code Audits
               </Link>
               <span>·</span>

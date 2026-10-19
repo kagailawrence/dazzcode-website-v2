@@ -77,18 +77,18 @@ export const metadata: Metadata = {
     "M-Pesa website integration Kenya"
   ],
   alternates: {
-    canonical: "https://www.dazzcode.com/ke/web-development",
+    canonical: "https://www.dazzcode.com/ke/web-development-kenya-nairobi",
     languages: {
       "en": "https://www.dazzcode.com/services/web-application-development",
-      "en-KE": "https://www.dazzcode.com/ke/web-development",
-      "x-default": "https://www.dazzcode.com/ke/web-development",
+      "en-KE": "https://www.dazzcode.com/ke/web-development-kenya-nairobi",
+      "x-default": "https://www.dazzcode.com/ke/web-development-kenya-nairobi",
     },
   },
   openGraph: {
     title: "Web Development Company Kenya | Web Applications & Websites | Dazzcode",
     description:
       "Dazzcode builds professional websites and custom web applications for Kenyan businesses, startups and growing organizations. Development, SEO and ongoing support.",
-    url: "https://www.dazzcode.com/ke/web-development",
+    url: "https://www.dazzcode.com/ke/web-development-kenya-nairobi",
     siteName: "Dazzcode",
     images: [
       {
@@ -177,7 +177,7 @@ export default function KenyaWebDevelopmentPage() {
     "@graph": [
       {
         "@type": "Service",
-        "@id": "https://www.dazzcode.com/ke/web-development#service",
+        "@id": "https://www.dazzcode.com/ke/web-development-kenya-nairobi#service",
         name: "Web Development Company in Kenya",
         description:
           "Professional website development and custom web application engineering in Kenya. Building company websites, client portals, internal business systems, M-Pesa integrations, and ongoing SEO.",
@@ -239,7 +239,7 @@ export default function KenyaWebDevelopmentPage() {
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://www.dazzcode.com/ke/web-development#breadcrumb",
+        "@id": "https://www.dazzcode.com/ke/web-development-kenya-nairobi#breadcrumb",
         itemListElement: [
           {
             "@type": "ListItem",
@@ -257,13 +257,13 @@ export default function KenyaWebDevelopmentPage() {
             "@type": "ListItem",
             position: 3,
             name: "Web Development",
-            item: "https://www.dazzcode.com/ke/web-development",
+            item: "https://www.dazzcode.com/ke/web-development-kenya-nairobi",
           },
         ],
       },
       {
         "@type": "FAQPage",
-        "@id": "https://www.dazzcode.com/ke/web-development#faq",
+        "@id": "https://www.dazzcode.com/ke/web-development-kenya-nairobi#faq",
         mainEntity: faqs.map((f) => ({
           "@type": "Question",
           name: f.question,
@@ -1083,7 +1083,7 @@ export default function KenyaWebDevelopmentPage() {
                 <li className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-[#059669]" /> Prioritized engineering remediation roadmap</li>
               </ul>
               <div className="pt-4">
-                <Link href="/services/code-audit">
+                <Link href="/services/saas-code-audit">
                   <Button variant="outline" className="text-xs font-bold uppercase tracking-wider border-[#E2EAE6] rounded-xl cursor-pointer">
                     Request a Code Audit →
                   </Button>
@@ -1380,13 +1380,13 @@ export default function KenyaWebDevelopmentPage() {
             Related Engineering Services
           </span>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 text-xs">
-            <Link href="/services/saas-development" className="p-3 rounded-xl bg-white border border-[#E2EAE6] hover:border-[#059669] text-[#12201B] font-semibold transition-colors text-center">
+            <Link href="/services/custom-saas-development" className="p-3 rounded-xl bg-white border border-[#E2EAE6] hover:border-[#059669] text-[#12201B] font-semibold transition-colors text-center">
               SaaS Development
             </Link>
-            <Link href="/ke/woocommerce-development" className="p-3 rounded-xl bg-white border border-[#E2EAE6] hover:border-[#059669] text-[#12201B] font-semibold transition-colors text-center">
+            <Link href="/ke/woocommerce-development-kenya-nairobi" className="p-3 rounded-xl bg-white border border-[#E2EAE6] hover:border-[#059669] text-[#12201B] font-semibold transition-colors text-center">
               WooCommerce Kenya
             </Link>
-            <Link href="/services/code-audit" className="p-3 rounded-xl bg-white border border-[#E2EAE6] hover:border-[#059669] text-[#12201B] font-semibold transition-colors text-center">
+            <Link href="/services/saas-code-audit" className="p-3 rounded-xl bg-white border border-[#E2EAE6] hover:border-[#059669] text-[#12201B] font-semibold transition-colors text-center">
               Code Audit
             </Link>
             <Link href="/services/saas-scaling" className="p-3 rounded-xl bg-white border border-[#E2EAE6] hover:border-[#059669] text-[#12201B] font-semibold transition-colors text-center">

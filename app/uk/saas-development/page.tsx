@@ -15,8 +15,8 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "SaaS Development Company UK | B2B SaaS Engineering | Dazzcode",
-  description: "Dazzcode is a dedicated SaaS development company working with UK startups and scaleups. We build scalable multi-tenant SaaS products, MVPs, and cloud platforms with GMT timezone alignment and GBP milestone pricing.",
+  title: "SaaS Development Company UK | Dazzcode",
+  description: "Dazzcode builds multi-tenant SaaS products, MVPs, and cloud platforms for UK startups, with GMT collaboration and clear GBP milestone pricing.",
   keywords: [
     "SaaS development company UK",
     "SaaS development UK",
@@ -29,11 +29,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.dazzcode.com/uk/saas-development",
     languages: {
-      "en": "https://www.dazzcode.com/services/saas-development",
-      "en-KE": "https://www.dazzcode.com/ke/saas-development-company",
+      "en": "https://www.dazzcode.com/services/custom-saas-development",
+      "en-KE": "https://www.dazzcode.com/ke/saas-development-company-kenya-nairobi",
       "en-GB": "https://www.dazzcode.com/uk/saas-development",
       "en-US": "https://www.dazzcode.com/us/saas-development",
-      "x-default": "https://www.dazzcode.com/services/saas-development",
+      "x-default": "https://www.dazzcode.com/services/custom-saas-development",
     },
   },
   openGraph: {
@@ -110,7 +110,7 @@ export default function UKSaaSPage() {
           <nav className="flex items-center gap-2 text-xs font-mono text-[#52615B] mb-8" aria-label="Breadcrumb">
             <Link href="/" className="hover:text-[#059669] transition-colors">Home</Link>
             <span>/</span>
-            <Link href="/services/saas-development" className="hover:text-[#059669] transition-colors">Services</Link>
+            <Link href="/services/custom-saas-development" className="hover:text-[#059669] transition-colors">Services</Link>
             <span>/</span>
             <span className="text-[#12201B] font-semibold">UK SaaS Development</span>
           </nav>

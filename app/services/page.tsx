@@ -18,7 +18,7 @@ import {
 
 export const metadata: Metadata = {
   title: "SaaS & Software Engineering Services | Dazzcode",
-  description: "Explore Dazzcode's full software lifecycle services: SaaS development, SaaS MVP launches, code audits, SaaS scaling, VPS server deployments, custom web apps, and AI workflow automation.",
+  description: "Explore Dazzcode services for SaaS development, MVP launches, code audits, scaling, VPS deployment, custom web apps, and AI workflow automation.",
   keywords: [
     "SaaS development services",
     "SaaS development company",
@@ -180,7 +180,7 @@ export default function ServicesOverviewPage() {
             Dazzcode is headquartered in Nairobi, Kenya, engineering software for clients across East Africa, the United Kingdom, and the United States.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/ke/saas-development-company" className="px-5 py-2.5 rounded-xl bg-[#FFFFFF] border border-[#E2EAE6] text-xs font-bold text-[#12201B] hover:border-[#059669] hover:text-[#059669] transition-colors shadow-xs">
+            <Link href="/ke/saas-development-company-kenya-nairobi" className="px-5 py-2.5 rounded-xl bg-[#FFFFFF] border border-[#E2EAE6] text-xs font-bold text-[#12201B] hover:border-[#059669] hover:text-[#059669] transition-colors shadow-xs">
               Kenya SaaS Engineering
             </Link>
             <Link href="/east-africa/saas-development" className="px-5 py-2.5 rounded-xl bg-[#FFFFFF] border border-[#E2EAE6] text-xs font-bold text-[#12201B] hover:border-[#059669] hover:text-[#059669] transition-colors shadow-xs">

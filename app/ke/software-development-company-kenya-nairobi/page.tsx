@@ -16,8 +16,8 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Software Development Company in Kenya | Custom Business Software | Dazzcode",
-  description: "Dazzcode is a custom software development company in Kenya. We engineer bespoke business management systems, enterprise ERPs, inventory portals, and operational software for Kenyan companies.",
+  title: "Software Development Company in Kenya | Dazzcode",
+  description: "Dazzcode builds custom business software in Kenya, including management systems, ERPs, inventory portals, and operational tools for growing companies.",
   keywords: [
     "software development company Kenya",
     "custom software development Kenya",
@@ -27,12 +27,12 @@ export const metadata: Metadata = {
     "business management software Kenya"
   ],
   alternates: {
-    canonical: "https://www.dazzcode.com/ke/software-development-company",
+    canonical: "https://www.dazzcode.com/ke/software-development-company-kenya-nairobi",
   },
   openGraph: {
     title: "Software Development Company in Kenya | Dazzcode",
     description: "Custom software engineering for Kenyan businesses and enterprises. Replace manual spreadsheets with bespoke operational software.",
-    url: "https://www.dazzcode.com/ke/software-development-company",
+    url: "https://www.dazzcode.com/ke/software-development-company-kenya-nairobi",
     siteName: "Dazzcode",
     images: [
       {
@@ -51,7 +51,7 @@ export default function KenyaSoftwareDevelopmentPage() {
     "@graph": [
       {
         "@type": "Service",
-        "@id": "https://www.dazzcode.com/ke/software-development-company#service",
+        "@id": "https://www.dazzcode.com/ke/software-development-company-kenya-nairobi#service",
         name: "Custom Software Development Company in Kenya",
         description: "Bespoke software development for Kenyan SMEs and growing enterprises. Building operational workflow engines, inventory systems, and custom database software.",
         provider: {
@@ -72,7 +72,7 @@ export default function KenyaSoftwareDevelopmentPage() {
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://www.dazzcode.com/ke/software-development-company#breadcrumb",
+        "@id": "https://www.dazzcode.com/ke/software-development-company-kenya-nairobi#breadcrumb",
         itemListElement: [
           {
             "@type": "ListItem",
@@ -90,7 +90,7 @@ export default function KenyaSoftwareDevelopmentPage() {
             "@type": "ListItem",
             position: 3,
             name: "Software Development Company",
-            item: "https://www.dazzcode.com/ke/software-development-company",
+            item: "https://www.dazzcode.com/ke/software-development-company-kenya-nairobi",
           },
         ],
       },

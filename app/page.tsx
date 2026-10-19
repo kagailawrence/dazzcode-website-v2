@@ -1,103 +1,20 @@
-"use client";
-
-import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
   ArrowRight,
-  CheckCircle2,
-  ChevronDown,
-  Layers,
-  Sparkles,
   ShieldCheck,
-  Globe,
-  Database,
-  RefreshCw,
-  Briefcase,
-  Store,
-  LineChart,
   Code2,
   ChevronRight,
-  Rocket,
-  Cpu,
-  Server,
   Zap,
-  Check,
-  BarChart3,
-  Users,
-  Building2,
-  TrendingUp,
-  ShieldAlert,
-  ArrowUpRight,
-  HelpCircle,
   Clock
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import HeroServicesCarousel from "@/components/sections/HeroServicesCarousel";
 import JsonLd from "@/components/seo/JsonLd";
+import HomeFaq from "@/components/sections/HomeFaq";
+import { homeFaqItems } from "@/lib/home-faq";
 
 export default function Home() {
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
-
-  const toggleFaq = (index: number) => {
-    setOpenFaq(openFaq === index ? null : index);
-  };
-
-  const faqItems = [
-    {
-      question:"Who is dazzcode?",
-      answer:"saas development company based in kenya serving clients across east africa, the uk, and the us."
-    },
-    {
-      question: "What does Dazzcode do as a SaaS development company?",
-      answer:
-        "Dazzcode is a software engineering company providing services across the entire software lifecycle: Build → Audit → Fix → Deploy → Scale. We build custom SaaS platforms, launch startup MVPs in 4 to 6 weeks, conduct deep codebase audits, deploy applications to Linux VPS servers with Docker and Nginx, and optimize platforms for high concurrency.",
-    },
-    {
-      question: "How much does custom SaaS development & MVP engineering cost?",
-      answer:
-        "Costs typically range between $1000 to $7,500 (or KES 30,000 to KES 900,000) for a focused SaaS MVP development sprint, depending on feature depth, multi-tenancy architecture complexity, and payment gateway requirements. We provide transparent, fixed-milestone pricing with zero surprise hourly overruns.",
-    },
-    {
-      question: "How long does it take to build and launch a SaaS MVP?",
-      answer:
-        "Most production-ready SaaS product development sprints take 4 to 6 weeks. We work in rapid weekly iterations with live staging preview deployments every Friday, allowing you to test core SaaS workflows continuously.",
-    },
-    {
-      question: "What is included in a Dazzcode SaaS code audit?",
-      answer:
-        "Our comprehensive code audit inspects application architecture, TypeScript type safety, database index bottlenecks, SQL query efficiency (eliminating N+1 issues), API latency, security vulnerabilities (OWASP compliance), and technical debt, delivering an actionable engineering remediation roadmap.",
-    },
-    {
-      question: "Do you handle VPS server deployment for Next.js, Node.js, and Docker?",
-      answer:
-        "Yes. We specialize in robust Linux server deployment and VPS deployment on Hetzner, DigitalOcean, and AWS EC2. We deploy Next.js apps to VPS with Docker Compose, Node.js runtime, Nginx reverse proxies, automated SSL certificates, PM2 process management, and GitHub Actions push-to-deploy CI/CD pipelines.",
-    },
-    {
-      question: "How do you work with businesses in Kenya, East Africa, the UK, and the US?",
-      answer:
-        "Headquartered in Nairobi, Kenya, we work globally across distributed teams. For Kenyan and East African clients, we provide native M-Pesa Daraja 2.0 API integration, multi-currency accounting, and offline-first POS systems. For UK and US clients, we offer synchronous GMT/EST timezone collaboration, GBP/USD milestone billing, and SOC2-ready codebases.",
-    },
-    {
-      question: "Who owns the code and intellectual property?",
-      answer:
-        "You do. We provide 100% intellectual property (IP) transfer from day one. You own all GitHub repositories, database instances, and architecture runbooks with zero vendor lock-in.",
-    },
-    {
-      question: "What technologies do you use for SaaS application development?",
-      answer:
-        "We engineer production platforms using Next.js (App Router), React, TypeScript, Tailwind CSS, PostgreSQL, Redis, Node.js, Go, Docker, and AI workflow automation tooling (OpenAI GPT-4o, Claude 3.5).",
-    },
-    {
-      question:"Saas development framework for MVP",
-      answer:"Our preferred stack for rapid SaaS MVP development balances speed, scalability, and developer experience: Next.js for the frontend, TypeScript for type safety, Tailwind CSS for styling, PostgreSQL with Supabase for the database, Redis for caching, and Node.js with Go for backend services."
-    },
-    {
-      question:"do you build ai saas applications?",
-      answer:"we engineer AI-powered SaaS solutions by integrating LLM APIs (OpenAI GPT-4o, Claude 3.5) into custom Next.js applications. Common patterns include internal tools with RAG (Retrieval-Augmented Generation), agentic workflow automation for operations, intelligent chatbots, and AI-driven data analytics platforms."
-    }
-  ];
-
   const jsonLdData = {
     "@context": "https://schema.org",
     "@graph": [
@@ -134,7 +51,7 @@ export default function Home() {
       {
         "@type": "FAQPage",
         "@id": "https://www.dazzcode.com/#faq",
-        mainEntity: faqItems.map((item) => ({
+        mainEntity: homeFaqItems.map((item) => ({
           "@type": "Question",
           name: item.question,
           acceptedAnswer: {
@@ -200,6 +117,7 @@ export default function Home() {
                   alt="Dazzcode SaaS Product Engineering and Analytics Dashboard"
                   width={1200}
                   height={900}
+                  sizes="(max-width: 640px) calc(100vw - 2rem), (max-width: 1023px) 60vw, 672px"
                   priority
                   className="w-full h-auto object-cover rounded-[1.9rem] transition-transform duration-500 group-hover:scale-[1.01]"
                 />
@@ -316,7 +234,7 @@ export default function Home() {
                 </p>
               </div>
               <Link
-                href="/services/code-audit"
+                href="/services/saas-code-audit"
                 className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#059669] hover:text-[#10B981]"
               >
                 <span>Request audit</span>
@@ -386,7 +304,7 @@ export default function Home() {
                   <span className="px-3 py-1 rounded-lg bg-[#FFFFFF] border border-[#E2EAE6] text-xs font-mono text-[#52615B]">Stripe & M-Pesa</span>
                 </div>
               </div>
-              <Link href="/services/saas-development" className="shrink-0">
+              <Link href="/services/custom-saas-development" className="shrink-0">
                 <Button className="h-12 px-6 text-xs font-bold uppercase tracking-wider bg-[#059669] hover:bg-[#10B981] text-white rounded-xl shadow-xs cursor-pointer">
                   <span>Explore SaaS Development</span>
                   <ArrowRight className="w-4 h-4 ml-2" />
@@ -438,7 +356,7 @@ export default function Home() {
                   <span className="px-3 py-1 rounded-lg bg-[#FFFFFF] border border-[#E2EAE6] text-xs font-mono text-[#52615B]">Due Diligence Ready</span>
                 </div>
               </div>
-              <Link href="/services/code-audit" className="shrink-0">
+              <Link href="/services/saas-code-audit" className="shrink-0">
                 <Button className="h-12 px-6 text-xs font-bold uppercase tracking-wider bg-[#059669] hover:bg-[#10B981] text-white rounded-xl shadow-xs cursor-pointer">
                   <span>Explore Code Audit</span>
                   <ArrowRight className="w-4 h-4 ml-2" />
@@ -806,7 +724,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-8">
             <div className="p-8 rounded-3xl bg-[#F8FAF9] border border-[#E2EAE6] shadow-xs">
               <p className="text-sm md:text-base text-[#52615B] leading-relaxed italic mb-6">
-                "Dazzcode engineered our offline-first retail system with incredible precision. Even when our internet drops, checkout cashiers keep scanning items and processing M-Pesa payments without missing a single sale."
+                &ldquo;Dazzcode engineered our offline-first retail system with incredible precision. Even when our internet drops, checkout cashiers keep scanning items and processing M-Pesa payments without missing a single sale.&rdquo;
               </p>
               <div>
                 <div className="font-bold text-[#12201B]">Retail Chain Operations Director</div>
@@ -816,7 +734,7 @@ export default function Home() {
 
             <div className="p-8 rounded-3xl bg-[#F8FAF9] border border-[#E2EAE6] shadow-xs">
               <p className="text-sm md:text-base text-[#52615B] leading-relaxed italic mb-6">
-                "We needed a technical team to audit our Next.js codebase and optimize slow queries before raising our Seed round. Dazzcode delivered an exact remediation punch-list that cut our p95 latency by 80%."
+                &ldquo;We needed a technical team to audit our Next.js codebase and optimize slow queries before raising our Seed round. Dazzcode delivered an exact remediation punch-list that cut our p95 latency by 80%.&rdquo;
               </p>
               <div>
                 <div className="font-bold text-[#12201B]">SaaS Founder & CTO</div>
@@ -830,48 +748,7 @@ export default function Home() {
       {/* ---------------------------------------------------- */}
       {/* 13. FAQ SECTION */}
       {/* ---------------------------------------------------- */}
-      <section id="faq" className="py-24 bg-[#F8FAF9] border-b border-[#E2EAE6]">
-        <div className="container px-4 md:px-6 mx-auto max-w-4xl">
-          <div className="text-center mb-16">
-            <span className="text-xs font-mono font-bold uppercase tracking-[0.25em] text-[#059669] mb-3 block">
-              Frequently Asked Questions
-            </span>
-            <h2 className="text-3xl md:text-4xl font-black text-[#12201B] tracking-tight">
-              SaaS Development & Engineering FAQs
-            </h2>
-          </div>
-
-          <div className="space-y-4">
-            {faqItems.map((item, index) => {
-              const isOpen = openFaq === index;
-              return (
-                <div
-                  key={index}
-                  className="rounded-2xl border border-[#E2EAE6] bg-[#FFFFFF] shadow-xs overflow-hidden transition-colors"
-                >
-                  <button
-                    onClick={() => toggleFaq(index)}
-                    className="w-full p-6 text-left flex items-center justify-between gap-4 font-bold text-base text-[#12201B] hover:text-[#059669] transition-colors"
-                    aria-expanded={isOpen}
-                  >
-                    <span>{item.question}</span>
-                    <ChevronDown
-                      className={`w-5 h-5 text-[#52615B] shrink-0 transition-transform duration-200 ${
-                        isOpen ? "rotate-180 text-[#059669]" : ""
-                      }`}
-                    />
-                  </button>
-                  {isOpen && (
-                    <div className="px-6 pb-6 text-sm text-[#52615B] leading-relaxed border-t border-[#E2EAE6]/50 pt-4">
-                      {item.answer}
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+      <HomeFaq />
 
       {/* ---------------------------------------------------- */}
       {/* 14. FINAL CTA SECTION */}

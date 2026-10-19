@@ -79,18 +79,18 @@ export const metadata: Metadata = {
     "MVP development timeline Kenya"
   ],
   alternates: {
-    canonical: "https://www.dazzcode.com/ke/mvp-development",
+    canonical: "https://www.dazzcode.com/ke/mvp-development-kenya-nairobi",
     languages: {
       "en": "https://www.dazzcode.com/services/saas-mvp-development",
-      "en-KE": "https://www.dazzcode.com/ke/mvp-development",
-      "x-default": "https://www.dazzcode.com/ke/mvp-development",
+      "en-KE": "https://www.dazzcode.com/ke/mvp-development-kenya-nairobi",
+      "x-default": "https://www.dazzcode.com/ke/mvp-development-kenya-nairobi",
     },
   },
   openGraph: {
     title: "MVP Development Kenya | Startup MVP Development | Dazzcode",
     description:
       "Dazzcode builds production-ready MVPs for Kenyan startups, founders, and growing businesses. Turn your validated software idea into a working product.",
-    url: "https://www.dazzcode.com/ke/mvp-development",
+    url: "https://www.dazzcode.com/ke/mvp-development-kenya-nairobi",
     siteName: "Dazzcode",
     images: [
       {
@@ -176,7 +176,7 @@ export default function KenyaMVPDevelopmentPage() {
     "@graph": [
       {
         "@type": "Service",
-        "@id": "https://www.dazzcode.com/ke/mvp-development#service",
+        "@id": "https://www.dazzcode.com/ke/mvp-development-kenya-nairobi#service",
         name: "Startup MVP Development in Kenya",
         description:
           "Dazzcode provides MVP development in Kenya for startups and businesses. Turn your idea into a working web or SaaS product with development, deployment and post-launch support.",
@@ -198,7 +198,7 @@ export default function KenyaMVPDevelopmentPage() {
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://www.dazzcode.com/ke/mvp-development#breadcrumb",
+        "@id": "https://www.dazzcode.com/ke/mvp-development-kenya-nairobi#breadcrumb",
         itemListElement: [
           {
             "@type": "ListItem",
@@ -216,13 +216,13 @@ export default function KenyaMVPDevelopmentPage() {
             "@type": "ListItem",
             position: 3,
             name: "Startup MVP Development",
-            item: "https://www.dazzcode.com/ke/mvp-development",
+            item: "https://www.dazzcode.com/ke/mvp-development-kenya-nairobi",
           },
         ],
       },
       {
         "@type": "FAQPage",
-        "@id": "https://www.dazzcode.com/ke/mvp-development#faq",
+        "@id": "https://www.dazzcode.com/ke/mvp-development-kenya-nairobi#faq",
         mainEntity: mvpFaqs.map((faq) => ({
           "@type": "Question",
           name: faq.q,
@@ -658,7 +658,7 @@ export default function KenyaMVPDevelopmentPage() {
               <p className="text-xs text-[#52615B] leading-relaxed mb-4">
                 Interactive customer portals, client dashboards, booking engines, and internal workflow tools accessible from any modern browser.
               </p>
-              <Link href="/ke/web-development" className="text-xs font-bold text-[#059669] hover:underline flex items-center gap-1">
+              <Link href="/ke/web-development-kenya-nairobi" className="text-xs font-bold text-[#059669] hover:underline flex items-center gap-1">
                 Web Development Services <ArrowRight className="w-3 h-3" />
               </Link>
             </div>
@@ -682,7 +682,7 @@ export default function KenyaMVPDevelopmentPage() {
               <p className="text-xs text-[#52615B] leading-relaxed mb-4">
                 Tailored operational systems that replace manual spreadsheets, paper forms, and WhatsApp groups for dispatch, stock, or invoicing.
               </p>
-              <Link href="/ke/software-development-company" className="text-xs font-bold text-[#059669] hover:underline flex items-center gap-1">
+              <Link href="/ke/software-development-company-kenya-nairobi" className="text-xs font-bold text-[#059669] hover:underline flex items-center gap-1">
                 Custom Software in Kenya <ArrowRight className="w-3 h-3" />
               </Link>
             </div>
@@ -1427,7 +1427,7 @@ export default function KenyaMVPDevelopmentPage() {
                 You don&apos;t necessarily need to throw away your code and start from scratch. Dazzcode can perform an in-depth code audit to identify security risks, query bottlenecks, outdated dependencies, and technical debt, giving you a clear roadmap to repair or refactor.
               </p>
             </div>
-            <Link href="/services/code-audit" className="shrink-0">
+            <Link href="/services/saas-code-audit" className="shrink-0">
               <Button
                 className="h-12 px-6 text-xs font-bold uppercase tracking-wider bg-[#059669] text-white hover:bg-[#047857] rounded-xl cursor-pointer"
               >

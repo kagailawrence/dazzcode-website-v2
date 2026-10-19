@@ -73,7 +73,7 @@ export const metadata: Metadata = {
     canonical: "https://www.dazzcode.com/services/custom-saas-development",
     languages: {
       "en": "https://www.dazzcode.com/services/custom-saas-development",
-      "en-KE": "https://www.dazzcode.com/ke/saas-development-company",
+      "en-KE": "https://www.dazzcode.com/ke/saas-development-company-kenya-nairobi",
       "en-GB": "https://www.dazzcode.com/uk/saas-development",
       "en-US": "https://www.dazzcode.com/us/saas-development",
       "x-default": "https://www.dazzcode.com/services/custom-saas-development",
@@ -279,7 +279,7 @@ export default function CustomSaasDevelopmentPage() {
                 See Our Work
               </Button>
             </Link>
-            <Link href="/services/code-audit" className="inline-flex items-center text-xs font-bold uppercase tracking-wider text-[#059669] hover:underline px-2 py-2">
+            <Link href="/services/saas-code-audit" className="inline-flex items-center text-xs font-bold uppercase tracking-wider text-[#059669] hover:underline px-2 py-2">
               Request a Technical Review →
             </Link>
           </div>
@@ -739,7 +739,7 @@ export default function CustomSaasDevelopmentPage() {
                   We inspect your repositories, database models, and API endpoints to identify security flaws, query bottlenecks, and technical debt.
                 </p>
               </div>
-              <Link href="/services/code-audit" className="text-xs font-bold text-[#059669] hover:underline flex items-center gap-1">
+              <Link href="/services/saas-code-audit" className="text-xs font-bold text-[#059669] hover:underline flex items-center gap-1">
                 Explore Code Audits <ArrowRight className="w-3 h-3" />
               </Link>
             </div>
@@ -1168,7 +1168,7 @@ export default function CustomSaasDevelopmentPage() {
               <p className="text-[#52615B] leading-relaxed mb-4">
                 Headquartered in Nairobi with native understanding of Safaricom Daraja, mobile money, offline-first connectivity, and regional business dynamics.
               </p>
-              <Link href="/ke/saas-development-company" className="font-bold text-[#059669] hover:underline">
+              <Link href="/ke/saas-development-company-kenya-nairobi" className="font-bold text-[#059669] hover:underline">
                 Kenya Regional Hub →
               </Link>
             </div>

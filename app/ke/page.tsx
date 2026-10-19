@@ -19,7 +19,7 @@ import {
 
 export const metadata: Metadata = {
   title: "SaaS & Software Development in Kenya | Dazzcode Nairobi",
-  description: "Dazzcode is a Kenya-based software engineering and SaaS development company headquartered in Nairobi. We build custom software, SaaS MVPs, web applications, and M-Pesa integrated platforms.",
+  description: "Nairobi-based Dazzcode builds custom software, SaaS MVPs, web applications, and M-Pesa-integrated platforms for Kenyan businesses.",
   keywords: [
     "SaaS development company Kenya",
     "software development company Kenya",
@@ -92,31 +92,31 @@ export default function KenyaHubPage() {
   const pages = [
     {
       title: "Web Development & Web Applications in Kenya",
-      href: "/ke/web-development",
+      href: "/ke/web-development-kenya-nairobi",
       keyword: "web development company Kenya",
       desc: "Professional business websites (from KSh 25,000), custom web applications, customer portals, M-Pesa integration, website redesigns, and ongoing SEO.",
     },
     {
       title: "WooCommerce & Ecommerce Development in Kenya",
-      href: "/ke/woocommerce-development",
+      href: "/ke/woocommerce-development-kenya-nairobi",
       keyword: "WooCommerce development Kenya",
       desc: "High-converting online stores, Safaricom M-Pesa STK Push integration, custom WooCommerce plugins, maintenance, and ecommerce SEO.",
     },
     {
       title: "SaaS Development Company in Kenya",
-      href: "/ke/saas-development-company",
+      href: "/ke/saas-development-company-kenya-nairobi",
       keyword: "SaaS development company Kenya",
       desc: "Architecting multi-tenant, cloud-native SaaS platforms with M-Pesa billing, scalable PostgreSQL, and institutional codebases.",
     },
     {
       title: "Custom Software Development Company",
-      href: "/ke/software-development-company",
+      href: "/ke/software-development-company-kenya-nairobi",
       keyword: "software development company Kenya",
       desc: "Replacing manual spreadsheets and disjointed tools with tailored operational software built for Kenyan enterprise workflows.",
     },
     {
       title: "Startup MVP Development in Kenya",
-      href: "/ke/mvp-development",
+      href: "/ke/mvp-development-kenya-nairobi",
       keyword: "MVP development Kenya",
       desc: "Fast 4–6 week production-ready MVP launches for Kenyan and East African founders validating new digital business models.",
     },

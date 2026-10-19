@@ -15,8 +15,8 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "SaaS Development Company US | Custom SaaS Engineering | Dazzcode",
-  description: "Dazzcode is a dedicated SaaS development company working with US startups and growing software companies. We engineer production-grade multi-tenant SaaS products, MVPs, and scalable cloud architectures with transparent milestone pricing.",
+  title: "SaaS Development Company in the US | Dazzcode",
+  description: "Dazzcode builds production-ready SaaS products, MVPs, and cloud platforms for US startups with clear milestone pricing and senior engineering.",
   keywords: [
     "SaaS development company US",
     "SaaS development USA",
@@ -30,11 +30,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.dazzcode.com/us/saas-development",
     languages: {
-      "en": "https://www.dazzcode.com/services/saas-development",
-      "en-KE": "https://www.dazzcode.com/ke/saas-development-company",
+      "en": "https://www.dazzcode.com/services/custom-saas-development",
+      "en-KE": "https://www.dazzcode.com/ke/saas-development-company-kenya-nairobi",
       "en-GB": "https://www.dazzcode.com/uk/saas-development",
       "en-US": "https://www.dazzcode.com/us/saas-development",
-      "x-default": "https://www.dazzcode.com/services/saas-development",
+      "x-default": "https://www.dazzcode.com/services/custom-saas-development",
     },
   },
   openGraph: {
@@ -111,7 +111,7 @@ export default function USSaaSPage() {
           <nav className="flex items-center gap-2 text-xs font-mono text-[#52615B] mb-8" aria-label="Breadcrumb">
             <Link href="/" className="hover:text-[#059669] transition-colors">Home</Link>
             <span>/</span>
-            <Link href="/services/saas-development" className="hover:text-[#059669] transition-colors">Services</Link>
+            <Link href="/services/custom-saas-development" className="hover:text-[#059669] transition-colors">Services</Link>
             <span>/</span>
             <span className="text-[#12201B] font-semibold">US SaaS Development</span>
           </nav>

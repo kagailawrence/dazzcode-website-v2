@@ -29,10 +29,11 @@ const jetbrains = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Dazzcode | SaaS Development Company & Custom SaaS Engineering",
-    template: "%s | Dazzcode",
+    default: "SaaS Development & Software Engineering | Dazzcode",
+    // Individual pages already include the brand in their titles.
+    template: "%s",
   },
-  description: "Dazzcode is  SaaS development company providing SaaS development services, SaaS MVP development, code audits, AI automation, and robust VPS server deployment.",
+  description: "Dazzcode builds SaaS products and web applications, launches MVPs, audits and scales software, and deploys secure cloud infrastructure.",
   keywords: [
     "SaaS development company",
     "SaaS development",

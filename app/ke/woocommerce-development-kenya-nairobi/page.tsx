@@ -97,18 +97,18 @@ export const metadata: Metadata = {
     "WooCommerce website cost Kenya"
   ],
   alternates: {
-    canonical: "https://www.dazzcode.com/ke/woocommerce-development",
+    canonical: "https://www.dazzcode.com/ke/woocommerce-development-kenya-nairobi",
     languages: {
       "en": "https://www.dazzcode.com/services/web-application-development",
-      "en-KE": "https://www.dazzcode.com/ke/woocommerce-development",
-      "x-default": "https://www.dazzcode.com/ke/woocommerce-development",
+      "en-KE": "https://www.dazzcode.com/ke/woocommerce-development-kenya-nairobi",
+      "x-default": "https://www.dazzcode.com/ke/woocommerce-development-kenya-nairobi",
     },
   },
   openGraph: {
     title: "WooCommerce Development Kenya | Ecommerce Website Development | Dazzcode",
     description:
       "WooCommerce development in Kenya for businesses, online sellers and dropshippers. Build, customize, maintain and optimize your WooCommerce store with Dazzcode.",
-    url: "https://www.dazzcode.com/ke/woocommerce-development",
+    url: "https://www.dazzcode.com/ke/woocommerce-development-kenya-nairobi",
     siteName: "Dazzcode",
     images: [
       {
@@ -185,7 +185,7 @@ export default function WooCommerceKenyaLandingPage() {
     "@graph": [
       {
         "@type": "Service",
-        "@id": "https://www.dazzcode.com/ke/woocommerce-development#service",
+        "@id": "https://www.dazzcode.com/ke/woocommerce-development-kenya-nairobi#service",
         name: "WooCommerce Development Kenya",
         description:
           "Professional WooCommerce and ecommerce development in Kenya. Custom store setups, M-Pesa Daraja payment integration, custom WooCommerce plugins, basic maintenance, SEO optimization, and technical code audits for Kenyan businesses.",
@@ -277,7 +277,7 @@ export default function WooCommerceKenyaLandingPage() {
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://www.dazzcode.com/ke/woocommerce-development#breadcrumb",
+        "@id": "https://www.dazzcode.com/ke/woocommerce-development-kenya-nairobi#breadcrumb",
         itemListElement: [
           {
             "@type": "ListItem",
@@ -295,13 +295,13 @@ export default function WooCommerceKenyaLandingPage() {
             "@type": "ListItem",
             position: 3,
             name: "WooCommerce Development",
-            item: "https://www.dazzcode.com/ke/woocommerce-development",
+            item: "https://www.dazzcode.com/ke/woocommerce-development-kenya-nairobi",
           },
         ],
       },
       {
         "@type": "FAQPage",
-        "@id": "https://www.dazzcode.com/ke/woocommerce-development#faq",
+        "@id": "https://www.dazzcode.com/ke/woocommerce-development-kenya-nairobi#faq",
         mainEntity: faqs.map((f) => ({
           "@type": "Question",
           name: f.question,
@@ -1539,13 +1539,13 @@ export default function WooCommerceKenyaLandingPage() {
             Related Software Engineering Capabilities
           </span>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 text-xs">
-            <Link href="/services/saas-development" className="p-3 rounded-xl bg-white border border-[#E2EAE6] hover:border-[#059669] text-[#12201B] font-semibold transition-colors text-center">
+            <Link href="/services/custom-saas-development" className="p-3 rounded-xl bg-white border border-[#E2EAE6] hover:border-[#059669] text-[#12201B] font-semibold transition-colors text-center">
               SaaS Development
             </Link>
             <Link href="/services/web-application-development" className="p-3 rounded-xl bg-white border border-[#E2EAE6] hover:border-[#059669] text-[#12201B] font-semibold transition-colors text-center">
               Web Applications
             </Link>
-            <Link href="/services/code-audit" className="p-3 rounded-xl bg-white border border-[#E2EAE6] hover:border-[#059669] text-[#12201B] font-semibold transition-colors text-center">
+            <Link href="/services/saas-code-audit" className="p-3 rounded-xl bg-white border border-[#E2EAE6] hover:border-[#059669] text-[#12201B] font-semibold transition-colors text-center">
               SaaS Code Audit
             </Link>
             <Link href="/services/saas-scaling" className="p-3 rounded-xl bg-white border border-[#E2EAE6] hover:border-[#059669] text-[#12201B] font-semibold transition-colors text-center">

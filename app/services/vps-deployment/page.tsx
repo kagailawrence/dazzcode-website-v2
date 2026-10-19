@@ -44,7 +44,7 @@ import VpsDeploymentLeadForm from "@/components/sections/VpsDeploymentLeadForm";
 export const metadata: Metadata = {
   title: "VPS Deployment for Next.js, Node.js & Docker | Dazzcode",
   description:
-    "Deploy your Next.js, Node.js or Docker SaaS to a production VPS with Dazzcode. We handle Linux setup, Docker, reverse proxy, SSL, domains, databases and deployment configuration.",
+    "Deploy Next.js, Node.js, or Docker apps to a production VPS. Dazzcode handles Linux setup, reverse proxy, SSL, databases, and release configuration.",
   keywords: [
     "VPS deployment",
     "VPS deployment services",

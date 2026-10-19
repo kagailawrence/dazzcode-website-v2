@@ -42,7 +42,7 @@ import CustomWebApplicationLeadForm from "@/components/sections/CustomWebApplica
 export const metadata: Metadata = {
   title: "Custom Web Application Development Company | Dazzcode",
   description:
-    "Build custom web applications designed around your business. Dazzcode develops dashboards, portals, SaaS platforms, workflow systems and custom business software in Kenya and beyond.",
+    "Dazzcode builds custom web apps for business workflows, including dashboards, portals, SaaS platforms, and operational software for teams in Kenya and beyond.",
   keywords: [
     "custom web application development",
     "custom web application development company",

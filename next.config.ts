@@ -185,6 +185,32 @@ const nextConfig: NextConfig = {
         destination: "/ke/:path*",
         permanent: true,
       },
+      // Preserve established Kenya landing URLs after the descriptive slug migration.
+      {
+        source: "/ke/mvp-development",
+        destination: "/ke/mvp-development-kenya-nairobi",
+        permanent: true,
+      },
+      {
+        source: "/ke/saas-development-company",
+        destination: "/ke/saas-development-company-kenya-nairobi",
+        permanent: true,
+      },
+      {
+        source: "/ke/software-development-company",
+        destination: "/ke/software-development-company-kenya-nairobi",
+        permanent: true,
+      },
+      {
+        source: "/ke/web-development",
+        destination: "/ke/web-development-kenya-nairobi",
+        permanent: true,
+      },
+      {
+        source: "/ke/woocommerce-development",
+        destination: "/ke/woocommerce-development-kenya-nairobi",
+        permanent: true,
+      },
     ];
   },
 };

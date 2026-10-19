@@ -15,8 +15,8 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Software Code Audit US | SaaS Technical Due Diligence | Dazzcode",
-  description: "Dazzcode provides comprehensive software code audits and technical due diligence reviews for US startups, CTOs, and venture investors. Detect technical debt, security flaws, and architectural scaling limits.",
+  title: "SaaS Code Audit in the US | Dazzcode",
+  description: "Dazzcode audits SaaS codebases for US startups and investors, identifying technical debt, security risks, and architecture limits.",
   keywords: [
     "software code audit US",
     "SaaS code audit",
@@ -29,10 +29,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.dazzcode.com/us/code-audit",
     languages: {
-      "en": "https://www.dazzcode.com/services/code-audit",
+      "en": "https://www.dazzcode.com/services/saas-code-audit",
       "en-GB": "https://www.dazzcode.com/uk/code-audit",
       "en-US": "https://www.dazzcode.com/us/code-audit",
-      "x-default": "https://www.dazzcode.com/services/code-audit",
+      "x-default": "https://www.dazzcode.com/services/saas-code-audit",
     },
   },
   openGraph: {
@@ -108,7 +108,7 @@ export default function USCodeAuditPage() {
           <nav className="flex items-center gap-2 text-xs font-mono text-[#52615B] mb-8" aria-label="Breadcrumb">
             <Link href="/" className="hover:text-[#059669] transition-colors">Home</Link>
             <span>/</span>
-            <Link href="/services/code-audit" className="hover:text-[#059669] transition-colors">Services</Link>
+            <Link href="/services/saas-code-audit" className="hover:text-[#059669] transition-colors">Services</Link>
             <span>/</span>
             <span className="text-[#12201B] font-semibold">US Code Audit</span>
           </nav>
@@ -136,7 +136,7 @@ export default function USCodeAuditPage() {
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
             </Link>
-            <Link href="/services/code-audit">
+            <Link href="/services/saas-code-audit">
               <Button
                 size="lg"
                 variant="outline"

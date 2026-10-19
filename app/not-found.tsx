@@ -22,7 +22,7 @@ export default function NotFound() {
     {
       title: "SaaS MVP Development",
       desc: "Launch your investor-ready MVP in 4–6 weeks",
-      href: "/services/saas-mvp",
+      href: "/services/saas-mvp-development",
       icon: Compass,
     },
     {

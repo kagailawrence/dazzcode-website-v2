@@ -41,8 +41,12 @@ export async function generateMetadata({ params }: CaseStudyPageProps): Promise<
   }
 
   return {
-    title: `${study.title} | Dazzcode Case Study`,
-    description: study.summary,
+    title: slug === "ai-lead-automation"
+      ? "AI Lead Automation Case Study | Dazzcode"
+      : "DazzPOS Offline-First POS Case Study | Dazzcode",
+    description: slug === "ai-lead-automation"
+      ? "How an AI lead qualification pipeline reduced response time to under two minutes and saved a B2B sales team 22 hours each week."
+      : "How DazzPOS supports 50+ retail terminals with offline checkout, fast barcode scans, and reliable transaction sync across Kenya and East Africa.",
     keywords: [
       `${study.slug} case study`,
       study.title,

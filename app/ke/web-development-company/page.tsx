@@ -1,2 +1,6 @@
-export { default, metadata } from "../web-development/page";
+import { permanentRedirect } from "next/navigation";
+
+export default function LegacyKenyaWebDevelopmentPage() {
+  permanentRedirect("/ke/web-development-kenya-nairobi");
+}
 

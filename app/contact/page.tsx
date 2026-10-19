@@ -224,11 +224,11 @@ export default function ContactPage() {
 
           <div className="pt-6 text-center">
             <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs text-[#52605B]">
-              <Link href="/services/saas-development" className="hover:text-[#059669] underline">
+              <Link href="/services/custom-saas-development" className="hover:text-[#059669] underline">
                 SaaS Development
               </Link>
               <span>·</span>
-              <Link href="/services/code-audit" className="hover:text-[#059669] underline">
+              <Link href="/services/saas-code-audit" className="hover:text-[#059669] underline">
                 Code Audits
               </Link>
               <span>·</span>

@@ -48,7 +48,7 @@ export async function generateMetadata(
   const modifiedTime = toIsoDate(post.updatedAt ?? post.publishedAt);
 
   return {
-    title: `${post.title} | Dazzcode Engineering Blog`,
+    title: `${post.seoTitle || post.title} | Dazzcode`,
     description: post.description,
     keywords: [
       post.title,
@@ -316,7 +316,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                   </h4>
                   <ul className="space-y-2 text-xs font-medium text-[#52615B]">
                     <li>
-                      <Link href="/services/saas-development" className="hover:text-[#059669] flex items-center justify-between py-1">
+                      <Link href="/services/custom-saas-development" className="hover:text-[#059669] flex items-center justify-between py-1">
                         <span>SaaS Development</span>
                         <ArrowUpRight className="w-3.5 h-3.5" />
                       </Link>
@@ -328,7 +328,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                       </Link>
                     </li>
                     <li>
-                      <Link href="/services/code-audit" className="hover:text-[#059669] flex items-center justify-between py-1">
+                      <Link href="/services/saas-code-audit" className="hover:text-[#059669] flex items-center justify-between py-1">
                         <span>SaaS Code Audit</span>
                         <ArrowUpRight className="w-3.5 h-3.5" />
                       </Link>

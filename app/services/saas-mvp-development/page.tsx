@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     canonical: "https://www.dazzcode.com/services/saas-mvp-development",
     languages: {
       "en": "https://www.dazzcode.com/services/saas-mvp-development",
-      "en-KE": "https://www.dazzcode.com/ke/mvp-development"
+      "en-KE": "https://www.dazzcode.com/ke/mvp-development-kenya-nairobi"
     }
   },
   openGraph: {
@@ -840,7 +840,7 @@ export default function SaasMvpDevelopmentPage() {
             <div className="p-8 rounded-3xl bg-[#F8FAF9] border border-[#E2EAE6]">
               <h3 className="text-lg font-bold text-[#12201B] mb-3">Kenya Regional Focus</h3>
               <p className="text-xs text-[#52615B] leading-relaxed mb-4">
-                Looking specifically for Kenyan startup MVP development? Explore our dedicated <Link href="/ke/mvp-development" className="text-[#059669] font-bold underline">Startup MVP Development in Kenya</Link> hub.
+                Looking specifically for Kenyan startup MVP development? Explore our dedicated <Link href="/ke/mvp-development-kenya-nairobi" className="text-[#059669] font-bold underline">Startup MVP Development in Kenya</Link> hub.
               </p>
               <Link href="#contact" className="text-xs font-bold text-[#059669] flex items-center gap-1 hover:underline">
                 Discuss Your SaaS Market Requirements <ArrowRight className="w-3.5 h-3.5" />

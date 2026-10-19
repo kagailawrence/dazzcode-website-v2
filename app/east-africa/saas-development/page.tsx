@@ -17,8 +17,8 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "SaaS Development for East Africa | Multi-Country Architecture | Dazzcode",
-  description: "Dazzcode engineers multi-country SaaS platforms across East Africa (Kenya, Uganda, Tanzania, Rwanda). Multi-currency payments (M-Pesa, MTN MoMo, Airtel Money), cross-border data sync, and low-latency cloud infrastructure.",
+  title: "SaaS Development in East Africa | Dazzcode",
+  description: "Dazzcode builds SaaS for East Africa with multi-currency payments, mobile money integrations, cross-border data sync, and regional cloud hosting.",
   keywords: [
     "SaaS development East Africa",
     "software development East Africa",

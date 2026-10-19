@@ -47,20 +47,20 @@ export const metadata: Metadata = {
     "SaaS application development company",
   ],
   alternates: {
-    canonical: "https://www.dazzcode.com/ke/saas-development-company",
+    canonical: "https://www.dazzcode.com/ke/saas-development-company-kenya-nairobi",
     languages: {
-      "en": "https://www.dazzcode.com/services/saas-development",
-      "en-KE": "https://www.dazzcode.com/ke/saas-development-company",
+      "en": "https://www.dazzcode.com/services/custom-saas-development",
+      "en-KE": "https://www.dazzcode.com/ke/saas-development-company-kenya-nairobi",
       "en-GB": "https://www.dazzcode.com/uk/saas-development",
       "en-US": "https://www.dazzcode.com/us/saas-development",
-      "x-default": "https://www.dazzcode.com/services/saas-development",
+      "x-default": "https://www.dazzcode.com/services/custom-saas-development",
     },
   },
   openGraph: {
     title: "SaaS Development Company in Kenya | Dazzcode",
     description:
       "Turn your software idea into a reliable, scalable SaaS product. Custom SaaS engineering, MVP development, AI features, deployment, and scaling.",
-    url: "https://www.dazzcode.com/ke/saas-development-company",
+    url: "https://www.dazzcode.com/ke/saas-development-company-kenya-nairobi",
     siteName: "Dazzcode",
     images: [
       {
@@ -86,7 +86,7 @@ export default function KenyaSaaSPage() {
     "@graph": [
       {
         "@type": "Service",
-        "@id": "https://www.dazzcode.com/ke/saas-development-company#service",
+        "@id": "https://www.dazzcode.com/ke/saas-development-company-kenya-nairobi#service",
         name: "SaaS Development Company in Kenya",
         description:
           "Custom SaaS development and product engineering services for startups and established businesses in Kenya and East Africa. From product strategy and MVP launch to deployment and scaling.",
@@ -112,7 +112,7 @@ export default function KenyaSaaSPage() {
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://www.dazzcode.com/ke/saas-development-company#breadcrumb",
+        "@id": "https://www.dazzcode.com/ke/saas-development-company-kenya-nairobi#breadcrumb",
         itemListElement: [
           {
             "@type": "ListItem",
@@ -130,13 +130,13 @@ export default function KenyaSaaSPage() {
             "@type": "ListItem",
             position: 3,
             name: "SaaS Development Company",
-            item: "https://www.dazzcode.com/ke/saas-development-company",
+            item: "https://www.dazzcode.com/ke/saas-development-company-kenya-nairobi",
           },
         ],
       },
       {
         "@type": "FAQPage",
-        "@id": "https://www.dazzcode.com/ke/saas-development-company#faq",
+        "@id": "https://www.dazzcode.com/ke/saas-development-company-kenya-nairobi#faq",
         mainEntity: [
           {
             "@type": "Question",
@@ -336,7 +336,7 @@ export default function KenyaSaaSPage() {
       title: "Codebase Audit & Technical Cleanup",
       description:
         "If you already have a slow or buggy application, we inspect the code and database to eliminate technical debt and fix stability issues.",
-      href: "/services/code-audit",
+      href: "/services/saas-code-audit",
     },
     {
       number: "10",
@@ -1017,7 +1017,7 @@ export default function KenyaSaaSPage() {
               <span className="px-3 py-1.5 rounded-lg bg-[#ECFDF5] text-[#059669] border border-[#A7F3D0]">Scale</span>
             </div>
             <div className="pt-2">
-              <Link href="/services/code-audit">
+              <Link href="/services/saas-code-audit">
                 <Button variant="outline" className="border-[#E2EAE6] bg-white hover:bg-[#F1F5F3] font-bold text-xs uppercase tracking-wider cursor-pointer">
                   Learn About Code Audits & Cleanup
                   <ArrowRight className="w-4 h-4 ml-2" />
@@ -1285,7 +1285,7 @@ export default function KenyaSaaSPage() {
                 SaaS MVP Development
               </Link>
               <span>·</span>
-              <Link href="/services/code-audit" className="hover:text-[#059669] underline">
+              <Link href="/services/saas-code-audit" className="hover:text-[#059669] underline">
                 Code Audits
               </Link>
               <span>·</span>
