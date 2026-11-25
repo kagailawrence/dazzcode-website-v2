@@ -73,6 +73,7 @@ export const metadata: Metadata = {
     canonical: "https://www.dazzcode.com/services/web-application-development",
     languages: {
       "en": "https://www.dazzcode.com/services/web-application-development",
+      "en-KE": "https://www.dazzcode.com/ke/web-development-kenya-nairobi",
       "x-default": "https://www.dazzcode.com/services/web-application-development"
     }
   },

@@ -68,7 +68,8 @@ export const metadata: Metadata = {
     canonical: "https://www.dazzcode.com/services/saas-mvp-development",
     languages: {
       "en": "https://www.dazzcode.com/services/saas-mvp-development",
-      "en-KE": "https://www.dazzcode.com/ke/mvp-development-kenya-nairobi"
+      "en-KE": "https://www.dazzcode.com/ke/mvp-development-kenya-nairobi",
+      "x-default": "https://www.dazzcode.com/services/saas-mvp-development",
     }
   },
   openGraph: {

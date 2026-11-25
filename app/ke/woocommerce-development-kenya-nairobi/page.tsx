@@ -98,11 +98,6 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: "https://www.dazzcode.com/ke/woocommerce-development-kenya-nairobi",
-    languages: {
-      "en": "https://www.dazzcode.com/services/web-application-development",
-      "en-KE": "https://www.dazzcode.com/ke/woocommerce-development-kenya-nairobi",
-      "x-default": "https://www.dazzcode.com/ke/woocommerce-development-kenya-nairobi",
-    },
   },
   openGraph: {
     title: "WooCommerce Development Kenya | Ecommerce Website Development | Dazzcode",
@@ -132,11 +127,11 @@ export default function WooCommerceKenyaLandingPage() {
   const faqs = [
     {
       question: "What does WooCommerce development cost in Kenya?",
-      answer: "A standard professional WooCommerce store setup starts at KSh 35,000 (which includes domain and hosting for the first year, M-Pesa integration, and mobile setup). Custom WooCommerce development ranges from KSh 45,000 to KSh 200,000 depending on custom business workflows, plugins, and feature complexity.",
+      answer: "As a guide, a standard store setup is typically KSh 35,000–55,000, standalone M-Pesa integration is around KSh 5,000, and custom development is usually KSh 45,000–200,000+ depending on scope. We confirm exact deliverables and pricing in a written quote.",
     },
     {
       question: "How much does a WooCommerce website cost in Kenya?",
-      answer: "Our entry-level complete store setup package is KSh 35,000. For businesses requiring custom themes, bespoke checkout flows, subscriptions, or ERP integrations, custom projects typically range between KSh 45,000 and KSh 200,000.",
+      answer: "A standard store setup typically falls between KSh 35,000 and KSh 55,000. Custom themes, bespoke checkout flows, subscriptions, ERP or inventory integrations, and specialized plugins can put custom development between KSh 45,000 and KSh 200,000 or more.",
     },
     {
       question: "Do you provide WooCommerce maintenance in Kenya?",
@@ -149,6 +144,10 @@ export default function WooCommerceKenyaLandingPage() {
     {
       question: "Can you integrate M-Pesa with WooCommerce?",
       answer: "Yes. We implement automated Lipa na M-Pesa STK Push and C2B payment integrations using the official Safaricom Daraja API. When a customer enters their phone number at checkout, a PIN prompt is sent instantly to their phone, and the order status automatically updates to 'Processing' upon successful payment callback.",
+    },
+    {
+      question: "How much does standalone M-Pesa integration cost?",
+      answer: "A standalone WooCommerce M-Pesa integration is around KSh 5,000 and often takes about three working days, subject to access to your M-Pesa portal credentials and an approved Till or PayBill number. We confirm timing after reviewing your setup.",
     },
     {
       question: "Can you customize an existing WooCommerce store?",
@@ -164,7 +163,7 @@ export default function WooCommerceKenyaLandingPage() {
     },
     {
       question: "Do you provide hosting and domain?",
-      answer: "Yes. Our KSh 35,000 WooCommerce Store Development package includes domain registration and high-performance hosting configured for the first year, with automated daily backups and SSL security.",
+      answer: "Domain and hosting can be included in a standard store setup, typically priced at KSh 35,000–55,000. We recommend registering the domain and hosting account in your own name and billing details, then granting the developer access needed for setup.",
     },
     {
       question: "Can you fix a slow WooCommerce website?",
@@ -213,13 +212,24 @@ export default function WooCommerceKenyaLandingPage() {
           name: "WooCommerce Engineering & Support Packages",
           itemListElement: [
             {
-              "@type": "Offer",
+              "@type": "AggregateOffer",
               itemOffered: {
                 "@type": "Service",
                 name: "WooCommerce Store Development",
-                description: "Complete WooCommerce store setup with domain, hosting for the first year, mobile-first design, product catalog, and M-Pesa checkout.",
+                description: "Typical standard WooCommerce store setup with domain and hosting setup, theme configuration, local payment gateways, shipping rules, and initial product uploads.",
               },
-              price: "35000",
+              lowPrice: "35000",
+              highPrice: "55000",
+              priceCurrency: "KES",
+            },
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: "Standalone WooCommerce M-Pesa Integration",
+                description: "Standalone M-Pesa checkout integration, subject to portal credentials and an approved Till or PayBill number.",
+              },
+              price: "5000",
               priceCurrency: "KES",
             },
             {
@@ -227,7 +237,7 @@ export default function WooCommerceKenyaLandingPage() {
               itemOffered: {
                 "@type": "Service",
                 name: "Custom WooCommerce Development",
-                description: "Custom checkout logic, subscription flows, custom WooCommerce plugins, and API integrations.",
+                description: "Custom checkout logic, subscription flows, custom WooCommerce plugins, and API integrations; typically KSh 45,000–200,000 or more depending on scope.",
               },
               price: "45000",
               priceCurrency: "KES",
@@ -351,8 +361,8 @@ export default function WooCommerceKenyaLandingPage() {
     {
       number: "01",
       title: "WooCommerce Store Development",
-      price: "KSh 35,000",
-      priceSubtitle: "Complete setup with domain & hosting (Year 1)",
+      price: "KSh 35,000–55,000",
+      priceSubtitle: "Typical standard store setup range",
       description: "Professional WooCommerce store setup for businesses that want to start selling online with zero technical friction.",
       scopeItems: [
         "WordPress & WooCommerce full installation & configuration",
@@ -368,9 +378,24 @@ export default function WooCommerceKenyaLandingPage() {
       ctaAnchor: "#lead-form",
     },
     {
+      number: "01A",
+      title: "Standalone M-Pesa Integration",
+      price: "Around KSh 5,000",
+      priceSubtitle: "Often about 3 working days; credentials required",
+      description: "Add M-Pesa checkout to an existing WooCommerce store. Final timing depends on access, portal approval, and the current checkout setup.",
+      scopeItems: [
+        "Requires M-Pesa portal credentials and an approved Till or PayBill number",
+        "STK Push checkout configuration for your store",
+        "Callback handling and payment status testing",
+        "Order flow test before handover",
+      ],
+      ctaText: "Ask About M-Pesa Setup →",
+      ctaAnchor: "#lead-form",
+    },
+    {
       number: "02",
       title: "Custom WooCommerce Development",
-      price: "KSh 45,000 – KSh 200,000",
+      price: "KSh 45,000 – KSh 200,000+",
       priceSubtitle: "Final price depends on required features and complexity",
       description: "Bespoke engineering for businesses whose operational requirements go beyond standard template capabilities.",
       scopeItems: [
@@ -813,6 +838,25 @@ export default function WooCommerceKenyaLandingPage() {
               </a>
             </div>
 
+            <div className="p-7 rounded-3xl bg-[#FFFFFF] border border-[#E2EAE6] flex flex-col justify-between shadow-xs">
+              <div>
+                <span className="text-xs font-mono uppercase tracking-wider text-[#52615B] font-bold block mb-1">Existing Store</span>
+                <h3 className="text-xl font-bold text-[#12201B] mb-2">Standalone M-Pesa Integration</h3>
+                <p className="text-2xl font-black text-[#059669] font-mono mb-2">Around KSh 5,000</p>
+                <p className="text-xs text-[#52615B] leading-relaxed mb-5">Often about 3 working days, subject to your store setup, M-Pesa portal credentials, and an approved Till or PayBill number.</p>
+                <ul className="space-y-2 text-xs text-[#52615B] border-t border-[#E2EAE6] pt-4">
+                  <li className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-[#059669]" /> STK Push checkout setup</li>
+                  <li className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-[#059669]" /> Callback and order status testing</li>
+                  <li className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-[#059669]" /> Existing WooCommerce store required</li>
+                </ul>
+              </div>
+              <a href="#lead-form" className="mt-6 block">
+                <Button variant="outline" className="w-full text-xs font-bold uppercase tracking-wider border-[#E2EAE6] rounded-xl cursor-pointer">
+                  Integrate M-Pesa
+                </Button>
+              </a>
+            </div>
+
             <div className="p-7 rounded-3xl bg-[#FFFFFF] border-2 border-[#059669] flex flex-col justify-between shadow-md relative">
               <div className="absolute -top-3 left-6 px-3 py-0.5 rounded-full bg-[#059669] text-white text-[10px] font-mono font-bold uppercase tracking-wider">
                 Full Store Setup
@@ -820,11 +864,11 @@ export default function WooCommerceKenyaLandingPage() {
               <div>
                 <span className="text-xs font-mono uppercase tracking-wider text-[#059669] font-bold block mb-1">Complete Package</span>
                 <h3 className="text-xl font-bold text-[#12201B] mb-2">Store Development</h3>
-                <p className="text-2xl font-black text-[#059669] font-mono mb-2">KSh 35,000</p>
-                <p className="text-xs text-[#52615B] leading-relaxed mb-5">Full store launch with domain and hosting included for the 1st year, plus M-Pesa STK Push integration.</p>
+                <p className="text-2xl font-black text-[#059669] font-mono mb-2">KSh 35,000 – 55,000</p>
+                <p className="text-xs text-[#52615B] leading-relaxed mb-5">Typical standard setup range. Scope may cover domain and hosting setup, theme configuration, local payments, shipping rules, and initial product uploads.</p>
                 <ul className="space-y-2 text-xs text-[#52615B] border-t border-[#E2EAE6] pt-4">
-                  <li className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-[#059669]" /> Domain & 1st Year Hosting</li>
-                  <li className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-[#059669]" /> M-Pesa STK Push Checkout</li>
+                  <li className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-[#059669]" /> Domain & hosting setup</li>
+                  <li className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-[#059669]" /> Local payment and shipping configuration</li>
                   <li className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-[#059669]" /> Product catalog & admin training</li>
                 </ul>
               </div>
@@ -896,7 +940,7 @@ export default function WooCommerceKenyaLandingPage() {
               <div>
                 <span className="text-xs font-mono uppercase tracking-wider text-[#52615B] font-bold block mb-1">Tailored Architecture</span>
                 <h3 className="text-xl font-bold text-[#12201B] mb-2">Custom WooCommerce</h3>
-                <p className="text-2xl font-black text-[#059669] font-mono mb-2">KSh 45K – 200K</p>
+                <p className="text-2xl font-black text-[#059669] font-mono mb-2">KSh 45K – 200K+</p>
                 <p className="text-xs text-[#52615B] leading-relaxed mb-5">Bespoke checkouts, custom plugins, subscriptions, memberships, and enterprise API integrations.</p>
                 <ul className="space-y-2 text-xs text-[#52615B] border-t border-[#E2EAE6] pt-4">
                   <li className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-[#059669]" /> Custom WooCommerce plugins</li>
@@ -910,6 +954,62 @@ export default function WooCommerceKenyaLandingPage() {
                 </Button>
               </a>
             </div>
+          </div>
+          <div className="mt-8 rounded-2xl border border-[#E2EAE6] bg-white p-6 text-sm leading-relaxed text-[#52615B]">
+            <h3 className="font-bold text-[#12201B]">Hourly pricing benchmark</h3>
+            <p className="mt-2">Freelancers and agencies in Kenya may quote around <strong className="text-[#12201B]">$15–$37 per hour</strong>, depending on complexity, custom coding, and local payment or compliance requirements. This is an indicative market range, not a Dazzcode hourly rate; we scope project work and confirm fees in a written quote.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* 5A. KENYA STORE OWNER BUYING GUIDE */}
+      <section className="py-20 bg-white border-b border-[#E2EAE6]">
+        <div className="container px-4 md:px-6 mx-auto max-w-5xl">
+          <div className="max-w-3xl mb-12">
+            <span className="text-xs font-mono font-bold uppercase tracking-[0.25em] text-[#059669] mb-3 block">Practical Buyer Guide</span>
+            <h2 className="text-3xl sm:text-4xl font-black text-[#12201B] tracking-tight mb-4">What to Check Before Hiring a WooCommerce Developer in Kenya</h2>
+            <p className="text-sm sm:text-base text-[#52615B] leading-relaxed">Use these questions to compare proposals, protect access to your store, and make sure the checkout and handover fit the way your business operates.</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-5">
+            <article className="rounded-2xl border border-[#E2EAE6] bg-[#F8FAF9] p-6">
+              <h3 className="text-lg font-bold text-[#12201B]">1. Keep ownership of accounts and assets</h3>
+              <ul className="mt-4 space-y-3 text-sm leading-relaxed text-[#52615B]">
+                <li><strong className="text-[#12201B]">Domain and hosting:</strong> Register your .co.ke or .com domain and hosting under your own email and billing details. Give the developer the access needed for the work, and retain ownership if you change providers.</li>
+                <li><strong className="text-[#12201B]">Plugin and theme licenses:</strong> Ask which premium products are licensed directly to your business and which depend on an agency license that may end when the engagement ends.</li>
+              </ul>
+            </article>
+
+            <article className="rounded-2xl border border-[#E2EAE6] bg-[#F8FAF9] p-6">
+              <h3 className="text-lg font-bold text-[#12201B]">2. Confirm payments and tax workflows</h3>
+              <ul className="mt-4 space-y-3 text-sm leading-relaxed text-[#52615B]">
+                <li><strong className="text-[#12201B]">Daraja or an aggregator:</strong> Ask whether checkout will use Safaricom Daraja directly or a payment aggregator such as Pesapal, IntaSend, or Flutterwave. Compare supported payment methods, approval steps, transaction charges, and settlement terms for your account.</li>
+                <li><strong className="text-[#12201B]">Callbacks and reconciliation:</strong> Ask how delayed callbacks, failed STK pushes, duplicate notifications, and manual transaction-code checks will be handled so orders can be reconciled instead of remaining unresolved.</li>
+                <li><strong className="text-[#12201B]">eTIMS and tax:</strong> If your business needs eTIMS invoicing, confirm early whether the proposed integration or middleware supports your workflow. Check applicable obligations with KRA or your tax adviser.</li>
+              </ul>
+            </article>
+
+            <article className="rounded-2xl border border-[#E2EAE6] bg-[#F8FAF9] p-6">
+              <h3 className="text-lg font-bold text-[#12201B]">3. Test mobile speed and hosting</h3>
+              <ul className="mt-4 space-y-3 text-sm leading-relaxed text-[#52615B]">
+                <li><strong className="text-[#12201B]">Mobile-first checkout:</strong> Test the developer’s live stores on your phone and on a mobile connection. Check page speed, product selection, form usability, and how smoothly checkout completes on a small screen.</li>
+                <li><strong className="text-[#12201B]">Hosting and caching:</strong> Ask what server resources, caching, backups, and monitoring they recommend for your expected traffic and catalog size. Cheap shared hosting can become a bottleneck for busy or resource-heavy stores.</li>
+              </ul>
+            </article>
+
+            <article className="rounded-2xl border border-[#E2EAE6] bg-[#F8FAF9] p-6">
+              <h3 className="text-lg font-bold text-[#12201B]">4. Map local delivery workflows</h3>
+              <p className="mt-4 text-sm leading-relaxed text-[#52615B]">Ask how the store will calculate delivery by service area—for example, Nairobi CBD, Kilimani, and upcountry—and whether it needs rider dispatch notices, parcel courier integrations such as Wells Fargo or G4S, or pickup and drop-off points such as PickUp Mtaani. Confirm current courier coverage, pricing, and integration availability before choosing a workflow.</p>
+            </article>
+
+            <article className="rounded-2xl border border-[#E2EAE6] bg-[#F8FAF9] p-6">
+              <h3 className="text-lg font-bold text-[#12201B]">5. Agree on handover, support, and milestones</h3>
+              <ul className="mt-4 space-y-3 text-sm leading-relaxed text-[#52615B]">
+                <li><strong className="text-[#12201B]">Training:</strong> Confirm the handover includes live or recorded admin training for adding products, processing refunds, and managing stock.</li>
+                <li><strong className="text-[#12201B]">Security and backups:</strong> Agree who handles off-site backups, WordPress and WooCommerce updates, plugin testing, and ongoing maintenance.</li>
+                <li><strong className="text-[#12201B]">Payment milestones:</strong> Put deliverables and payment dates in writing. One possible structure is a 40–50% deposit, a payment after staging review, and the final 20–30% after launch and payment testing; adjust the middle milestone so the agreed amounts total 100%.</li>
+              </ul>
+            </article>
           </div>
         </div>
       </section>
