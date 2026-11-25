@@ -20,7 +20,7 @@ A code audit is not simply running an automated linter. It requires senior syste
 
 ## 2. Database & SQL Query Profiling
 
-The database is the number one source of SaaS performance degradation. During a [SaaS Code Audit](/services/code-audit), we analyze:
+The database is the number one source of SaaS performance degradation. During a [SaaS Code Audit](/services/saas-code-audit), we analyze:
 - **Missing Indexes**: Running `EXPLAIN ANALYZE` on frequent queries to eliminate sequential scans.
 - **N+1 Query Loops**: Identifying ORM calls fetching relational data inside loops instead of batching.
 - **Connection Limits & Pooling**: Ensuring connection poolers like PgBouncer prevent serverless connection exhaustion.
@@ -40,4 +40,4 @@ The database is the number one source of SaaS performance degradation. During a 
 - When new feature delivery has slowed to a crawl due to technical debt
 - When unexplained server crashes and 504 timeouts are occurring
 
-Need an objective, senior-led audit on your codebase? Learn about our [SaaS Code Audit Services](/services/code-audit) or [book a technical review with Dazzcode](/contact).
+Need an objective, senior-led audit on your codebase? Learn about our [SaaS Code Audit Services](/services/saas-code-audit) or [book a technical review with Dazzcode](/contact).
