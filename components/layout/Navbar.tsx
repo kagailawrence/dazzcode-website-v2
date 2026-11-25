@@ -20,6 +20,7 @@ const navLinks = [
       tagline: service.tagline,
     })),
   },
+  { name: "POS", href: "https://pos.dazzcode.com" },
   { name: "Case Studies", href: "/case-studies" },
   { name: "How We Build", href: "/case-studies#how-we-build" },
   { name: "Blog", href: "/blog" },
@@ -188,6 +189,14 @@ export function Navbar() {
                     </div>
                   )}
                 </div>
+
+                <a
+                  href="https://pos.dazzcode.com"
+                  onClick={handleLinkClick}
+                  className="text-2xl font-black tracking-tight text-[#12201B] py-1"
+                >
+                  POS
+                </a>
 
                 <Link
                   href="/case-studies"
