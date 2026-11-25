@@ -101,9 +101,28 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const modifiedTime = toIsoDate(post.updatedAt ?? post.publishedAt);
 
   const allPosts = getAllPosts();
-  const relatedPosts = allPosts
-    .filter((p) => p.slug !== post.slug)
-    .slice(0, 3);
+  const currentPostIndex = allPosts.findIndex((p) => p.slug === post.slug);
+  const relatedPosts = [];
+  const nextArticle = allPosts[(currentPostIndex + 1) % allPosts.length];
+
+  // Link each article to the next one in the publish-date list so every post
+  // receives contextual internal links, then prefer additional same-category guides.
+  if (nextArticle && nextArticle.slug !== post.slug) {
+    relatedPosts.push(nextArticle);
+  }
+
+  relatedPosts.push(
+    ...allPosts
+      .filter((p) => p.slug !== post.slug && p.slug !== nextArticle?.slug && p.category === post.category)
+      .slice(0, 2)
+  );
+
+  for (let offset = 2; relatedPosts.length < Math.min(3, allPosts.length - 1); offset += 1) {
+    const candidate = allPosts[(currentPostIndex + offset) % allPosts.length];
+    if (candidate && candidate.slug !== post.slug && !relatedPosts.some((p) => p.slug === candidate.slug)) {
+      relatedPosts.push(candidate);
+    }
+  }
 
   // Article Schema for SEO & GEO
   const articleSchema = {

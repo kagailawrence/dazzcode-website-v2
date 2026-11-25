@@ -1270,6 +1270,11 @@ export default function SaasCodeAuditPage() {
               </Button>
             </Link>
           </div>
+          <nav aria-label="Regional code audit services" className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm">
+            <span className="text-[#52615B]">Regional audit services:</span>
+            <Link href="/uk/code-audit" className="font-semibold text-[#047857] hover:underline">UK SaaS code audit</Link>
+            <Link href="/us/code-audit" className="font-semibold text-[#047857] hover:underline">US SaaS code audit</Link>
+          </nav>
         </div>
       </section>
     </div>

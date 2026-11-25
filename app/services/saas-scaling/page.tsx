@@ -1351,6 +1351,11 @@ export default function SaasScalingPage() {
               </Button>
             </Link>
           </div>
+          <nav aria-label="Regional SaaS scaling services" className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm">
+            <span className="text-[#52615B]">Regional scaling services:</span>
+            <Link href="/uk/saas-scaling" className="font-semibold text-[#047857] hover:underline">SaaS scaling in the UK</Link>
+            <Link href="/us/saas-scaling" className="font-semibold text-[#047857] hover:underline">SaaS scaling in the US</Link>
+          </nav>
         </div>
       </section>
 
